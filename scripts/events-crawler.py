@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
-Event Crawler — reads venues.md, fetches each venue's event page,
-extracts upcoming events, and writes to events.md organized by city/date.
-Runs nightly. Cleans up past events automatically.
+Event Crawler — reads venues.md, fetches events via Songkick (music venues)
+or direct scraping (theater venues), writes clean events.md.
+Runs nightly. Removes past events automatically.
 """
 
 import re
 import time
 import urllib.request
 import urllib.error
+import urllib.parse
 from collections import defaultdict
 from datetime import datetime, date
 from pathlib import Path
@@ -19,185 +20,260 @@ VENUES_FILE = WORKSPACE / "events/venues.md"
 EVENTS_FILE = WORKSPACE / "events/events.md"
 ET = ZoneInfo("America/New_York")
 
-# Date patterns to look for in HTML
-DATE_PATTERNS = [
-    r'\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|'
-    r'Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)'
-    r'\s+(\d{1,2})(?:st|nd|rd|th)?,?\s*(\d{4})?',
-    r'\b(\d{1,2})[/\-](\d{1,2})(?:[/\-](\d{2,4}))?',
-    r'\b(20\d{2})[/\-](\d{2})[/\-](\d{2})',
-]
-
-MONTH_MAP = {
-    'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6,
-    'jul': 7, 'aug': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12,
-    'january': 1, 'february': 2, 'march': 3, 'april': 4, 'june': 6,
-    'july': 7, 'august': 8, 'september': 9, 'october': 10, 'november': 11, 'december': 12,
-}
-
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
+}
+
+MONTH_MAP = {
+    "january": 1, "february": 2, "march": 3, "april": 4,
+    "may": 5, "june": 6, "july": 7, "august": 8,
+    "september": 9, "october": 10, "november": 11, "december": 12,
 }
 
 
 def parse_venues():
-    """Parse venues.md into {city: [(name, url)]}"""
+    """Parse venues.md → {city: [(name, official_url, songkick_id_or_None)]}"""
     venues = defaultdict(list)
     current_city = None
-    text = VENUES_FILE.read_text()
-
-    for line in text.splitlines():
+    for line in VENUES_FILE.read_text().splitlines():
         if line.startswith("## "):
             current_city = line[3:].strip()
         elif line.startswith("- **") and " | " in line and current_city:
-            match = re.match(r'- \*\*(.+?)\*\*\s*\|\s*(https?://\S+)', line)
-            if match:
-                name, url = match.group(1), match.group(2)
-                venues[current_city].append((name, url.rstrip("/")))
-
+            parts = [p.strip() for p in line.split("|")]
+            name_match = re.match(r'- \*\*(.+?)\*\*', parts[0])
+            if not name_match:
+                continue
+            name = name_match.group(1)
+            official_url = parts[1].strip() if len(parts) > 1 else ""
+            songkick_id = None
+            for part in parts[2:]:
+                m = re.match(r'songkick:(\d+)', part.strip())
+                if m:
+                    songkick_id = m.group(1)
+            venues[current_city].append((name, official_url, songkick_id))
     return venues
 
 
-def fetch_page(url, timeout=15):
-    """Fetch a URL, return text or None."""
+def fetch(url, timeout=15):
+    """Fetch URL text, return None on error."""
     try:
         req = urllib.request.Request(url, headers=HEADERS)
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             raw = resp.read()
-            encoding = resp.headers.get_content_charset() or "utf-8"
-            return raw.decode(encoding, errors="replace")
+            enc = resp.headers.get_content_charset() or "utf-8"
+            return raw.decode(enc, errors="replace")
     except Exception as e:
-        print(f"  ⚠️  Fetch error: {e}")
+        print(f"  ⚠️  {e}")
         return None
 
 
-def strip_tags(html):
-    """Very basic HTML tag stripper."""
-    return re.sub(r'<[^>]+>', ' ', html)
+# ─── Songkick parser ────────────────────────────────────────────────────────
 
-
-def extract_events(html, venue_name, venue_url, city):
+def parse_songkick(html, venue_name, venue_url):
     """
-    Best-effort extraction of event names and dates from HTML.
-    Returns list of dicts: {name, date, url, venue, city}
+    Parse Songkick calendar page. Format in rendered text:
+      'Thursday 26 February 2026\nArtist Name\nVenue, City...'
     """
     if not html:
         return []
 
     today = date.today()
     events = []
-    text = strip_tags(html)
-    # Collapse whitespace
-    text = re.sub(r'\s+', ' ', text)
+    seen = set()
 
-    # Look for structured date blocks — find dates and nearby text
+    # Songkick embeds structured data as JSON-LD
+    json_ld_re = re.compile(
+        r'"startDate"\s*:\s*"(\d{4}-\d{2}-\d{2})[^"]*".*?"name"\s*:\s*"([^"]{3,80})"',
+        re.DOTALL
+    )
+    import json as _json
+    for m in json_ld_re.finditer(html):
+        date_str = m.group(1)
+        # Decode JSON unicode escapes (e.g. \u0026 → &)
+        try:
+            artist = _json.loads(f'"{m.group(2)}"')
+        except Exception:
+            artist = m.group(2)
+        try:
+            event_date = date.fromisoformat(date_str)
+        except ValueError:
+            continue
+        if event_date < today:
+            continue
+        key = (event_date, artist[:25])
+        if key in seen:
+            continue
+        seen.add(key)
+        events.append({"name": artist, "date": event_date, "url": venue_url, "venue": venue_name})
+
+    if events:
+        return events
+
+    # Fallback: parse text pattern "Day DD Month YYYY\nArtist\n..."
+    # Strip HTML tags first
+    text = re.sub(r'<[^>]+>', '\n', html)
+    text = re.sub(r'&amp;', '&', text)
+    text = re.sub(r'&#\d+;', '', text)
+    text = re.sub(r'\n{3,}', '\n\n', text)
+
     date_re = re.compile(
-        r'\b(January|February|March|April|May|June|July|August|September|October|November|December)'
-        r'\s+(\d{1,2})(?:,?\s*(\d{4}))?',
+        r'(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+'
+        r'(\d{1,2})\s+(January|February|March|April|May|June|July|August|'
+        r'September|October|November|December)\s+(\d{4})',
         re.IGNORECASE
     )
 
-    # Also look for links in original HTML that might be event pages
-    link_re = re.compile(r'href=["\']([^"\']+)["\'][^>]*>([^<]{5,80})<', re.IGNORECASE)
-    links = link_re.findall(html)
-
-    # Find all date matches and try to pair with nearby text
-    for m in date_re.finditer(text):
-        month_str = m.group(1).lower()[:3]
+    lines = text.splitlines()
+    for i, line in enumerate(lines):
+        m = date_re.search(line)
+        if not m:
+            continue
+        day, month_str, year = int(m.group(1)), m.group(2).lower(), int(m.group(3))
         month = MONTH_MAP.get(month_str)
         if not month:
             continue
-        day = int(m.group(2))
-        year = int(m.group(3)) if m.group(3) else today.year
-
-        # If the date seems past for this year, try next year
         try:
             event_date = date(year, month, day)
         except ValueError:
             continue
-
         if event_date < today:
-            if event_date.replace(year=year + 1) >= today:
-                event_date = event_date.replace(year=year + 1)
-            else:
-                continue  # genuinely past
-
-        # Grab surrounding text as event name candidate
-        start = max(0, m.start() - 120)
-        end = min(len(text), m.end() + 120)
-        context = text[start:end].strip()
-
-        # Find the most title-like chunk near the date
-        # Look for capitalized phrases
-        title_re = re.compile(r'[A-Z][A-Za-z0-9\s\'\-\&\:\,\.]{3,60}')
-        titles = title_re.findall(context)
-        name = titles[0].strip() if titles else venue_name + " Event"
-
-        # Skip obvious non-event strings
-        skip = ["Buy Ticket", "Get Ticket", "More Info", "Learn More",
-                "View All", "See All", "Load More", "Subscribe"]
-        if any(s.lower() in name.lower() for s in skip):
             continue
 
-        # Try to find a matching link
-        event_url = venue_url
-        for href, link_text in links:
-            if any(word.lower() in link_text.lower() for word in name.split()[:3] if len(word) > 3):
-                if href.startswith("http"):
-                    event_url = href
-                elif href.startswith("/"):
-                    from urllib.parse import urlparse
-                    parsed = urlparse(venue_url)
-                    event_url = f"{parsed.scheme}://{parsed.netloc}{href}"
-                break
+        # Next non-empty line is typically artist name
+        artist = ""
+        for j in range(i + 1, min(i + 5, len(lines))):
+            candidate = lines[j].strip()
+            if candidate and not date_re.search(candidate) and len(candidate) > 2:
+                # Skip venue/city lines
+                if not any(skip in candidate.lower() for skip in ["buy ticket", "save this", "don't miss", "new york", "brooklyn", "san francisco", "6 delancey", "1805 geary"]):
+                    artist = candidate
+                    break
 
-        events.append({
-            "name": name[:80],
-            "date": event_date,
-            "url": event_url,
-            "venue": venue_name,
-            "city": city,
-        })
+        if not artist:
+            continue
 
-    # Deduplicate by (date, name[:20])
+        # Clean up artist names with openers: "Artist and Opener" → "Artist (+ Opener)"
+        artist = re.sub(r'\s+and\s+', ' + ', artist, flags=re.IGNORECASE)
+
+        key = (event_date, artist[:25])
+        if key in seen:
+            continue
+        seen.add(key)
+        events.append({"name": artist, "date": event_date, "url": venue_url, "venue": venue_name})
+
+    return events
+
+
+# ─── Theater parser (direct scraping) ───────────────────────────────────────
+
+def parse_theater(html, venue_name, venue_url):
+    """Best-effort theater event extraction using schema.org JSON-LD."""
+    if not html:
+        return []
+
+    today = date.today()
+    events = []
     seen = set()
-    unique = []
-    for e in events:
-        key = (e["date"], e["name"][:20])
-        if key not in seen:
-            seen.add(key)
-            unique.append(e)
 
-    return unique[:20]  # cap per venue
+    # Try JSON-LD schema.org Event
+    json_ld_re = re.compile(
+        r'"@type"\s*:\s*"(?:Event|TheaterEvent|MusicEvent|VisualArtsEvent)"'
+        r'.*?"name"\s*:\s*"([^"]{3,100})"'
+        r'(?:.*?"startDate"\s*:\s*"(\d{4}-\d{2}-\d{2})[^"]*")?',
+        re.DOTALL
+    )
+    for m in json_ld_re.finditer(html):
+        name = m.group(1).strip()
+        date_str = m.group(2)
+        if not date_str:
+            continue
+        try:
+            event_date = date.fromisoformat(date_str)
+        except ValueError:
+            continue
+        if event_date < today:
+            continue
+        key = (event_date, name[:25])
+        if key in seen:
+            continue
+        seen.add(key)
 
+        # Try to find a specific event URL
+        url_re = re.compile(r'"url"\s*:\s*"(https?://[^"]{10,100})"')
+        event_url = venue_url
+        # Look for url near the event block
+        idx = m.start()
+        nearby = html[max(0, idx-500):idx+500]
+        u = url_re.search(nearby)
+        if u:
+            event_url = u.group(1)
+
+        events.append({"name": name, "date": event_date, "url": event_url, "venue": venue_name})
+
+    if events:
+        return events
+
+    # Fallback: date pattern scraping (same as before)
+    text = re.sub(r'<[^>]+>', ' ', html)
+    text = re.sub(r'\s+', ' ', text)
+    date_re = re.compile(
+        r'\b(January|February|March|April|May|June|July|August|September|'
+        r'October|November|December)\s+(\d{1,2})(?:,?\s*(\d{4}))?',
+        re.IGNORECASE
+    )
+    title_re = re.compile(r'[A-Z][A-Za-z0-9\s\'\-\&\:]{4,60}')
+    for m in date_re.finditer(text):
+        month = MONTH_MAP.get(m.group(1).lower())
+        if not month:
+            continue
+        day = int(m.group(2))
+        year = int(m.group(3)) if m.group(3) else today.year
+        try:
+            event_date = date(year, month, day)
+        except ValueError:
+            continue
+        if event_date < today:
+            continue
+
+        ctx = text[max(0, m.start()-150):m.end()+150]
+        titles = title_re.findall(ctx)
+        skip = {"Buy Ticket", "Get Ticket", "More Info", "Learn More", "View All", "See All"}
+        name = next((t.strip() for t in titles if t.strip() not in skip and len(t) > 5), None)
+        if not name:
+            continue
+
+        key = (event_date, name[:25])
+        if key in seen:
+            continue
+        seen.add(key)
+        events.append({"name": name, "date": event_date, "url": venue_url, "venue": venue_name})
+
+    return events[:15]
+
+
+# ─── Main ────────────────────────────────────────────────────────────────────
 
 def write_events_md(all_events_by_city):
-    """Write events.md sorted by city then date."""
     now = datetime.now(ET).strftime("%Y-%m-%d %H:%M %Z")
     lines = [f"# Upcoming Events", f"_Last updated: {now}_", ""]
 
-    city_order = ["New York City", "San Francisco"]
-    for city in city_order:
+    for city in ["New York City", "San Francisco"]:
         lines.append(f"## {city}")
-        events = all_events_by_city.get(city, [])
+        events = sorted(all_events_by_city.get(city, []), key=lambda e: e["date"])
         if not events:
-            lines.append("_No upcoming events found — check back after the next crawl._")
+            lines.append("_No upcoming events found._")
             lines.append("")
             continue
 
-        # Sort by date
-        events.sort(key=lambda e: e["date"])
-
         current_date = None
         for ev in events:
-            date_str = ev["date"].strftime("%b %-d, %Y")
             if ev["date"] != current_date:
-                lines.append(f"### {date_str}")
+                lines.append(f"### {ev['date'].strftime('%b %-d, %Y')}")
                 current_date = ev["date"]
-            lines.append(f"- **{ev['name']}** @ {ev['venue']} — [Info / Tickets]({ev['url']})")
-
+            name = ev["name"].replace("&", "&amp;")
+            lines.append(f"- **{name}** @ {ev['venue']} — [Info / Tickets]({ev['url']})")
         lines.append("")
 
     EVENTS_FILE.write_text("\n".join(lines))
@@ -206,28 +282,35 @@ def write_events_md(all_events_by_city):
 def main():
     print(f"\n🎵 Event Crawler — {datetime.now(ET).strftime('%Y-%m-%d %H:%M %Z')}")
     venues_by_city = parse_venues()
-    total_venues = sum(len(v) for v in venues_by_city.values())
-    print(f"Loaded {total_venues} venues across {len(venues_by_city)} cities\n")
+    total = sum(len(v) for v in venues_by_city.values())
+    print(f"Loaded {total} venues across {len(venues_by_city)} cities\n")
 
-    all_events_by_city = defaultdict(list)
+    all_events = defaultdict(list)
     today = date.today()
 
     for city, venues in venues_by_city.items():
         print(f"📍 {city}")
-        for venue_name, url in venues:
-            print(f"  Fetching {venue_name}...")
-            html = fetch_page(url)
-            events = extract_events(html, venue_name, url, city)
+        for name, official_url, songkick_id in venues:
+            if songkick_id:
+                crawl_url = f"https://www.songkick.com/venues/{songkick_id}/calendar"
+                print(f"  [Songkick] {name}...")
+                html = fetch(crawl_url)
+                events = parse_songkick(html, name, official_url)
+            else:
+                print(f"  [Direct]   {name}...")
+                html = fetch(official_url)
+                events = parse_theater(html, name, official_url)
+
             future = [e for e in events if e["date"] >= today]
-            print(f"  → {len(future)} upcoming events found")
-            all_events_by_city[city].extend(future)
-            time.sleep(2)
+            print(f"  → {len(future)} upcoming events")
+            all_events[city].extend(future)
+            time.sleep(1)
 
-    write_events_md(all_events_by_city)
+    write_events_md(all_events)
 
-    total = sum(len(e) for e in all_events_by_city.values())
-    print(f"\n✅ Done — {total} upcoming events written to events.md")
-    for city, evs in all_events_by_city.items():
+    total_events = sum(len(e) for e in all_events.values())
+    print(f"\n✅ Done — {total_events} upcoming events written to events.md")
+    for city, evs in all_events.items():
         print(f"   {city}: {len(evs)} events")
 
 
