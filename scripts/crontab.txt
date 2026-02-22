@@ -4,3 +4,9 @@
 * 10-13 * * 1-5 /usr/bin/python3 /home/exedev/.openclaw/workspace/scripts/m57-alert.py >> /home/exedev/.openclaw/workspace/scripts/m57-alert.log 2>&1
 # Workspace auto-push — daily 4am UTC
 0 4 * * * /home/exedev/.openclaw/workspace/scripts/git-autopush.sh
+# Events crawler — nightly 2am ET (7am UTC)
+0 7 * * * /usr/bin/python3 /home/exedev/.openclaw/workspace/scripts/events-crawler.py >> /home/exedev/.openclaw/workspace/scripts/events-crawler.log 2>&1
+# Events discovery — nightly 3am ET (8am UTC)
+0 8 * * * /usr/bin/python3 /home/exedev/.openclaw/workspace/scripts/events-discovery.py >> /home/exedev/.openclaw/workspace/scripts/events-discovery.log 2>&1
+# HTML generator — nightly 4am ET (9am UTC)
+0 9 * * * /usr/bin/python3 /home/exedev/.openclaw/workspace/scripts/events-html-gen.py >> /home/exedev/.openclaw/workspace/scripts/events-html-gen.log 2>&1
