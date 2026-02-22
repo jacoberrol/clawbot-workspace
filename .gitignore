@@ -1,0 +1,22 @@
+# Node
+scripts/node_modules/
+scripts/package-lock.json
+
+# Teller secrets — never commit these
+scripts/teller/teller-config.json
+scripts/teller/certificate.pem
+scripts/teller/private_key.pem
+
+# Logs
+scripts/*.log
+
+# Runtime state (transient, regenerated)
+scripts/m57-status.json
+scripts/m57-alert-state.json
+scripts/m57-state.json
+scripts/reservation-state.json
+scripts/teller/subscription-report.json
+
+# Python cache
+__pycache__/
+*.pyc
