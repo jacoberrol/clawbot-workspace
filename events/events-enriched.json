@@ -26,7 +26,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-02-24",
         "url": "https://www.brooklynsteel.com/events/",
-        "genres": [],
+        "genres": [
+          "hip hop",
+          "rap rock",
+          "boom bap"
+        ],
         "is_theater": false
       },
       {
@@ -71,7 +75,10 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-02-26",
         "url": "https://www.boweryballroom.com/events/",
-        "genres": [],
+        "genres": [
+          "queer",
+          "spanish"
+        ],
         "is_theater": false
       },
       {
@@ -80,7 +87,11 @@
         "neighborhood": "Manhattan/Greenwich Village",
         "date": "2026-02-26",
         "url": "https://www.songkick.com/concerts/42304601-gary-bartz-at-le-poisson-rouge?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "jazz",
+          "free funk",
+          "modern creative"
+        ],
         "is_theater": false
       },
       {
@@ -107,7 +118,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-02-26",
         "url": "https://www.songkick.com/concerts/43000632-juice-at-babys-all-right?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "j-pop",
+          "hello project",
+          "girl group"
+        ],
         "is_theater": false
       },
       {
@@ -125,7 +140,11 @@
         "neighborhood": "Manhattan/West Village",
         "date": "2026-02-26",
         "url": "https://www.songkick.com/concerts/42791830-lynch-mob-at-racket-nyc?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "hard rock",
+          "rock",
+          "heavy metal"
+        ],
         "is_theater": false
       },
       {
@@ -134,7 +153,9 @@
         "neighborhood": "Manhattan/West Village",
         "date": "2026-02-26",
         "url": "https://www.songkick.com/concerts/42976641-trixter-at-racket-nyc?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "hard rock"
+        ],
         "is_theater": false
       },
       {
@@ -143,7 +164,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-02-27",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "synthwave",
+          "eighties",
+          "dreamwave"
+        ],
         "is_theater": false
       },
       {
@@ -152,7 +177,10 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-02-27",
         "url": "https://www.boweryballroom.com/events/",
-        "genres": [],
+        "genres": [
+          "queer",
+          "spanish"
+        ],
         "is_theater": false
       },
       {
@@ -179,7 +207,10 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-02-27",
         "url": "https://www.songkick.com/concerts/42814424-rich-brian-at-brooklyn-steel?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "pop rap",
+          "trap"
+        ],
         "is_theater": false
       },
       {
@@ -188,7 +219,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-02-27",
         "url": "https://www.babysallright.com/",
-        "genres": [],
+        "genres": [
+          "r&b",
+          "jazz",
+          "funk"
+        ],
         "is_theater": false
       },
       {
@@ -197,7 +232,11 @@
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-02-27",
         "url": "https://www.elsewherebrooklyn.com/events/",
-        "genres": [],
+        "genres": [
+          "electronic",
+          "pop",
+          "dance"
+        ],
         "is_theater": false
       },
       {
@@ -269,7 +308,11 @@
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-02-28",
         "url": "https://www.elsewherebrooklyn.com/events/",
-        "genres": [],
+        "genres": [
+          "mezcal",
+          "daytime disco",
+          "summer"
+        ],
         "is_theater": false
       },
       {
@@ -287,7 +330,9 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-03-01",
         "url": "https://www.boweryballroom.com/events/",
-        "genres": [],
+        "genres": [
+          "rock"
+        ],
         "is_theater": false
       },
       {
@@ -323,7 +368,9 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-03",
         "url": "https://www.babysallright.com/",
-        "genres": [],
+        "genres": [
+          "country"
+        ],
         "is_theater": false
       },
       {
@@ -332,7 +379,10 @@
         "neighborhood": "Manhattan/West Village",
         "date": "2026-03-03",
         "url": "https://www.songkick.com/concerts/42860908-nathan-evans-at-racket-nyc?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "pop",
+          "folk"
+        ],
         "is_theater": false
       },
       {
@@ -341,7 +391,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-04",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "r&b",
+          "alternative r&b",
+          "soul"
+        ],
         "is_theater": false
       },
       {
@@ -350,7 +404,11 @@
         "neighborhood": "Manhattan/Greenwich Village",
         "date": "2026-03-04",
         "url": "https://www.songkick.com/concerts/43034281-jesse-baez-at-le-poisson-rouge?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "contemporary r&b",
+          "trap edm",
+          "r&b"
+        ],
         "is_theater": false
       },
       {
@@ -368,7 +426,10 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-04",
         "url": "https://www.songkick.com/concerts/43054424-idk-at-babys-all-right?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "trap",
+          "hip hop"
+        ],
         "is_theater": false
       },
       {
@@ -404,7 +465,9 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-03-05",
         "url": "https://www.boweryballroom.com/events/",
-        "genres": [],
+        "genres": [
+          "hip hop"
+        ],
         "is_theater": false
       },
       {
@@ -413,7 +476,11 @@
         "neighborhood": "Manhattan/Greenwich Village",
         "date": "2026-03-05",
         "url": "https://lpr.com/events/",
-        "genres": [],
+        "genres": [
+          "pop",
+          "folk",
+          "power pop"
+        ],
         "is_theater": false
       },
       {
@@ -440,7 +507,9 @@
         "neighborhood": "Brooklyn/Greenpoint",
         "date": "2026-03-05",
         "url": "https://www.warsawconcerts.com/events/",
-        "genres": [],
+        "genres": [
+          "indie rock"
+        ],
         "is_theater": false
       },
       {
@@ -476,7 +545,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-06",
         "url": "https://www.brooklynsteel.com/events/",
-        "genres": [],
+        "genres": [
+          "indie rock",
+          "folk",
+          "indie folk"
+        ],
         "is_theater": false
       },
       {
@@ -530,7 +603,9 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-07",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "acid jazz"
+        ],
         "is_theater": false
       },
       {
@@ -3781,7 +3856,10 @@
         "neighborhood": "SF/Lower Pac Heights",
         "date": "2026-03-07",
         "url": "https://www.theindependentsf.com/calendar",
-        "genres": [],
+        "genres": [
+          "queer",
+          "spanish"
+        ],
         "is_theater": false
       },
       {
@@ -4159,7 +4237,11 @@
         "neighborhood": "SF/Hayes Valley",
         "date": "2026-03-19",
         "url": "https://www.songkick.com/concerts/42894491-timecop1983-at-rickshaw-stop?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "synthwave",
+          "eighties",
+          "dreamwave"
+        ],
         "is_theater": false
       },
       {
@@ -4942,7 +5024,9 @@
         "neighborhood": "SF/SoMa",
         "date": "2026-04-04",
         "url": "https://augusthallsf.com/events/",
-        "genres": [],
+        "genres": [
+          "indie rock"
+        ],
         "is_theater": false
       },
       {
