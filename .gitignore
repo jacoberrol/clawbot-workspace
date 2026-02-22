@@ -1,21 +1,17 @@
-# Node
-scripts/node_modules/
-scripts/package-lock.json
-
-# Teller secrets — never commit these
-scripts/teller/teller-config.json
-scripts/teller/certificate.pem
-scripts/teller/private_key.pem
+# Secrets — never commit
+.env
+users/**/.env
 
 # Logs
-scripts/*.log
+*.log
 
-# Runtime state (transient, regenerated)
-scripts/m57-status.json
-scripts/m57-alert-state.json
-scripts/m57-state.json
-scripts/reservation-state.json
-scripts/teller/subscription-report.json
+# Runtime state in scripts/ (transient, regenerated)
+users/*/scripts/m57-status.json
+users/*/scripts/m57-alert-state.json
+users/*/scripts/m57-state.json
+users/*/scripts/reservation-state.json
+users/*/scripts/discovery-state.json
+users/*/scripts/teller-*.json
 
 # Python cache
 __pycache__/

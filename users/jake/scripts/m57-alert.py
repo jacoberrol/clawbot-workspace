@@ -6,14 +6,18 @@ when a bus is ~10 minutes from his stop.
 """
 
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-STATUS_FILE = Path("/home/exedev/.openclaw/workspace/scripts/m57-status.json")
-ALERT_STATE_FILE = Path("/home/exedev/.openclaw/workspace/scripts/m57-alert-state.json")
+from dotenv_loader import load_dotenv
+load_dotenv()
+
+STATUS_FILE = Path(__file__).parent / "m57-status.json"
+ALERT_STATE_FILE = Path(__file__).parent / "m57-alert-state.json"
 
 ET = ZoneInfo("America/New_York")
 ALERT_MIN = 8    # lower bound: alert if bus is >= this many minutes away
@@ -47,7 +51,7 @@ def send_notification(message):
             [
                 "openclaw", "message", "send",
                 "--channel", "telegram",
-                "--target", "455383146",
+                "--target", os.environ.get("TELEGRAM_TARGET", ""),
                 "--message", message,
             ],
             capture_output=True, text=True, timeout=15

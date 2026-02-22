@@ -12,7 +12,7 @@ from pathlib import Path
 
 STOP_ID = "MTA_405565"       # West End Av / W 61 St (eastbound M57)
 LINE_REF = "MTA NYCT_M57"
-STATUS_FILE = Path("/home/exedev/.openclaw/workspace/scripts/m57-status.json")
+STATUS_FILE = Path(__file__).parent / "m57-status.json"
 ET = ZoneInfo("America/New_York")
 
 

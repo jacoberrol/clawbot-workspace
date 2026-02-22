@@ -16,24 +16,34 @@ _(Nothing significant yet — just getting started.)_
 
 ---
 
+## Workspace Structure
+
+Per-user directories live under `users/`:
+- `users/jake/` — Jake's projects (scripts, events data, .env)
+- `users/ollie/` — Ollie's workspace (ready for projects)
+- `users/zoe/` — Zoe's workspace (ready for projects)
+- `docs/` stays at repo root for GitHub Pages
+
 ## Active Projects (as of 2026-02-22)
 
 ### M57 Bus Monitor
 - Alerts Jake when M57 is ~10 min from West End Ave & W 61st St (eastbound) on weekdays 6:30–8:30am ET
 - Stop ID: `MTA_405565`; API key "TEST" works for MTA BusTime
 - Two-script design: m57-poll.py (all day) + m57-alert.py (commute window only)
+- Scripts: `users/jake/scripts/m57-poll.py` + `users/jake/scripts/m57-alert.py`
 
 ### Event Discovery System
 - Crawls NYC + SF music/theater venues; generates a web page at https://jacoberrol.github.io/clawbot-workspace
 - Jake still needs to enable GitHub Pages: repo Settings → Pages → `main`/`docs`
 - **Crawler needs rewrite** — current regex parsing extracts garbled UI text instead of real event names
 - Discovery script needs `BRAVE_API_KEY` env var to run
-- Jake reviews `events/candidates.md` and says "approve/reject" for new venues
+- Jake reviews `users/jake/events/candidates.md` and says "approve/reject" for new venues
+- Scripts: `users/jake/scripts/events-*.py`
 
 ### Workspace Git
 - Repo: `git@github.com:jacoberrol/clawbot-workspace.git`
-- Auto-push daily at 4am UTC via `scripts/git-autopush.sh`
-- Crontab version-controlled at `scripts/crontab.txt`
+- Auto-push daily at 4am UTC via `users/jake/scripts/git-autopush.sh`
+- Crontab version-controlled at `users/jake/scripts/crontab.txt`
 
 ## Key Technical Facts
 - All scripts use Python stdlib only (no pip installs)

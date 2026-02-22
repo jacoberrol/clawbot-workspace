@@ -2,13 +2,14 @@
 # Daily auto-commit and push for the clawbot workspace.
 # Cron: 0 4 * * * (4am UTC daily)
 
-WORKSPACE="/home/exedev/.openclaw/workspace"
-LOG="$WORKSPACE/scripts/git-autopush.log"
+WORKSPACE="/home/exedev/clawbot/workspace"
+SCRIPTS="$WORKSPACE/users/jake/scripts"
+LOG="$SCRIPTS/git-autopush.log"
 
 cd "$WORKSPACE" || exit 1
 
 # Export current crontab so it's version controlled
-crontab -l > "$WORKSPACE/scripts/crontab.txt" 2>/dev/null || true
+crontab -l > "$SCRIPTS/crontab.txt" 2>/dev/null || true
 
 # Stage any changes
 git add -A
@@ -22,8 +23,9 @@ fi
 TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
 git commit -m "Auto-commit: $TIMESTAMP"
 git push origin main >> "$LOG" 2>&1
+PUSH_STATUS=$?
 
-if [ $? -eq 0 ]; then
+if [ $PUSH_STATUS -eq 0 ]; then
   echo "[$TIMESTAMP] Pushed OK." >> "$LOG"
 else
   echo "[$TIMESTAMP] Push FAILED — check $LOG" >> "$LOG"
