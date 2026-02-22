@@ -13,6 +13,9 @@ from datetime import datetime, date
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from dotenv_loader import load_dotenv
+load_dotenv()
+
 WORKSPACE = Path("/home/exedev/.openclaw/workspace")
 VENUES_FILE = WORKSPACE / "events/venues.md"
 CANDIDATES_FILE = WORKSPACE / "events/candidates.md"

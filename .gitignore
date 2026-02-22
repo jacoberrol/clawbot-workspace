@@ -1,3 +1,6 @@
+# Secrets
+.env
+
 # Node
 scripts/node_modules/
 scripts/package-lock.json
@@ -16,6 +19,7 @@ scripts/m57-alert-state.json
 scripts/m57-state.json
 scripts/reservation-state.json
 scripts/teller/subscription-report.json
+scripts/discovery-state.json
 
 # Python cache
 __pycache__/

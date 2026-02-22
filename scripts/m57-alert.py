@@ -6,11 +6,15 @@ when a bus is ~10 minutes from his stop.
 """
 
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+from dotenv_loader import load_dotenv
+load_dotenv()
 
 STATUS_FILE = Path("/home/exedev/.openclaw/workspace/scripts/m57-status.json")
 ALERT_STATE_FILE = Path("/home/exedev/.openclaw/workspace/scripts/m57-alert-state.json")
@@ -47,7 +51,7 @@ def send_notification(message):
             [
                 "openclaw", "message", "send",
                 "--channel", "telegram",
-                "--target", "455383146",
+                "--target", os.environ.get("TELEGRAM_TARGET", ""),
                 "--message", message,
             ],
             capture_output=True, text=True, timeout=15

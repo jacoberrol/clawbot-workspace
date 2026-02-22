@@ -1,5 +1,5 @@
 # Upcoming Events
-_Last updated: 2026-02-22 01:31 EST_
+_Last updated: 2026-02-22 02:00 EST_
 
 ## New York City
 ### Feb 22, 2026
