@@ -230,6 +230,49 @@ footer {
   font-size: 0.8rem;
   border-top: 1px solid var(--border);
 }
+
+/* ── Mobile city nav ── */
+.city-nav {
+  display: none;
+}
+@media (max-width: 768px) {
+  .city-nav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+  .city-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 0.85rem 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .city-nav a.nyc {
+    color: var(--nyc);
+  }
+  .city-nav a.nyc:hover, .city-nav a.nyc:focus {
+    border-bottom-color: var(--nyc);
+  }
+  .city-nav a.sf {
+    color: var(--sf);
+  }
+  .city-nav a.sf:hover, .city-nav a.sf:focus {
+    border-bottom-color: var(--sf);
+  }
+  /* Offset anchor scroll so the sticky nav doesn't cover the heading */
+  .city-col {
+    scroll-margin-top: 52px;
+  }
+}
 """
 
 
@@ -387,12 +430,17 @@ def generate():
   <p class="updated">Updated {updated}</p>
 </header>
 
+<nav class="city-nav">
+  <a class="nyc" href="#nyc">🗽 New York City</a>
+  <a class="sf"  href="#sf">🌉 San Francisco</a>
+</nav>
+
 <div class="cities">
-  <div class="city-col nyc">
+  <div class="city-col nyc" id="nyc">
     <h2>🗽 New York City</h2>
     {nyc_html}
   </div>
-  <div class="city-col sf">
+  <div class="city-col sf" id="sf">
     <h2>🌉 San Francisco</h2>
     {sf_html}
   </div>

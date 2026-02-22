@@ -216,6 +216,49 @@ footer {
   font-size: 0.8rem;
   border-top: 1px solid var(--border);
 }
+
+/* ── Mobile city nav ── */
+.city-nav {
+  display: none;
+}
+@media (max-width: 768px) {
+  .city-nav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+  .city-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 0.85rem 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .city-nav a.nyc {
+    color: var(--nyc);
+  }
+  .city-nav a.nyc:hover, .city-nav a.nyc:focus {
+    border-bottom-color: var(--nyc);
+  }
+  .city-nav a.sf {
+    color: var(--sf);
+  }
+  .city-nav a.sf:hover, .city-nav a.sf:focus {
+    border-bottom-color: var(--sf);
+  }
+  /* Offset anchor scroll so the sticky nav doesn't cover the heading */
+  .city-col {
+    scroll-margin-top: 52px;
+  }
+}
 </style>
 </head>
 <body>
@@ -223,11 +266,16 @@ footer {
 <header>
   <h1>Jake's Event Feed</h1>
   <p class="sub">New York City &amp; San Francisco</p>
-  <p class="updated">Updated February 22, 2026 at 2:00 PM EST</p>
+  <p class="updated">Updated February 22, 2026 at 4:22 PM EST</p>
 </header>
 
+<nav class="city-nav">
+  <a class="nyc" href="#nyc">🗽 New York City</a>
+  <a class="sf"  href="#sf">🌉 San Francisco</a>
+</nav>
+
 <div class="cities">
-  <div class="city-col nyc">
+  <div class="city-col nyc" id="nyc">
     <h2>🗽 New York City</h2>
     <div class="date-group">
 <div class="date-label">Feb 22, 2026</div>
@@ -3482,7 +3530,7 @@ footer {
 </div>
 </div>
   </div>
-  <div class="city-col sf">
+  <div class="city-col sf" id="sf">
     <h2>🌉 San Francisco</h2>
     <div class="date-group">
 <div class="date-label">Feb 22, 2026</div>
