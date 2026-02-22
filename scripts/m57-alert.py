@@ -1,5 +1,6 @@
-#!/usr/bin/env python3"""
-M57 Alert — runs every minute between 6:30–8:30am ET.
+#!/usr/bin/env python3
+"""
+M57 Alert - runs every minute between 6:30-8:30am ET.
 Reads the status file written by m57-poll.py and notifies Jake
 when a bus is ~10 minutes from his stop.
 """
