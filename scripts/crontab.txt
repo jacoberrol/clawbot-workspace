@@ -1,0 +1,6 @@
+# M57 poller — every minute, all day
+* * * * * /usr/bin/python3 /home/exedev/.openclaw/workspace/scripts/m57-poll.py >> /home/exedev/.openclaw/workspace/scripts/m57-poll.log 2>&1
+# M57 alerter — every minute, 10am-2pm UTC (covers 6:30-8:30am ET in EST+EDT), weekdays
+* 10-13 * * 1-5 /usr/bin/python3 /home/exedev/.openclaw/workspace/scripts/m57-alert.py >> /home/exedev/.openclaw/workspace/scripts/m57-alert.log 2>&1
+# Workspace auto-push — daily 4am UTC
+0 4 * * * /home/exedev/.openclaw/workspace/scripts/git-autopush.sh

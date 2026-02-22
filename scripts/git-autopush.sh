@@ -7,6 +7,9 @@ LOG="$WORKSPACE/scripts/git-autopush.log"
 
 cd "$WORKSPACE" || exit 1
 
+# Export current crontab so it's version controlled
+crontab -l > "$WORKSPACE/scripts/crontab.txt" 2>/dev/null || true
+
 # Stage any changes
 git add -A
 
