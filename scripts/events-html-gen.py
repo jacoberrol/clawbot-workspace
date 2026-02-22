@@ -214,7 +214,7 @@ def parse_events_md():
     current_date = None
 
     for line in text.splitlines():
-        if line.startswith("## ") and not line.startswith("## New") is False:
+        if line.startswith("## "):
             city = line[3:].strip()
             if city in ("New York City", "San Francisco"):
                 current_city = city
