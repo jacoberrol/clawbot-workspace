@@ -36,6 +36,13 @@ SEARCH_QUERIES = [
     "{city} city highlights must see not tourist trap",
 ]
 
+WORK_QUERIES = [
+    "{city} best cafes to work from laptop wifi outlets 2025",
+    "{city} coffee shops good wifi reliable internet work friendly",
+    "{city} best specialty coffee third wave cafes",
+    "{city} cafes with power outlets work remote",
+]
+
 
 def brave_search(query: str, api_key: str, count: int = 5) -> list[dict]:
     """Run a Brave Search query and return results."""
@@ -48,7 +55,6 @@ def brave_search(query: str, api_key: str, count: int = 5) -> list[dict]:
     url = f"{BRAVE_API_URL}?{params}"
     req = urllib.request.Request(url, headers={
         "Accept": "application/json",
-        "Accept-Encoding": "gzip",
         "X-Subscription-Token": api_key,
     })
     try:
@@ -126,11 +132,12 @@ def extract_venues_from_results(results: list[dict], city: str) -> list[dict]:
     return venues
 
 
-def scout_city(city: str, trip: dict, api_key: str) -> list[dict]:
-    """Run all search queries for a city and return ranked venues."""
+def scout_city(city: str, trip: dict, api_key: str) -> tuple[list[dict], list[dict]]:
+    """Run all search queries for a city and return (ranked_venues, work_spots)."""
     print(f"\n  Scouting {city}...")
     prefs = trip.get("preferences", {})
     vibe = prefs.get("vibe", "upscale-casual local")
+    categories = prefs.get("categories", [])
     all_results = []
 
     for q_template in SEARCH_QUERIES:
@@ -144,11 +151,28 @@ def scout_city(city: str, trip: dict, api_key: str) -> list[dict]:
 
     venues = extract_venues_from_results(all_results, city)
     venues.sort(key=lambda v: v["score"], reverse=True)
-    return venues
+
+    # Work-friendly spots (separate pass)
+    work_spots = []
+    if "work-friendly" in categories:
+        print(f"    [work] Scouting work-friendly cafes in {city}...")
+        work_results = []
+        for q_template in WORK_QUERIES:
+            query = q_template.format(city=city)
+            print(f"    → {query}")
+            results = brave_search(query, api_key, count=5)
+            for r in results:
+                r["_score"] = score_result(r, prefs) + 2  # Bonus: query-matched
+            work_results.extend(results)
+            time.sleep(0.5)
+        work_spots = extract_venues_from_results(work_results, city)
+        work_spots.sort(key=lambda v: v["score"], reverse=True)
+
+    return venues, work_spots
 
 
-def write_venues_md(trip: dict, city_venues: dict[str, list]) -> Path:
-    """Write venues.md for this trip."""
+def write_venues_md(trip: dict, city_venues: dict[str, list], city_work: dict[str, list]) -> Path:
+    """Write venues.md for this trip, including work-friendly section."""
     trip_id = trip["id"]
     out_dir = Path(__file__).parent / trip_id
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -161,7 +185,7 @@ def write_venues_md(trip: dict, city_venues: dict[str, list]) -> Path:
         f"**Cities:** {', '.join(trip['cities'])}  ",
         f"**Dates:** {dates.get('start')} → {dates.get('end')}  ",
         f"**Party size:** {trip.get('party_size', 2)}  ",
-        f"**Generated:** {datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}",
+        f"**Generated:** {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
         f"",
         f"---",
         f"",
@@ -174,23 +198,36 @@ def write_venues_md(trip: dict, city_venues: dict[str, list]) -> Path:
         if not venues:
             lines.append("_No results found._")
             lines.append("")
-            continue
+        else:
+            lines.append("| # | Name / Source | Description | Score |")
+            lines.append("|---|---------------|-------------|-------|")
+            for i, v in enumerate(venues[:15], 1):
+                title = v["title"].replace("|", "-")[:60]
+                desc = v["description"].replace("|", "-")[:80]
+                url = v["url"]
+                lines.append(f"| {i} | [{title}]({url}) | {desc} | {v['score']} |")
+            lines.append("")
 
-        lines.append("| # | Name / Source | Description | Score |")
-        lines.append("|---|---------------|-------------|-------|")
-        for i, v in enumerate(venues[:15], 1):
-            title = v["title"].replace("|", "-")[:60]
-            desc = v["description"].replace("|", "-")[:80]
-            url = v["url"]
-            lines.append(f"| {i} | [{title}]({url}) | {desc} | {v['score']} |")
-        lines.append("")
+        # Work-friendly subsection
+        work = city_work.get(city, [])
+        if work:
+            lines.append(f"### ☕ {city} — Work-Friendly Cafes")
+            lines.append(f"")
+            lines.append("| # | Name / Source | Description | Score |")
+            lines.append("|---|---------------|-------------|-------|")
+            for i, v in enumerate(work[:10], 1):
+                title = v["title"].replace("|", "-")[:60]
+                desc = v["description"].replace("|", "-")[:80]
+                url = v["url"]
+                lines.append(f"| {i} | [{title}]({url}) | {desc} | {v['score']} |")
+            lines.append("")
 
     out_file.write_text("\n".join(lines), encoding="utf-8")
     print(f"\n  → Wrote {out_file}")
     return out_file
 
 
-def write_candidates_md(trip: dict, city_venues: dict[str, list]) -> Path:
+def write_candidates_md(trip: dict, city_venues: dict[str, list], city_work: dict[str, list]) -> Path:
     """Write top candidates for reservation consideration."""
     trip_id = trip["id"]
     out_dir = Path(__file__).parent / trip_id
@@ -203,7 +240,7 @@ def write_candidates_md(trip: dict, city_venues: dict[str, list]) -> Path:
         f"These are the highest-scoring venues from the scout run.",
         f"Review and update with: actual restaurant name, Resy URL, and type.",
         f"",
-        f"Generated: {datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}",
+        f"Generated: {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
         f"",
         f"---",
         f"",
@@ -211,7 +248,7 @@ def write_candidates_md(trip: dict, city_venues: dict[str, list]) -> Path:
 
     for city in trip["cities"]:
         venues = city_venues.get(city, [])
-        lines.append(f"## {city} — Top 5")
+        lines.append(f"## {city} — Top 5 (Dining & Bars)")
         lines.append("")
         for v in venues[:5]:
             lines.append(f"- **[{v['title'][:70]}]({v['url']})**")
@@ -220,6 +257,17 @@ def write_candidates_md(trip: dict, city_venues: dict[str, list]) -> Path:
             lines.append(f"  Resy URL: _(fill in if available)_")
             lines.append(f"  Type: _(restaurant / bar / highlight)_")
             lines.append("")
+
+        work = city_work.get(city, [])
+        if work:
+            lines.append(f"## {city} — Top 5 (☕ Work-Friendly Cafes)")
+            lines.append("")
+            for v in work[:5]:
+                lines.append(f"- **[{v['title'][:70]}]({v['url']})**")
+                lines.append(f"  {v['description'][:120]}")
+                lines.append(f"  Score: {v['score']}")
+                lines.append(f"  WiFi: _(confirm)_ | Outlets: _(confirm)_ | Coffee quality: _(confirm)_")
+                lines.append("")
 
     out_file.write_text("\n".join(lines), encoding="utf-8")
     print(f"  → Wrote {out_file}")
@@ -251,13 +299,15 @@ def main():
         print(f"Dates: {trip['dates']['start']} → {trip['dates']['end']}")
 
         city_venues = {}
+        city_work = {}
         for city in trip["cities"]:
-            venues = scout_city(city, trip, api_key)
+            venues, work_spots = scout_city(city, trip, api_key)
             city_venues[city] = venues
-            print(f"  Found {len(venues)} results for {city}")
+            city_work[city] = work_spots
+            print(f"  Found {len(venues)} dining + {len(work_spots)} work-friendly results for {city}")
 
-        write_venues_md(trip, city_venues)
-        write_candidates_md(trip, city_venues)
+        write_venues_md(trip, city_venues, city_work)
+        write_candidates_md(trip, city_venues, city_work)
         print(f"\n✓ Done: {trip['id']}")
 
     print("\n\nAll trips processed. Review candidates.md for each trip.")

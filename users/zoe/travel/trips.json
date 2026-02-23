@@ -9,7 +9,7 @@
       },
       "party_size": 2,
       "preferences": {
-        "categories": ["restaurants", "bars", "highlights"],
+        "categories": ["restaurants", "bars", "highlights", "work-friendly"],
         "vibe": "upscale-casual, local favorites, not touristy",
         "meal_types": ["dinner", "drinks"],
         "budget": "mid-to-high",
