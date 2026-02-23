@@ -45,9 +45,12 @@
     font-size: 0.7rem; font-weight: 700; color: var(--green);
     background: rgba(74,222,128,0.1); padding: 2px 6px; border-radius: 4px;
   }
-  .venue-name { font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; }
+  .venue-name { font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
   .venue-name a { color: var(--text); text-decoration: none; }
   .venue-name a:hover { color: var(--accent); }
+  .venue-book { margin-left: auto; flex-shrink: 0; }
+  .book-link { font-size: 0.75rem; font-weight: 600; color: var(--green); background: rgba(74,222,128,0.1); padding: 2px 8px; border-radius: 4px; text-decoration: none; border: 1px solid rgba(74,222,128,0.3); }
+  .book-link:hover { background: rgba(74,222,128,0.2); }
   .venue-meta { color: var(--muted); font-size: 0.82rem; margin-bottom: 0.5rem; }
   .venue-desc { font-size: 0.88rem; color: #aaabb8; line-height: 1.5; }
   .venue-booking { margin-top: 0.5rem; font-size: 0.82rem; }
@@ -77,16 +80,76 @@
 <body>
 <div class="container">
   <h1>✈️ london-paris-mar2026</h1>
-  <p class="meta">London, Paris &nbsp;·&nbsp; 2026-03-01 → 2026-03-07 &nbsp;·&nbsp; Party of 2 &nbsp;·&nbsp; Generated 2026-02-23 03:26 UTC</p>
+  <p class="meta">London, Paris &nbsp;·&nbsp; 2026-03-01 → 2026-03-07 &nbsp;·&nbsp; Party of 2 &nbsp;·&nbsp; Generated 2026-02-23 03:31 UTC</p>
 
   <div class="cols">
     <div class="city-section">
   <h2>📍 London</h2>
-  <p class="empty">No venues found. Run travel-scout.py first.</p>
+  <div class="venue-card">
+  <div class="venue-name"><a href="https://theumbrellaproject.co.uk/bricks-and-mortar" target="_blank">Umbrella Workshop</a></div>
+  <div class="venue-desc">Book a table at Umbrella Workshop · Logo: Project No: UB03 · Project Completed: FEBRUARY 2022 · Tele</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://www.satanswhiskers.com" target="_blank">Satan’s Whiskers</a></div>
+  <div class="venue-desc">We offer a full consultancy service on beverage, bar design, operations, systems, training and back</div>
+</div><div class="venue-card">
+  <div class="venue-name">Bar Américain</div>
+  <div class="venue-desc">From curtain up to last call, let us transport you to a Parisian Christmas, right here in the heart</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://tayer-elementary.com" target="_blank">Tayēr + Elementary</a></div>
+  <div class="venue-desc">Tayēr + Elementary is a cocktail bar established in 2019 in London. A sincere inter</div>
+</div><div class="venue-card">
+  <div class="venue-name">Three Sheets Soho</div>
+  <div class="venue-desc">Since its opening in 2016, the outwardly unassuming Dalston cocktail bar Three Sheets – owne</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://littlemercies.co.uk" target="_blank">Little Mercies</a> <span class="venue-book"><a class="book-link" href="https://www.opentable.com/r/little-mercies-london" target="_blank">🗓 OpenTable</a></span></div>
+  <div class="venue-desc">Opened in October 2018, we are a multi award winning local neighbourhood cocktail bar and re</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://www.seedlibraryshoreditch.com" target="_blank">Seed Library</a></div>
+  <div class="venue-desc">Seed Library is a laid-back cocktail bar by Mr Lyan in the heart of Shoreditch, East London<</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://www.barswift.com" target="_blank">Swift</a></div>
+  <div class="venue-desc">Discover the best cocktails in Borough, London Bridge, Shoreditch, and Soho at Bar Swift. Enjoy seas</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://www.lyaness.com" target="_blank">Lyaness</a></div>
+  <div class="venue-desc">Located at Sea Containers London, Lyaness is the flagship cocktail bar by Ryan Chet</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="http://www.69colebrookerow.com" target="_blank">69 Colebrooke Row</a> <span class="venue-book"><a class="book-link" href="https://www.exploretock.com/69colebrookerow" target="_blank">🗓 Tock</a></span></div>
+  <div class="venue-desc">THE BAR WITH NO NAME TUCKED AWAY FROM THE MAIN ROAD, OFFERING COCKTAILS, APERITIFS, DIGESTIF</div>
+</div>
 </div>
 <div class="city-section">
   <h2>📍 Paris</h2>
-  <p class="empty">No venues found. Run travel-scout.py first.</p>
+  <div class="venue-card">
+  <div class="venue-name">Jolyne</div>
+  <div class="venue-desc">Bar Jolyne, 11 Rue Rochebrune, 75011 Paris, France. Cravings: Wine bar. Extras: Amu</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://www.moncoyote.com/fr/store/paris.html" target="_blank">Coyote</a></div>
+  <div class="venue-desc">64K Followers, 966 Following, 1,128 Posts - le coyote paris 3 (@lecoyoteparis) on Instagram: &quot;l</div>
+</div><div class="venue-card">
+  <div class="venue-name">Mésures</div>
+  <div class="venue-desc">Interprétation Géologique des Mésures Effectuées au Spectromètre de Masse dans le Domaine de la Géoc</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://devie.bar" target="_blank">Bar De Vie</a></div>
+  <div class="venue-desc">An award winning, dual concept cocktail bar and restaurant celebrating locality, seasonality</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://www.experimentalcocktailclub.com/paris" target="_blank">Experimental Cocktail Club</a></div>
+  <div class="venue-desc">Experimental Cocktail Club quickly became the epicentre of a phenomenon that would transform Paris’s</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://www.folderol.fr" target="_blank">Folderol</a></div>
+  <div class="venue-desc">Mercredi - Lundi : 16h - 23h · COMMANDES GATEAUX GLACÉES</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://liquiderie-bar.wheree.com" target="_blank">Liquiderie Bar</a></div>
+  <div class="venue-desc">Restaurant Liquiderie Bar, 7, rue de la Présentation Paris 75011. Craving : Wine ba</div>
+</div><div class="venue-card">
+  <div class="venue-name">Kissproof</div>
+  <div class="venue-desc">Since the bar is in one of the less-tourist-filled parts of Paris, in the old Chinatown of Bellevill</div>
+</div><div class="venue-card">
+  <div class="venue-name">Les Ambassadeurs</div>
+  <div class="venue-desc">Creative cocktails &amp; live music overlooking Place de la Concorde. A Parisian ad</div>
+</div><div class="venue-card">
+  <div class="venue-name"><a href="https://www.sistermidnightparis.com" target="_blank">Sister Midnight</a></div>
+  <div class="venue-desc">Sister Midnight is an award-winning cocktail bar in Pigalle, from the creative duo Jen Riley</div>
+</div>
 </div>
   </div>
 

@@ -65,9 +65,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     font-size: 0.7rem; font-weight: 700; color: var(--green);
     background: rgba(74,222,128,0.1); padding: 2px 6px; border-radius: 4px;
   }}
-  .venue-name {{ font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; }}
+  .venue-name {{ font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }}
   .venue-name a {{ color: var(--text); text-decoration: none; }}
   .venue-name a:hover {{ color: var(--accent); }}
+  .venue-book {{ margin-left: auto; flex-shrink: 0; }}
+  .book-link {{ font-size: 0.75rem; font-weight: 600; color: var(--green); background: rgba(74,222,128,0.1); padding: 2px 8px; border-radius: 4px; text-decoration: none; border: 1px solid rgba(74,222,128,0.3); }}
+  .book-link:hover {{ background: rgba(74,222,128,0.2); }}
   .venue-meta {{ color: var(--muted); font-size: 0.82rem; margin-bottom: 0.5rem; }}
   .venue-desc {{ font-size: 0.88rem; color: #aaabb8; line-height: 1.5; }}
   .venue-booking {{ margin-top: 0.5rem; font-size: 0.82rem; }}
@@ -112,7 +115,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
 
 def parse_venues_md(venues_md: Path) -> dict[str, list[dict]]:
-    """Parse venues.md into per-city lists."""
+    """
+    Parse venues.md into per-city lists.
+    Handles both old format (Name/Source | Description | Score)
+    and new format (Venue | Reserve | Notes) with emoji headings.
+    """
     if not venues_md.exists():
         return {}
 
@@ -121,25 +128,62 @@ def parse_venues_md(venues_md: Path) -> dict[str, list[dict]]:
     current_city = None
 
     for line in text.splitlines():
+        # City headings: "## 🍽 London — Dining & Bars" or "## London"
         if line.startswith("## ") and not line.startswith("### "):
-            current_city = line[3:].strip()
-            city_venues[current_city] = []
-        elif current_city and line.startswith("| ") and not line.startswith("| #") and not line.startswith("|---"):
+            raw = line[3:].strip()
+            # Strip emoji and "— Dining & Bars" / "— Work-Friendly Cafes" suffixes
+            raw = re.sub(r'^[\U00010000-\U0010ffff\u2600-\u27BF\s]+', '', raw)  # leading emoji
+            raw = re.sub(r'\s*[—–-].*$', '', raw).strip()  # strip " — Dining & Bars"
+            if raw:
+                current_city = raw
+                if current_city not in city_venues:
+                    city_venues[current_city] = []
+
+        elif current_city and line.startswith("| ") and not re.match(r'\|\s*#?\s*\|', line) and not line.startswith("|---"):
             parts = [p.strip() for p in line.strip("|").split("|")]
-            if len(parts) >= 3:
-                name_cell = parts[1]
-                desc = parts[2]
-                # Extract link if present
-                m = re.search(r"\[([^\]]+)\]\(([^)]+)\)", name_cell)
-                if m:
-                    name, url = m.group(1), m.group(2)
-                else:
-                    name, url = name_cell, ""
-                score = int(parts[3]) if len(parts) > 3 and parts[3].lstrip("-").isdigit() else 0
-                city_venues[current_city].append({
-                    "name": name, "url": url, "description": desc, "score": score,
-                    "confirmed": False, "booking_time": None, "confirmation": None
-                })
+            if len(parts) < 2:
+                continue
+
+            # Column 1: venue (may have markdown link)
+            name_cell = parts[1]
+            m = re.search(r"\[([^\]]+)\]\(([^)]+)\)", name_cell)
+            if m:
+                name, url = m.group(1), m.group(2)
+            else:
+                name, url = name_cell, ""
+
+            if not name or name in ("#", "Venue", "Name / Source"):
+                continue
+
+            # Column 2: reservation link OR description (old format had description here)
+            reservation_url = ""
+            reservation_platform = ""
+            description = ""
+            if len(parts) > 2:
+                col2 = parts[2]
+                res_match = re.search(r"\[([^\]]+)\]\(([^)]+)\)", col2)
+                if res_match:
+                    reservation_platform = res_match.group(1)
+                    reservation_url = res_match.group(2)
+                elif col2 not in ("—", "-", ""):
+                    description = col2  # old format: description in col2
+
+            # Column 3: notes (new format) or score (old format)
+            if len(parts) > 3:
+                col3 = parts[3]
+                if col3.lstrip("-").isdigit():
+                    pass  # old score column, ignore
+                elif col3 not in ("—", "-", ""):
+                    description = col3
+
+            city_venues[current_city].append({
+                "name": name,
+                "url": url,
+                "description": description,
+                "reservation_url": reservation_url,
+                "reservation_platform": reservation_platform,
+                "confirmed": False,
+            })
 
     return city_venues
 
@@ -192,12 +236,14 @@ def build_city_section(city: str, venues: list[dict], confirmed_names: set[str])
         is_confirmed = any(c.lower() in v["name"].lower() or v["name"].lower() in c.lower()
                            for c in confirmed_names)
         confirmed_class = " confirmed" if is_confirmed else ""
-        name_html = f'<a href="{v["url"]}" target="_blank">{v["name"]}</a>' if v["url"] else v["name"]
-        desc = v["description"][:120] + ("…" if len(v["description"]) > 120 else "")
-        score_badge = f'<span class="badge badge-yellow">score {v["score"]}</span>' if v["score"] else ""
+        name_html = f'<a href="{v["url"]}" target="_blank">{v["name"]}</a>' if v.get("url") else v["name"]
+        raw_desc = re.sub(r'<[^>]+>', '', v.get("description") or "")
+        desc = raw_desc[:120] + ("…" if len(raw_desc) > 120 else "")
+        res_url = v.get("reservation_url", "")
+        res_platform = v.get("reservation_platform", "Book")
+        book_html = f'<a class="book-link" href="{res_url}" target="_blank">🗓 {res_platform}</a>' if res_url else ""
         cards.append(f"""<div class="venue-card{confirmed_class}">
-  <div class="venue-name">{name_html}</div>
-  <div class="venue-meta">{score_badge}</div>
+  <div class="venue-name">{name_html}{(' <span class="venue-book">' + book_html + '</span>') if book_html else ''}</div>
   <div class="venue-desc">{desc}</div>
 </div>""")
 
