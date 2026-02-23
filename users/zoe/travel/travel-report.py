@@ -15,6 +15,8 @@ import datetime
 from pathlib import Path
 
 TRIPS_FILE = Path(__file__).parent / "trips.json"
+WORKSPACE = Path(__file__).parent.parent.parent.parent
+DOCS_TRAVEL = WORKSPACE / "docs" / "travel"
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
@@ -235,6 +237,89 @@ def build_reservations_section(confirmed: list[dict], failed: list[dict]) -> str
 </div>"""
 
 
+def generate_landing_page(trips: list[dict]):
+    """Generate docs/travel/index.html listing all trips."""
+    DOCS_TRAVEL.mkdir(parents=True, exist_ok=True)
+
+    cards = []
+    for trip in trips:
+        trip_id = trip["id"]
+        cities = ", ".join(trip["cities"])
+        dates = trip.get("dates", {})
+        start = dates.get("start", "")
+        end = dates.get("end", "")
+        party = trip.get("party_size", 2)
+        pub_dir = DOCS_TRAVEL / trip_id
+        has_report = (pub_dir / "index.html").exists()
+        link = f"./{trip_id}/" if has_report else "#"
+        status_badge = '<span class="badge badge-green">Report Ready</span>' if has_report else '<span class="badge badge-yellow">Pending</span>'
+        cards.append(f"""<a class="trip-card" href="{link}">
+  <div class="trip-header">
+    <span class="trip-cities">✈️ {cities}</span>
+    {status_badge}
+  </div>
+  <div class="trip-dates">{start} → {end}</div>
+  <div class="trip-meta">Party of {party}</div>
+  <div class="trip-id">{trip_id}</div>
+</a>""")
+
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel — Zoe & Jake</title>
+<style>
+  :root {{
+    --bg: #0f0f13; --surface: #1a1a23; --border: #2e2e3e;
+    --text: #e0e0e8; --muted: #888899; --accent: #7c8cf8;
+    --green: #4ade80; --yellow: #fbbf24;
+  }}
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  body {{ background: var(--bg); color: var(--text);
+         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         padding: 2rem 1rem; }}
+  .container {{ max-width: 800px; margin: 0 auto; }}
+  h1 {{ font-size: 2rem; color: var(--accent); margin-bottom: 0.25rem; }}
+  .subtitle {{ color: var(--muted); margin-bottom: 2.5rem; font-size: 0.9rem; }}
+  .nav {{ margin-bottom: 1.5rem; }}
+  .nav a {{ color: var(--muted); text-decoration: none; font-size: 0.85rem; }}
+  .nav a:hover {{ color: var(--accent); }}
+  .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }}
+  .trip-card {{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                padding: 1.25rem; text-decoration: none; color: var(--text);
+                transition: border-color 0.15s; display: block; }}
+  .trip-card:hover {{ border-color: var(--accent); }}
+  .trip-header {{ display: flex; justify-content: space-between; align-items: center;
+                  margin-bottom: 0.5rem; }}
+  .trip-cities {{ font-weight: 600; font-size: 1.05rem; }}
+  .trip-dates {{ color: var(--muted); font-size: 0.88rem; margin-bottom: 0.25rem; }}
+  .trip-meta {{ color: var(--muted); font-size: 0.82rem; margin-bottom: 0.5rem; }}
+  .trip-id {{ font-size: 0.75rem; color: #555566; font-family: monospace; }}
+  .badge {{ font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; }}
+  .badge-green {{ background: rgba(74,222,128,0.15); color: var(--green); }}
+  .badge-yellow {{ background: rgba(251,191,36,0.15); color: var(--yellow); }}
+  footer {{ margin-top: 3rem; text-align: center; color: var(--muted); font-size: 0.8rem; }}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="nav"><a href="../">← Events</a></div>
+  <h1>✈️ Trips</h1>
+  <p class="subtitle">Zoe & Jake · Generated {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}</p>
+  <div class="grid">
+    {''.join(cards) if cards else '<p style="color:var(--muted)">No trips yet. Add one to trips.json.</p>'}
+  </div>
+  <footer>Built by Bot · travel-report.py</footer>
+</div>
+</body>
+</html>"""
+
+    out = DOCS_TRAVEL / "index.html"
+    out.write_text(html, encoding="utf-8")
+    print(f"  → Landing page: {out}")
+
+
 def main():
     trips_data = json.loads(TRIPS_FILE.read_text())
     trips = trips_data.get("trips", [])
@@ -276,11 +361,22 @@ def main():
             reservations_section=build_reservations_section(confirmed, failed),
         )
 
+        # Write local copy
         out_file = trip_dir / "report.html"
         out_file.write_text(html, encoding="utf-8")
         print(f"  → Wrote {out_file}")
 
+        # Publish to GitHub Pages docs/travel/TRIP_ID/index.html
+        pub_dir = DOCS_TRAVEL / trip_id
+        pub_dir.mkdir(parents=True, exist_ok=True)
+        pub_file = pub_dir / "index.html"
+        pub_file.write_text(html, encoding="utf-8")
+        print(f"  → Published {pub_file}")
+
+    # Regenerate the travel landing page
+    generate_landing_page(trips)
     print("\nAll reports generated.")
+    print(f"Published to: https://jacoberrol.github.io/clawbot-workspace/travel/")
 
 
 if __name__ == "__main__":
