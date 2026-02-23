@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trip: san-francisco</title>
+<style>
+  :root {
+    --bg: #0f0f13; --surface: #1a1a23; --surface2: #22222e;
+    --border: #2e2e3e; --text: #e0e0e8; --muted: #888899;
+    --accent: #7c8cf8; --green: #4ade80; --red: #f87171;
+    --yellow: #fbbf24; --purple: #c084fc; --orange: #fb923c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px; line-height: 1.6; padding: 2rem 1rem;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.25rem; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2.5rem; }
+  .nav { margin-bottom: 1rem; }
+  .nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; }
+  .nav a:hover { color: var(--accent); }
+
+  /* City columns */
+  .cities { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  @media (max-width: 800px) { .cities { grid-template-columns: 1fr; } }
+
+  .city-col { }
+  .city-heading {
+    font-size: 1.4rem; font-weight: 700; color: var(--accent);
+    margin-bottom: 1.5rem; padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+
+  /* Section headers (Bars / Restaurants / Cafes) */
+  .section-heading {
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    margin: 1.25rem 0 0.75rem;
+  }
+  .section-heading:first-of-type { margin-top: 0; }
+
+  /* Venue cards */
+  .venue-card {
+    background: var(--surface); border-radius: 10px; padding: 1rem 1.1rem;
+    margin-bottom: 0.65rem; border: 1px solid var(--border);
+    position: relative; transition: border-color 0.15s;
+  }
+  .venue-card:hover { border-color: #44445a; }
+  .venue-card.confirmed { border-color: var(--green); }
+  .venue-card.confirmed::after {
+    content: '✓ Reserved';
+    position: absolute; top: 0.8rem; right: 0.8rem;
+    font-size: 0.68rem; font-weight: 700; color: var(--green);
+    background: rgba(74,222,128,0.1); padding: 2px 7px; border-radius: 4px;
+    border: 1px solid rgba(74,222,128,0.25);
+  }
+
+  .venue-top { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.35rem; }
+  .venue-name { font-weight: 600; font-size: 1rem; flex: 1; }
+  .venue-name a { color: var(--text); text-decoration: none; }
+  .venue-name a:hover { color: var(--accent); }
+
+  .book-btn {
+    flex-shrink: 0; font-size: 0.7rem; font-weight: 700;
+    color: var(--green); background: rgba(74,222,128,0.1);
+    padding: 3px 9px; border-radius: 5px; text-decoration: none;
+    border: 1px solid rgba(74,222,128,0.3); white-space: nowrap;
+  }
+  .book-btn:hover { background: rgba(74,222,128,0.2); }
+
+  /* Tags row */
+  .tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .tag {
+    font-size: 0.68rem; font-weight: 600; padding: 2px 7px;
+    border-radius: 4px; letter-spacing: 0.02em;
+  }
+  .tag-neighbourhood { background: rgba(124,140,248,0.15); color: var(--accent); }
+  .tag-cuisine       { background: rgba(251,146,60,0.15);  color: var(--orange); }
+  .tag-rating        { background: rgba(250,204,21,0.15);  color: var(--yellow); }
+  .tag-type          { background: rgba(192,132,252,0.12); color: var(--purple); }
+
+  .venue-desc {
+    font-size: 0.84rem; color: #9999aa; line-height: 1.5;
+    display: -webkit-box; -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  /* Reservations panel */
+  .reservations {
+    background: var(--surface); border-radius: 12px; padding: 1.5rem;
+    border: 1px solid var(--border); margin-top: 0.5rem;
+  }
+  .reservations h2 {
+    font-size: 1.1rem; color: var(--green); margin-bottom: 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .res-item {
+    padding: 0.75rem; background: var(--surface2); border-radius: 8px;
+    margin-bottom: 0.6rem; border-left: 3px solid var(--green);
+  }
+  .res-item.failed { border-left-color: var(--red); }
+  .res-name { font-weight: 600; margin-bottom: 0.2rem; }
+  .res-detail { font-size: 0.82rem; color: var(--muted); }
+
+  .badge {
+    display: inline-block; font-size: 0.68rem; font-weight: 700;
+    padding: 2px 7px; border-radius: 4px; margin-right: 0.4rem;
+  }
+  .badge-green  { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-red    { background: rgba(248,113,113,0.15); color: var(--red); }
+
+  .empty { color: var(--muted); font-style: italic; padding: 0.5rem 0; font-size: 0.9rem; }
+  footer { margin-top: 3rem; text-align: center; color: var(--muted); font-size: 0.78rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="nav"><a href="../">← All Trips</a></div>
+  <h1>✈️ san-francisco</h1>
+  <p class="meta">San Francisco &nbsp;·&nbsp; TBD → TBD &nbsp;·&nbsp; Party of 2 &nbsp;·&nbsp; 2026-02-23 03:47 UTC</p>
+  <div class="cities">
+    <div class="city-col">
+  <div class="city-heading">📍 San Francisco</div>
+  <div class="section-heading">🍸 Bars</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.barapriljean.com" target="_blank">April Jean</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 North Beach</span></div>
+  <div class="venue-desc">1371 Grant Avenue, San Francisco, CA 94133 · Monday-Friday 2pm Til’ Late · Saturday &amp; Sunday 12pm Til’ Late · HeyMom@BarAprilJean.com · Specialties: Bar Apr…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://vesuvio.com" target="_blank">Vesuvio Cafe</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 North Beach</span></div>
+  <div class="venue-desc">255 Columbus @ Jack Kerouac Alley, North Beach San Francisco California - Hours: Sun-Thurs 11-1 and Fri-Sat 11-2 Vesuvio Cafe, San Francisco. 1,666 likes · 9 ta…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Moongate Lounge</div>
+    <a class="book-btn" href="https://www.exploretock.com/moongate-lounge-san-francisco" target="_blank">🗓 Tock</a>
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Natural Wine Bar</span></div>
+  <div class="venue-desc">MOONGATE LOUNGE - Try Our New Menu - 28 Waverly Pl, Fl 2, San Francisco, CA 94108, 502 Photos, (415) 857-9688, Mon - Closed, Tue - 6:00 pm - 11:00 pm, Wed - 6:0…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="http://www.thetreasurysf.com" target="_blank">The Treasury</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Financial District</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">The Treasury is a lively, lighthearted bar located in the heart of San Francisco’s Financial District. We offer delicious cocktails, craft beer, well-chosen win…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.pacificcocktailsf.com" target="_blank">Pacific Cocktail Haven</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Union Square</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Located near San Francisco’s prestigious Union Square, P.C.H. is a lively bar that has quickly grown into one of America’s most acclaimed cocktail destinations.…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Cavaña</div>
+    <a class="book-btn" href="https://resy.com/cities/san-francisco-ca/venues/cavana" target="_blank">🗓 Resy</a>
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Mission</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Cavaña is an ode to Central and South America. It’s an exploration of the flavors, culture, and heritage found throughout Latin America. CAVAÑA - Try Our New Me…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://truelaurelsf.com" target="_blank">True Laurel</a></div>
+    <a class="book-btn" href="https://www.exploretock.com/truelaurelsf" target="_blank">🗓 Tock</a>
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Seasonal</span></div>
+  <div class="venue-desc">true laurel serves food and drinks for dining outdoors on our patio, indoors, for to-go, or for delivery! TRUE LAUREL - Try Our New Menu - 753 Alabama St, San F…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.lostresortsf.com" target="_blank">Lost Resort</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Mission</span><span class="tag tag-cuisine">Small Plates</span></div>
+  <div class="venue-desc">LOST RESORT - Try Our New Menu - 2736 20th St, San Francisco, CA 94110, 473 Photos, (415) 237-0770, Mon - 4:00 pm - 12:00 am, Tue - 4:00 pm - 12:00 am, Wed - 4:…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.trickdogbar.com" target="_blank">Trick Dog</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Mission</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">presenting our new menu...MEET ME IN THE CITY: PHOTOGRAPHS + COCKTAILS · presenting our new menu...MEET ME IN THE CITY: PHOTOGRAPHS + COCKTAILS 〰️ Old school, c…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://holywatersf.com" target="_blank">Holy Water</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Bernal Heights</span><span class="tag tag-cuisine">Beer Bar</span></div>
+  <div class="venue-desc">Holy Water has the most meticulously curated craft beer selections in San Francisco from both prominent and esoteric breweries. Featured handcrafted cocktails o…</div>
+</div><div class="section-heading">🍽 Restaurants</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">More maps in Eater SF</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">More in Dining Out in SF</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">The Latest</div>
+    
+  </div>
+  
+  <div class="venue-desc">Find the latest Bay Area news out of San Francisco, San Jose, Oakland and beyond. NBC Bay Area brings you weather forecasts, breaking news and more. Patrick Mur…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.youtube.com/channel/UCkufADHurYB9CGfUiJhxluA" target="_blank">Youtube</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Mission</span></div>
+  <div class="venue-desc">Moving to San Francisco? Let&#x27;s connect. We are all about living in San Francisco California, moving to San Francisco, and relocating to San Francisco. We a…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Nicola Parisi Dining Out in SF</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Dining Out in SF</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Mexican</span></div>
+  <div class="venue-desc">Yilitz is San Francisco’s only goshnan business. Founder Aliya Arkin is proud to carry that flag. ... ﻿Nursel is a tiny, unassuming restaurant in San Carlos. It…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Phone +14154947560</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Link Visit website</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Phone (415) 362-3370</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Booking Book a table</div>
+    
+  </div>
+  
+  
+</div><div class="section-heading">☕ Work Cafes</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Sōhn</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Dogpatch</span><span class="tag tag-cuisine">Korean</span></div>
+  <div class="venue-desc">SŌHN (손) is an all-day café and multi-use gathering space in the heart of San Francisco’s Dogpatch neighborhood. She’d drive with her family to San Jose, maybe,…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://cafe-international.cafes-city.com" target="_blank">Cafe International</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Lower Haight</span></div>
+  <div class="venue-desc">CAFE INTERNATIONAL - Try Our New Menu - 508 Haight St, San Francisco, CA 94117, 244 Photos, (415) 552-7390, Mon - 7:00 am - 4:30 pm, Tue - 7:00 am - 4:30 pm, We…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://diamond-coffee-n-pastry.webflow.io" target="_blank">Diamond Coffee N’ Pastry</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Richmond</span><span class="tag tag-cuisine">Spanish</span></div>
+  <div class="venue-desc">A small, friendly cafe with a delicious range of pastries and excellent coffees. I enjoyed my quiche so much that I had to have another one. Croissants were nic…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.oceanbeachcafe.com" target="_blank">Ocean Beach Cafe</a></div>
+    
+  </div>
+  
+  <div class="venue-desc">Ocean Beach Cafe is SF&#x27;s first Non Alcoholic bar! Coffee, Sandwiches and a Total Vibe. Mocktails are out, Free Samples are at Ocean Beach! OCEAN BEACH CAFE…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.pixlcatcoffee.com/locations" target="_blank">Pixlcat</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 SoMa</span><span class="tag tag-cuisine">Specialty Coffee</span></div>
+  <div class="venue-desc">Pixlcat Coffee is a specialty café ... culture. Located in the heart of the city, we serve specialty coffee, matcha lattes, and our signature butter mochi, craf…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://beluna-cafe.menu-world.com" target="_blank">Beluna Cafe</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Lower Haight</span></div>
+  <div class="venue-desc">BELUNA CAFE - Try Our New Menu - 1195 Oak St, San Francisco, CA 94117, 55 Photos, (415) 529-1883, Mon - 8:00 am - 3:00 pm, Tue - 8:00 am - 3:00 pm, Wed - 8:00 a…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.fiddlefigcoffee.com" target="_blank">Fiddle Fig Cafe</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 North Beach</span><span class="tag tag-cuisine">Bakery</span></div>
+  <div class="venue-desc">FIDDLE FIG CAFE &amp; COFFEE - Try Our New Menu - 790 Lombard St, San Francisco, CA 94133, 324 Photos, (415) 417-9733, Mon - 8:00 am - 4:00 pm, Tue - 8:00 am - …</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://joe.coffee/locations/ca/san-francisco/compton-s-coffee-house-san-francisco-71143ce3-9c5e-40f4-bae7-03f787cf6853" target="_blank">Compton’s Coffee House</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Fillmore</span><span class="tag tag-cuisine">Specialty Coffee</span><span class="tag tag-rating">★ 4.4</span></div>
+  <div class="venue-desc">1,887 Followers, 1,875 Following, 299 Posts - Compton’s Coffee House (@comptonscoffee) on Instagram: &quot;📍1910 Fillmore Street San Francisco, 94115. 📍543 Colu…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://delahcoffee.com" target="_blank">Delah Coffee</a></div>
+    
+  </div>
+  
+  <div class="venue-desc">Delah Coffee · Menu · Coffee is our craft, our ritual, our passion and we want to share it with you. Order Online · Our menu features a carefully curated select…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://tarragoncafe.com" target="_blank">Tarragon Cafe</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Fillmore</span></div>
+  <div class="venue-desc">200 Fillmore Street San Francisco, Ca. 94117 415-624-3318 TARRAGON CAFE - Try Our New Menu - 200 Fillmore St, San Francisco, CA 94117, 901 Photos, (415) 624-331…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.ballastcoffee.com" target="_blank">Ballast Coffee</a></div>
+    
+  </div>
+  
+  <div class="venue-desc">Ballast Coffee brings hand picked, curated, Barako coffee imported from the Philippines directly to you. BALLAST COFFEE - Try Our New Menu - 329 W Portal Ave, S…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.upfordayz.com" target="_blank">Upfordayz</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Bakery</span></div>
+  <div class="venue-desc">UPFORDAYZ brings a different approach to coffee roasting and brewing, showcasing Sam&#x27;s relentless pursuit for perfectly balanced and unique blends. UPFORDA…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.lecafedusoleilsf.com" target="_blank">Café du Soleil</a></div>
+    
+  </div>
+  
+  <div class="venue-desc">Le Café du Soleil · Open Menu Close Menu · Le Café du Soleil · Open Menu Close Menu · Café du Soleil, located in San Francisco, serves European-inspired dishes,…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.vervecoffee.com/blogs/the-verve-blog/hello-san-francisco" target="_blank">Verve Coffee Roasters</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Mission</span><span class="tag tag-cuisine">Specialty Coffee</span></div>
+  <div class="venue-desc">VERVE COFFEE ROASTERS - Try Our New Menu - 2101 Market St, San Francisco, CA 94114, 428 Photos, (415) 780-0867, Mon - 7:00 am - 5:00 pm, Tue - 7:00 am - 5:00 pm…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://homecoffeesf.com" target="_blank">Home Coffee Roasters</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Richmond</span><span class="tag tag-cuisine">Specialty Coffee</span></div>
+  <div class="venue-desc">Coffee Roaster, Cafe, Birthday Cake Latte, Home is where our story begins, Home is where the heart is, Home Coffee San Francisco, Home Coffee Roasters, Specialt…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://chestnutstreetcoffeeroasterysanfrancisco.cafecityguide.website" target="_blank">Chestnut Street Coffee Roastery</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Brunch Café</span></div>
+  <div class="venue-desc">CHESTNUT STREET COFFEE ROASTERY - Try Our New Menu - 2331 Chestnut St, San Francisco, CA 94123, 226 Photos, (415) 931-5282, Mon - 6:30 am - 2:00 pm, Tue - 6:30 …</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.mercurycafe.net" target="_blank">Mercury Cafe</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Mission</span></div>
+  <div class="venue-desc">Hayes Valley, 201 Octavia Blvd San Francisco, CA Mon - Wed: 7:30 - 3PM Thurs: 7:30 - 9PM* Fri: 7:30 - 4PM Sat: 8 - 4PM Sun: 8 - 3PM MERCURY CAFE - 201 Octavia B…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://bluedanube.square.site" target="_blank">Blue Danube</a></div>
+    
+  </div>
+  
+  <div class="venue-desc">BLUE DANUBE COFFEE HOUSE - Try Our New Menu - 306 Clement St, San Francisco, CA 94118, 525 Photos, (415) 221-9041, Mon - 7:00 am - 7:00 pm, Tue - 7:00 am - 7:00…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.saintfrankcoffee.com" target="_blank">Saint Frank</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Russian Hill</span><span class="tag tag-cuisine">Specialty Coffee</span></div>
+  <div class="venue-desc">Specialty Coffee Roasting Company based in San Francisco pursuing flavor, meaning and connection in coffee with humility and courtesy. SAINT FRANK COFFEE - Try …</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://parkcafelife.com/locations/duboce-park-cafe" target="_blank">Duboce Park Cafe</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Mission</span></div>
+  <div class="venue-desc">2 Sanchez st, San Francisco, CA 94110 · +1 415 621.1108 · &quot;Great place to get some work done out in the sun. This cafe is right opposite Duboce Triangle pa…</div>
+</div>
+</div>
+  </div>
+  <div class="reservations">
+  <h2>🗓 Reservations</h2>
+  <p class="empty">No reservations yet. Add Resy URLs to venues and run travel-reservations.py.</p>
+</div>
+  <footer>Built by Bot &nbsp;·&nbsp; travel-report.py</footer>
+</div>
+</body>
+</html>

@@ -16,5 +16,22 @@
         "avoid": ["tourist traps", "chain restaurants", "hard rock cafe type places"]
       }
     }
+  ,
+    {
+      "id": "san-francisco",
+      "cities": ["San Francisco"],
+      "dates": {
+        "start": "TBD",
+        "end": "TBD"
+      },
+      "party_size": 2,
+      "preferences": {
+        "categories": ["restaurants", "bars", "highlights", "work-friendly"],
+        "vibe": "upscale-casual, local favorites, not touristy",
+        "meal_types": ["dinner", "drinks"],
+        "budget": "mid-to-high",
+        "avoid": ["tourist traps", "chain restaurants", "fisherman's wharf type places"]
+      }
+    }
   ]
 }

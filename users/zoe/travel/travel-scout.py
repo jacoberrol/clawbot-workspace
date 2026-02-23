@@ -54,10 +54,22 @@ PARIS_NEIGHBOURHOODS = [
     "Beaubourg", "Temple", "Réaumur", "Arts et Métiers",
 ]
 
+SF_NEIGHBOURHOODS = [
+    "Mission", "Castro", "Hayes Valley", "SoMa", "North Beach", "Nob Hill",
+    "Tenderloin", "Lower Haight", "Upper Haight", "Haight-Ashbury", "Noe Valley",
+    "Potrero Hill", "Dogpatch", "Bernal Heights", "Excelsior", "Outer Sunset",
+    "Inner Sunset", "Richmond", "Inner Richmond", "Outer Richmond", "Marina",
+    "Cow Hollow", "Pac Heights", "Pacific Heights", "Russian Hill", "Telegraph Hill",
+    "Chinatown", "Financial District", "FiDi", "Union Square", "Civic Center",
+    "Japantown", "Western Addition", "Fillmore", "Glen Park", "Bayview",
+    "Embarcadero", "Ferry Building", "Fisherman's Wharf",
+]
+
 # Used to infer city from venue name lookup (for neighbourhood extraction)
 CITY_NEIGHBOURHOODS = {
     "london": LONDON_NEIGHBOURHOODS,
     "paris": PARIS_NEIGHBOURHOODS,
+    "san francisco": SF_NEIGHBOURHOODS,
 }
 
 CUISINE_KEYWORDS = {
