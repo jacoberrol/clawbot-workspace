@@ -6,158 +6,696 @@
 <title>Trip: london-paris-mar2026</title>
 <style>
   :root {
-    --bg: #0f0f13;
-    --surface: #1a1a23;
-    --surface2: #22222e;
-    --border: #2e2e3e;
-    --text: #e0e0e8;
-    --muted: #888899;
-    --accent: #7c8cf8;
-    --green: #4ade80;
-    --red: #f87171;
-    --yellow: #fbbf24;
+    --bg: #0f0f13; --surface: #1a1a23; --surface2: #22222e;
+    --border: #2e2e3e; --text: #e0e0e8; --muted: #888899;
+    --accent: #7c8cf8; --green: #4ade80; --red: #f87171;
+    --yellow: #fbbf24; --purple: #c084fc; --orange: #fb923c;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background: var(--bg);
-    color: var(--text);
+    background: var(--bg); color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    padding: 2rem 1rem;
+    font-size: 15px; line-height: 1.6; padding: 2rem 1rem;
   }
-  .container { max-width: 1100px; margin: 0 auto; }
+  .container { max-width: 1200px; margin: 0 auto; }
   h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.25rem; }
-  .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
-  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  @media (max-width: 700px) { .cols { grid-template-columns: 1fr; } }
-  .city-section { background: var(--surface); border-radius: 12px; padding: 1.5rem;
-                   border: 1px solid var(--border); }
-  .city-section h2 { font-size: 1.25rem; color: var(--accent); margin-bottom: 1rem;
-                      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-  .venue-card { background: var(--surface2); border-radius: 8px; padding: 1rem;
-                 margin-bottom: 0.75rem; border: 1px solid var(--border);
-                 position: relative; }
-  .venue-card.confirmed { border-color: var(--green); }
-  .venue-card.confirmed::before {
-    content: '✓ RESERVED';
-    position: absolute; top: 0.75rem; right: 0.75rem;
-    font-size: 0.7rem; font-weight: 700; color: var(--green);
-    background: rgba(74,222,128,0.1); padding: 2px 6px; border-radius: 4px;
+  .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2.5rem; }
+  .nav { margin-bottom: 1rem; }
+  .nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; }
+  .nav a:hover { color: var(--accent); }
+
+  /* City columns */
+  .cities { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  @media (max-width: 800px) { .cities { grid-template-columns: 1fr; } }
+
+  .city-col { }
+  .city-heading {
+    font-size: 1.4rem; font-weight: 700; color: var(--accent);
+    margin-bottom: 1.5rem; padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
   }
-  .venue-name { font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+
+  /* Section headers (Bars / Restaurants / Cafes) */
+  .section-heading {
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    margin: 1.25rem 0 0.75rem;
+  }
+  .section-heading:first-of-type { margin-top: 0; }
+
+  /* Venue cards */
+  .venue-card {
+    background: var(--surface); border-radius: 10px; padding: 1rem 1.1rem;
+    margin-bottom: 0.65rem; border: 1px solid var(--border);
+    position: relative; transition: border-color 0.15s;
+  }
+  .venue-card:hover { border-color: #44445a; }
+  .venue-card.confirmed { border-color: var(--green); }
+  .venue-card.confirmed::after {
+    content: '✓ Reserved';
+    position: absolute; top: 0.8rem; right: 0.8rem;
+    font-size: 0.68rem; font-weight: 700; color: var(--green);
+    background: rgba(74,222,128,0.1); padding: 2px 7px; border-radius: 4px;
+    border: 1px solid rgba(74,222,128,0.25);
+  }
+
+  .venue-top { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.35rem; }
+  .venue-name { font-weight: 600; font-size: 1rem; flex: 1; }
   .venue-name a { color: var(--text); text-decoration: none; }
   .venue-name a:hover { color: var(--accent); }
-  .venue-book { margin-left: auto; flex-shrink: 0; }
-  .book-link { font-size: 0.75rem; font-weight: 600; color: var(--green); background: rgba(74,222,128,0.1); padding: 2px 8px; border-radius: 4px; text-decoration: none; border: 1px solid rgba(74,222,128,0.3); }
-  .book-link:hover { background: rgba(74,222,128,0.2); }
-  .venue-meta { color: var(--muted); font-size: 0.82rem; margin-bottom: 0.5rem; }
-  .venue-desc { font-size: 0.88rem; color: #aaabb8; line-height: 1.5; }
-  .venue-booking { margin-top: 0.5rem; font-size: 0.82rem; }
-  .booking-time { color: var(--green); font-weight: 600; }
-  .booking-conf { color: var(--muted); }
-  .no-booking { color: var(--yellow); }
-  .reservations-section { margin-top: 2rem; background: var(--surface);
-                            border-radius: 12px; padding: 1.5rem;
-                            border: 1px solid var(--border); }
-  .reservations-section h2 { font-size: 1.25rem; color: var(--green);
-                               margin-bottom: 1rem; padding-bottom: 0.5rem;
-                               border-bottom: 1px solid var(--border); }
-  .res-item { padding: 0.75rem; background: var(--surface2); border-radius: 8px;
-               margin-bottom: 0.75rem; border-left: 3px solid var(--green); }
+
+  .book-btn {
+    flex-shrink: 0; font-size: 0.7rem; font-weight: 700;
+    color: var(--green); background: rgba(74,222,128,0.1);
+    padding: 3px 9px; border-radius: 5px; text-decoration: none;
+    border: 1px solid rgba(74,222,128,0.3); white-space: nowrap;
+  }
+  .book-btn:hover { background: rgba(74,222,128,0.2); }
+
+  /* Tags row */
+  .tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .tag {
+    font-size: 0.68rem; font-weight: 600; padding: 2px 7px;
+    border-radius: 4px; letter-spacing: 0.02em;
+  }
+  .tag-neighbourhood { background: rgba(124,140,248,0.15); color: var(--accent); }
+  .tag-cuisine       { background: rgba(251,146,60,0.15);  color: var(--orange); }
+  .tag-rating        { background: rgba(250,204,21,0.15);  color: var(--yellow); }
+  .tag-type          { background: rgba(192,132,252,0.12); color: var(--purple); }
+
+  .venue-desc {
+    font-size: 0.84rem; color: #9999aa; line-height: 1.5;
+    display: -webkit-box; -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  /* Reservations panel */
+  .reservations {
+    background: var(--surface); border-radius: 12px; padding: 1.5rem;
+    border: 1px solid var(--border); margin-top: 0.5rem;
+  }
+  .reservations h2 {
+    font-size: 1.1rem; color: var(--green); margin-bottom: 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .res-item {
+    padding: 0.75rem; background: var(--surface2); border-radius: 8px;
+    margin-bottom: 0.6rem; border-left: 3px solid var(--green);
+  }
   .res-item.failed { border-left-color: var(--red); }
-  .res-name { font-weight: 600; margin-bottom: 0.25rem; }
-  .res-detail { font-size: 0.85rem; color: var(--muted); }
-  .badge { display: inline-block; font-size: 0.7rem; font-weight: 700;
-            padding: 2px 7px; border-radius: 4px; margin-right: 0.5rem; }
-  .badge-green { background: rgba(74,222,128,0.15); color: var(--green); }
-  .badge-red { background: rgba(248,113,113,0.15); color: var(--red); }
-  .badge-yellow { background: rgba(251,191,36,0.15); color: var(--yellow); }
-  .empty { color: var(--muted); font-style: italic; padding: 1rem 0; }
-  footer { margin-top: 3rem; text-align: center; color: var(--muted); font-size: 0.8rem; }
+  .res-name { font-weight: 600; margin-bottom: 0.2rem; }
+  .res-detail { font-size: 0.82rem; color: var(--muted); }
+
+  .badge {
+    display: inline-block; font-size: 0.68rem; font-weight: 700;
+    padding: 2px 7px; border-radius: 4px; margin-right: 0.4rem;
+  }
+  .badge-green  { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-red    { background: rgba(248,113,113,0.15); color: var(--red); }
+
+  .empty { color: var(--muted); font-style: italic; padding: 0.5rem 0; font-size: 0.9rem; }
+  footer { margin-top: 3rem; text-align: center; color: var(--muted); font-size: 0.78rem; }
 </style>
 </head>
 <body>
 <div class="container">
+  <div class="nav"><a href="../">← All Trips</a></div>
   <h1>✈️ london-paris-mar2026</h1>
-  <p class="meta">London, Paris &nbsp;·&nbsp; 2026-03-01 → 2026-03-07 &nbsp;·&nbsp; Party of 2 &nbsp;·&nbsp; Generated 2026-02-23 03:31 UTC</p>
-
-  <div class="cols">
-    <div class="city-section">
-  <h2>📍 London</h2>
-  <div class="venue-card">
-  <div class="venue-name"><a href="https://theumbrellaproject.co.uk/bricks-and-mortar" target="_blank">Umbrella Workshop</a></div>
-  <div class="venue-desc">Book a table at Umbrella Workshop · Logo: Project No: UB03 · Project Completed: FEBRUARY 2022 · Tele</div>
+  <p class="meta">London, Paris &nbsp;·&nbsp; 2026-03-01 → 2026-03-07 &nbsp;·&nbsp; Party of 2 &nbsp;·&nbsp; 2026-02-23 03:42 UTC</p>
+  <div class="cities">
+    <div class="city-col">
+  <div class="city-heading">📍 London</div>
+  <div class="section-heading">🍸 Bars</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://theumbrellaproject.co.uk/bricks-and-mortar" target="_blank">Umbrella Workshop</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Shoreditch</span><span class="tag tag-cuisine">Natural Wine Bar</span></div>
+  <div class="venue-desc">Book a table at Umbrella Workshop · Logo: Project No: UB03 · Project Completed: FEBRUARY 2022 · Telephone No: 020 7739 4951 · Social: @INSTAGRAM · Address: UNIT…</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://www.satanswhiskers.com" target="_blank">Satan’s Whiskers</a></div>
-  <div class="venue-desc">We offer a full consultancy service on beverage, bar design, operations, systems, training and back</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.satanswhiskers.com" target="_blank">Satan’s Whiskers</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Bethnal Green</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">We offer a full consultancy service on beverage, bar design, operations, systems, training and back of house. Looking every bit a down-and-out ... vintage Frenc…</div>
 </div><div class="venue-card">
-  <div class="venue-name">Bar Américain</div>
-  <div class="venue-desc">From curtain up to last call, let us transport you to a Parisian Christmas, right here in the heart</div>
+  <div class="venue-top">
+    <div class="venue-name">Bar Américain</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Soho</span><span class="tag tag-cuisine">Brasserie</span></div>
+  <div class="venue-desc">From curtain up to last call, let us transport you to a Parisian Christmas, right here in the heart of London. ... ... Transport yourself to 1920s Paris this fe…</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://tayer-elementary.com" target="_blank">Tayēr + Elementary</a></div>
-  <div class="venue-desc">Tayēr + Elementary is a cocktail bar established in 2019 in London. A sincere inter</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://tayer-elementary.com" target="_blank">Tayēr + Elementary</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Tayēr + Elementary is a cocktail bar established in 2019 in London. A sincere interest in ingredients, intelligent design and meticulous research is integral to…</div>
 </div><div class="venue-card">
-  <div class="venue-name">Three Sheets Soho</div>
-  <div class="venue-desc">Since its opening in 2016, the outwardly unassuming Dalston cocktail bar Three Sheets – owne</div>
+  <div class="venue-top">
+    <div class="venue-name">Three Sheets Soho</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Soho</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Since its opening in 2016, the outwardly unassuming Dalston cocktail bar Three Sheets – owned and run by brothers Max and Noel Venning – has become a city-wide …</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://littlemercies.co.uk" target="_blank">Little Mercies</a> <span class="venue-book"><a class="book-link" href="https://www.opentable.com/r/little-mercies-london" target="_blank">🗓 OpenTable</a></span></div>
-  <div class="venue-desc">Opened in October 2018, we are a multi award winning local neighbourhood cocktail bar and re</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://littlemercies.co.uk" target="_blank">Little Mercies</a></div>
+    <a class="book-btn" href="https://www.opentable.com/r/little-mercies-london" target="_blank">🗓 OpenTable</a>
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Soho</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Opened in October 2018, we are a multi award winning local neighbourhood cocktail bar and restaurant. Our food menu might also be the best kept secret in North …</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://www.seedlibraryshoreditch.com" target="_blank">Seed Library</a></div>
-  <div class="venue-desc">Seed Library is a laid-back cocktail bar by Mr Lyan in the heart of Shoreditch, East London<</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.seedlibraryshoreditch.com" target="_blank">Seed Library</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Shoreditch</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Seed Library is a laid-back cocktail bar by Mr Lyan in the heart of Shoreditch, East London where you can enjoy a cocktail or selection of beers and wine with g…</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://www.barswift.com" target="_blank">Swift</a></div>
-  <div class="venue-desc">Discover the best cocktails in Borough, London Bridge, Shoreditch, and Soho at Bar Swift. Enjoy seas</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.barswift.com" target="_blank">Swift</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Shoreditch</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Discover the best cocktails in Borough, London Bridge, Shoreditch, and Soho at Bar Swift. Enjoy seasonal specials and classics drinks at our award winning bars.…</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://www.lyaness.com" target="_blank">Lyaness</a></div>
-  <div class="venue-desc">Located at Sea Containers London, Lyaness is the flagship cocktail bar by Ryan Chet</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.lyaness.com" target="_blank">Lyaness</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Located at Sea Containers London, Lyaness is the flagship cocktail bar by Ryan Chetiyawardana (aka Mr Lyan) and team. Mr Lyan aka Ryan Chetiyawardana is London’…</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="http://www.69colebrookerow.com" target="_blank">69 Colebrooke Row</a> <span class="venue-book"><a class="book-link" href="https://www.exploretock.com/69colebrookerow" target="_blank">🗓 Tock</a></span></div>
-  <div class="venue-desc">THE BAR WITH NO NAME TUCKED AWAY FROM THE MAIN ROAD, OFFERING COCKTAILS, APERITIFS, DIGESTIF</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="http://www.69colebrookerow.com" target="_blank">69 Colebrooke Row</a></div>
+    <a class="book-btn" href="https://www.exploretock.com/69colebrookerow" target="_blank">🗓 Tock</a>
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Islington</span></div>
+  <div class="venue-desc">THE BAR WITH NO NAME TUCKED AWAY FROM THE MAIN ROAD, OFFERING COCKTAILS, APERITIFS, DIGESTIFS, JAZZ, BLUES, ROCK N ROLL AND GOOD TIME FOR EVERYONE 69 Colebrooke…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.the-connaught.co.uk/restaurants-bars/connaught-bar" target="_blank">The Connaught Bar</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Mayfair</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Experience the award-winning Connaught Bar, a luxury cocktail bar in London for innovative cocktails in a 5-star hotel setting. THE CONNAUGHT BAR GIN · Born, bl…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.happinessforgets.com" target="_blank">Happiness Forgets</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Shoreditch</span></div>
+  <div class="venue-desc">In the basement, 8-9 Hoxton Square, London, N1 6NU (map) Open from 5.00pm, everyday. To make a reservation click here · Have you seen our St Albans outpost No N…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://homeboybar.com" target="_blank">Homeboy</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Islington</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">11th &amp; Social are taking over the bar on Wednesday 9th October from 7-11pm…bringing some amazing drinks and the Norwich party vibes to Homeboy. With modern …</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.barnightjar.com" target="_blank">Nightjar</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Shoreditch</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Experience Nightjar&#x27;s renowned ... with delectable snacks. Enjoy the best vintage jazz, blues, ragtime, and swing in Shoreditch, East London. Visit us wher…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Expect to pay</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Pub</span></div>
+  <div class="venue-desc">To begin, a drink in a bar or pub, ... to take turns buying rounds of drinks. Going to a movie next? Expect to pay $15 to $18 per ticket for an adult.... Food -…</div>
+</div><div class="section-heading">🍽 Restaurants</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">July 2025:</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Craft Beer</span></div>
+  <div class="venue-desc">The very best things to do, events, shows, and openings in London throughout July 2025, including festivals, theatre and art shows Explore what’s on in London i…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Address:</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Thai</span></div>
+  <div class="venue-desc">Royal Thai Embassy, London สถานเอกอัครราชทูต ณ กรุงลอนดอน</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Opening hours:</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">British</span></div>
+  <div class="venue-desc">Under normal circumstances lines on the London underground operate from 5.30 am until around 12.30 am (6.45 am to 11.30 pm on Sunday). There are round the clock…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Expect to pay:</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Opening times:</div>
+    
+  </div>
+  
+  
+</div><div class="section-heading">☕ Work Cafes</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="http://www.thewrencoffee.com" target="_blank">The Wren Coffee</a></div>
+    
+  </div>
+  
+  <div class="venue-desc">The Wren Coffee is an independent coffee shop in St Nicks Cole Abbey, the huge Church on Distaff Lane that you may not have noticed before. 3,013 Followers, 434…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://redemptionroasters.com" target="_blank">Redemption Roasters</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Holborn</span></div>
+  <div class="venue-desc">Redemption Roasters is on a mission to reduce reoffending through coffee. Shop our speciality coffee, brewing kit, learn about our social impact or find out whe…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://fwdcoffee.co.uk" target="_blank">FWD:Coffee</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Specialty Coffee</span></div>
+  <div class="venue-desc">Independent coffee shops in east London. From the eclectic soundtrack to the unique lighting and decor, FWD:Coffee is a point of curiosity as soon as you walk t…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.frotheecafe.co.uk" target="_blank">Frothee</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Islington</span><span class="tag tag-cuisine">Specialty Coffee</span></div>
+  <div class="venue-desc">60 Caledonian Road, Islington, N1 9DP · hello@frotheecafe.co.uk See Instagram photos and videos from frothee (@frotheecafe) Frothee is an sleek King’s Cross caf…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.pasero.uk" target="_blank">Pasero</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Wine Bar</span></div>
+  <div class="venue-desc">7,342 followers, 1,437 following, 416 posts – PASERO (@pasero.uk) on Instagram: &quot;Coffee | Wine | Plates This week 🍽️ by @solan.table DINNER Weds-Sat / BRUN…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.londontrampoline.com" target="_blank">Trampoline</a></div>
+    
+  </div>
+  
+  <div class="venue-desc">... With 150 trampolines, Oxygen Freejumping invites the whole city to take the leap for fun. With ‘Little O’, a designated safe area for toddlers up to five ye…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://caravanandco.com/pages/kings-cross" target="_blank">Caravan King's Cross</a></div>
+    <a class="book-btn" href="https://www.sevenrooms.com/reservations/caravankingscross?venues=caravankingscross,caravanexmouthmarket,caravanbankside,caravancity,caravanfitzrovia,caravancanarywharf" target="_blank">🗓 SevenRooms</a>
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Brunch Café</span></div>
+  <div class="venue-desc">Minutes from King&#x27;s Cross St Pancras station, Caravan King&#x27;s Cross restaurant can be found in Granary Square, near Coal Drops Yard. Stop by anytime fo…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.canovahall.com" target="_blank">Canova Hall</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Brixton</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">CANOVA HALL - Try Our New Menu - 250 Ferndale Road, London SW9 8BQ, United Kingdom, 6 Photos, +442077338356, Mon - 8:00 am - 12:00 am, Tue - 8:00 am - 12:00 am,…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Gladwell’s Deli & Grocery</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.wearelumberjack.co.uk" target="_blank">Lumberjack</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Craft Beer</span></div>
+  <div class="venue-desc">Lumberjack is your local general store, kitchen and artisanal deli, with an emphasis on speciality coffee, fresh bread, pastry &amp; cakes, plus a carefully cur…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://juliets-quality-foods-1.wheree.com" target="_blank">Juliet’s Quality Foods</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Tooting</span><span class="tag tag-cuisine">Brunch Café</span></div>
+  <div class="venue-desc">Nestled along the vibrant stretch of Mitcham Road in the charming Tooting neighborhood of London, Juliet’s Quality Foods invites you to step into a world where …</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://geckocoffee.house/pages/contact" target="_blank">Gecko Coffeehouse</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Bethnal Green</span></div>
+  <div class="venue-desc">Gecko Coffeehouse 49 Bethnal Green Road Shoredtich, London E1 6LA Opening hours: Monday: 9:00am-5:00pm Tuesday: 9:00am-5:00pm Wednesday: 9:00am-5:00pm Thursday:…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.kneesupspace.com" target="_blank">Knees Up</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Hackney</span><span class="tag tag-cuisine">Pub</span></div>
+  <div class="venue-desc">A home for activity – equipment, fuel and hydration + programming for people who move. Started by Matt and Oli - friends who met through their love of running -…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Project 44</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Shoreditch</span><span class="tag tag-cuisine">Wine Bar</span></div>
+  <div class="venue-desc">See Instagram photos and videos from Project 44 (@project44.london) Project 44 is a neighbourhood cafe in Shoreditch serving specialty coffee &amp; homemade san…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://sabretooth.london" target="_blank">Sabretooth</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Hoxton</span><span class="tag tag-cuisine">Indian</span></div>
+  <div class="venue-desc">In a small independent shop in the heart of Hoxton, we&#x27;ve made &amp; served our chai amongst friends &amp; neighbors since 2019. Sabretooth Hoxton, London:…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.commonsat.co.uk/osw" target="_blank">Commons at Old Street Works</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Specialty Coffee</span></div>
+  <div class="venue-desc">Commons at Old Street Works (OSW) is our flagship store. We&#x27;ve been serving London&#x27;s best coffee since the summer of 2023. ‍ Designed by Cavendish Stu…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.batchbaby.co.uk/about" target="_blank">Batch Baby</a></div>
+    
+  </div>
+  
+  <div class="venue-desc">11K Followers, 1,145 Following, 224 Posts - BATCH BABY (@batchbabycoffee) on Instagram: &quot;Multi-roaster speciality coffee shop in De Beauvoir - we do lots o…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.thewave.com/wp-content/uploads/2025/02/The-Wave-London.pdf" target="_blank">Wave</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Italian</span></div>
+  <div class="venue-desc">Every one of the UK wave sites has had massive delays, Lost Shore in Edinburgh was announced in 2015, completed in 2024, The Wave in Bristol announced in 2011, …</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Coffee Junction</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Shoreditch</span></div>
+  <div class="venue-desc">We had chicken schnitzel and with each main you get to choose four salad options to go with it - the roast potato with olives and the pesto pasta with big mozza…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.market-cafe.co.uk" target="_blank">Market Cafe</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Italian</span></div>
+  <div class="venue-desc">2 Broadway Market London E8 4QJ · t. 020 7249 9070 e. info@market-cafe.co.uk · marketcafeldn · Scroll · Monday - Wednesday 10am - 10.00pm · Thursday 10am - 11.0…</div>
 </div>
 </div>
-<div class="city-section">
-  <h2>📍 Paris</h2>
-  <div class="venue-card">
-  <div class="venue-name">Jolyne</div>
-  <div class="venue-desc">Bar Jolyne, 11 Rue Rochebrune, 75011 Paris, France. Cravings: Wine bar. Extras: Amu</div>
+<div class="city-col">
+  <div class="city-heading">📍 Paris</div>
+  <div class="section-heading">🍸 Bars</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Jolyne</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Wine Bar</span></div>
+  <div class="venue-desc">Bar Jolyne, 11 Rue Rochebrune, 75011 Paris, France. Cravings: Wine bar. Extras: Amuse-bouche, Naturopath, Open all day, Open Tuesdays, Women at the helm. Look a…</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://www.moncoyote.com/fr/store/paris.html" target="_blank">Coyote</a></div>
-  <div class="venue-desc">64K Followers, 966 Following, 1,128 Posts - le coyote paris 3 (@lecoyoteparis) on Instagram: &quot;l</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.moncoyote.com/fr/store/paris.html" target="_blank">Coyote</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Wine Bar</span></div>
+  <div class="venue-desc">64K Followers, 966 Following, 1,128 Posts - le coyote paris 3 (@lecoyoteparis) on Instagram: &quot;lesbian and queer saloon | café journée | restaurant cave à v…</div>
 </div><div class="venue-card">
-  <div class="venue-name">Mésures</div>
-  <div class="venue-desc">Interprétation Géologique des Mésures Effectuées au Spectromètre de Masse dans le Domaine de la Géoc</div>
+  <div class="venue-top">
+    <div class="venue-name">Mésures</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Nation</span><span class="tag tag-cuisine">Pub</span></div>
+  <div class="venue-desc">Interprétation Géologique des Mésures Effectuées au Spectromètre de Masse dans le Domaine de la Géochronologie Absolue. Colloques Internationaux du Centre natio…</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://devie.bar" target="_blank">Bar De Vie</a></div>
-  <div class="venue-desc">An award winning, dual concept cocktail bar and restaurant celebrating locality, seasonality</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://devie.bar" target="_blank">Bar De Vie</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">An award winning, dual concept cocktail bar and restaurant celebrating locality, seasonality and craft in Paris&#x27; Montorgueil quarter. Le projet multiforme …</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://www.experimentalcocktailclub.com/paris" target="_blank">Experimental Cocktail Club</a></div>
-  <div class="venue-desc">Experimental Cocktail Club quickly became the epicentre of a phenomenon that would transform Paris’s</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.experimentalcocktailclub.com/paris" target="_blank">Experimental Cocktail Club</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Nation</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Experimental Cocktail Club quickly became the epicentre of a phenomenon that would transform Paris’s nightlife through accessible prices and audacious combinati…</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://www.folderol.fr" target="_blank">Folderol</a></div>
-  <div class="venue-desc">Mercredi - Lundi : 16h - 23h · COMMANDES GATEAUX GLACÉES</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.folderol.fr" target="_blank">Folderol</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Wine Bar</span></div>
+  <div class="venue-desc">Mercredi - Lundi : 16h - 23h · COMMANDES GATEAUX GLACÉES 48K Followers, 261 Following, 74 Posts - Folderol (@f.o.l.d.e.r.o.l) on Instagram: &quot;Vins et glaces…</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://liquiderie-bar.wheree.com" target="_blank">Liquiderie Bar</a></div>
-  <div class="venue-desc">Restaurant Liquiderie Bar, 7, rue de la Présentation Paris 75011. Craving : Wine ba</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://liquiderie-bar.wheree.com" target="_blank">Liquiderie Bar</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Wine Bar</span></div>
+  <div class="venue-desc">Restaurant Liquiderie Bar, 7, rue de la Présentation Paris 75011. Craving : Wine bar / Cave à manger. The extras : Open Sunday, Antidepressant, Late night hunge…</div>
 </div><div class="venue-card">
-  <div class="venue-name">Kissproof</div>
-  <div class="venue-desc">Since the bar is in one of the less-tourist-filled parts of Paris, in the old Chinatown of Bellevill</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://kissproof-belleville.wheree.com" target="_blank">Kissproof</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Pigalle</span></div>
+  <div class="venue-desc">Since the bar is in one of the less-tourist-filled parts of Paris, in the old Chinatown of Belleville, it’s more of a neighborhood haunt where you’re either sta…</div>
 </div><div class="venue-card">
-  <div class="venue-name">Les Ambassadeurs</div>
-  <div class="venue-desc">Creative cocktails &amp; live music overlooking Place de la Concorde. A Parisian ad</div>
+  <div class="venue-top">
+    <div class="venue-name">Les Ambassadeurs</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Concorde</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Creative cocktails &amp; live music overlooking Place de la Concorde. A Parisian address enchanting locals and visitors. Creative cocktails &amp; live music ove…</div>
 </div><div class="venue-card">
-  <div class="venue-name"><a href="https://www.sistermidnightparis.com" target="_blank">Sister Midnight</a></div>
-  <div class="venue-desc">Sister Midnight is an award-winning cocktail bar in Pigalle, from the creative duo Jen Riley</div>
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.sistermidnightparis.com" target="_blank">Sister Midnight</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Pigalle</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Sister Midnight is an award-winning cocktail bar in Pigalle, from the creative duo Jen Riley and Joe Boley. Reviving the area&#x27;s forgotten glam rock roots, …</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Bar Nouveau</div>
+    
+  </div>
+  
+  <div class="venue-desc">Tucked away in Paris&#x27;s vibrant Marais district, Bar Nouveau was co-founded by twins Sara and Hadrien Moudoulaud, Marc Puzzuoli, and the recipient of the In…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="http://www.copperbay.fr" target="_blank">CopperBay</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Grands Boulevards</span></div>
+  <div class="venue-desc">5 rue Bouchardon | 75010 Paris | paris@copperbay.fr Copperbay, Paris: See 95 unbiased reviews of Copperbay, rated 4.7 of 5 on Tripadvisor and ranked #2,642 of 1…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.candelaria-paris.com" target="_blank">Candelaria</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">Authentic Mexican taqueria in the heart of Paris, where everything including the tortillas is made in-house, plus a world-class cocktail bar with an extensive s…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.thecambridge.paris/en" target="_blank">Cambridge Public House</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Le Marais</span><span class="tag tag-cuisine">Pub</span></div>
+  <div class="venue-desc">Opened in early 2019 following a meeting in London, The Cambridge Public House is located in the Marais district of Paris. 8 Rue de Poitou, 75003 Paris, France …</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Bar Hemingway</div>
+    
+  </div>
+  
+  <div class="venue-desc">Stories that intersect, encounters that connect, iconic cocktails... at the intimate Bar Hemingway, the great writer&#x27;s legend is reborn every evening, amon…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.maison-proust.com/en/maison-proust" target="_blank">Maison Proust</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Pigalle</span></div>
+  <div class="venue-desc">With infinite gratitude and building ... Maison Proust. Maison Proust restores the splendour of Parisian salons in the Belle Epoque, in keeping with his masterp…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Harry's New York Bar</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Opéra</span><span class="tag tag-cuisine">American</span></div>
+  <div class="venue-desc">Harry&#x27;s New York Bar is a bar in Paris, France located at 5, Rue Daunou, between the Avenue de l&#x27;Opéra and the Rue de la Paix. It was converted from a…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.cravanparis.com/en" target="_blank">Cravan</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Saint-Germain</span><span class="tag tag-cuisine">Cocktail Bar</span></div>
+  <div class="venue-desc">37K Followers, 0 Following, 737 Posts - CRAVAN (@cravanparis) on Instagram: &quot;CRAVAN 6e Tue to Sat 12pm - 1am CRAVAN 16e Wed to Sat 6pm - 11pm Enjoy respons…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://besthotelbar.com/bar/bar-sur-le-toit" target="_blank">Bar Sur Le Toit</a></div>
+    <a class="book-btn" href="https://www.sevenrooms.com/reservations/lebarsurletoit" target="_blank">🗓 SevenRooms</a>
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Montmartre</span></div>
+  <div class="venue-desc">Le Café, ouvert sur la rue Cadet, accompagne les journées avec des assiettes fraîches, simples, pleines d’allant. Le restaurant célèbre une cuisine joyeuse, gén…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Fréquence</div>
+    
+  </div>
+  
+  <div class="venue-desc">Paris, France · Fréquence was founded by two friends Matthieu Biron (formerly Andy Wahloo) and Guillaume Quenza (ex-Sherry Butt), and the bar is dedicated to th…</div>
+</div><div class="section-heading">☕ Work Cafes</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Map of Cafes to Work in Paris</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">25 Best Laptop Friendly Cafes in Paris</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.backinblackcoffee.com" target="_blank">Back in Black</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Pigalle</span><span class="tag tag-cuisine">Seasonal</span></div>
+  <div class="venue-desc">Speciality Coffee pioneers in Paris since 2010 Roasters in Paris since 2015 Online shop for fresh seasonal tasty coffee beans and the best coffee gears Come dri…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://bestcafedesigns.com/dream-cafe-on-partage-cafe" target="_blank">Partage Cafe</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Pub</span></div>
+  <div class="venue-desc">Come here for a meal after seeing Square de l&#x27;oiseau lunaire. Australian and French cuisines are must-order ones at this cafe. Tasty filet américain, salad…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.fontaine-de-mars.com/en" target="_blank">La Fontaine</a></div>
+    <a class="book-btn" href="https://www.opentable.com/r/la-fontaine-gaillon-paris" target="_blank">🗓 OpenTable</a>
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">French</span></div>
+  <div class="venue-desc">A few steps from the Eiffel Tower, on a small square refreshed by the Fontaine de Mars, this bistro-brasserie is not the latest fashionable place... It is an in…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Cafeinoman</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-rating">4.8/5</span></div>
+  <div class="venue-desc">1,590 Followers, 360 Following, 260 Posts - Cafeinoman by Pfaff (@cafeinoman75) on Instagram: &quot;📍Coffee Shop Paris 11 ☕️ Vente de cafés de spécialité⁣⁣ torr…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="http://www.lebichat.fr" target="_blank">Le Bichat</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 République</span><span class="tag tag-cuisine">Pub</span></div>
+  <div class="venue-desc">Bienvenue sur le site du Restaurant Bar Traiteur Bio &quot;Le Bichat&quot; 11 rue bichat 75010 PARIS Le Bichat, Paris. 6,918 likes · 1,205 were here. Restaurant…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Unicorners Coworking Cafe</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Nuage Cafe</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">French</span></div>
+  <div class="venue-desc">Nuage Café is a super concept, paying per hour and getting free internet, a calm workspace, and a buffet of food, snacks, fruit, coffee, tea, juice and toasts. …</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Le Careé des Invalides (Army Museum Cafe)</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.louiscorner.fr" target="_blank">Loui’s Corner</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Brunch Café</span></div>
+  <div class="venue-desc">🥘 Café, Restaurant 7/7 🔥Service continu toute l’année 👨🏻‍🍳 Cuisine maison 🥞 Brunch ⏰ week-end 11h-15h 📍 49 Rue Bichat, 75010 Paris · 8 h du matin : un petit-déj…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://europeancoffeetrip.com/cafe/goodnewscoffeeshop-paris" target="_blank">Good News Coffee Shop</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">Specialty Coffee</span></div>
+  <div class="venue-desc">GOOD NEWS COFFEE SHOP - Try Our New Menu - 27 bis rue Mademoiselle, 75004 Paris, France, 9 Photos, +33781063900, Mon - Closed, Tue - 8:30 am - 6:00 pm, Wed - 8:…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://www.hotel-de-la-marine.paris/en" target="_blank">La Marine</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Concorde</span><span class="tag tag-cuisine">French</span></div>
+  <div class="venue-desc">La Marine is a popular choice among travelers for its charming location, appreciated from breakfast to dinner. Known for its vibrant Parisian bistro atmosphere,…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://blondie-coffee-shop.wheree.com" target="_blank">Blondie Coffee Shop</a></div>
+    
+  </div>
+  
+  <div class="venue-desc">Blondie Coffee Shop, Paris: See 7 unbiased reviews of Blondie Coffee Shop, rated 3.4 of 5 on Tripadvisor and ranked #13,183 of 16,325 restaurants in Paris. Blon…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Strada Cafe</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Le Marais</span><span class="tag tag-cuisine">French</span></div>
+  <div class="venue-desc">8,268 followers, 406 following, 38 posts – Strada Café (@strada_cafe) on Instagram: &quot;Monday to Friday from 8 am-18:30pm Saturday Sunday from 9am to 18pm N…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Jozi Brunch & Jozi Cafe</div>
+    
+  </div>
+  
+  
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">KB CafeShop</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Pigalle</span><span class="tag tag-cuisine">Seasonal</span></div>
+  <div class="venue-desc">Speciality Coffee pioneers in Paris since 2010 Roasters in Paris since 2015 Online shop for fresh seasonal tasty coffee beans and the best coffee gears Come dri…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">La Compagnie du Cafe</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-cuisine">French</span></div>
+  <div class="venue-desc">La Compagnie du Café is a coffee shop, coffee roaster and a lunch cantine. Open 7 days a week, we serve all day house roasted coffee, home made food with many v…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name"><a href="https://ciao-paulette.wheree.com" target="_blank">Ciao Paulette</a></div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Temple</span><span class="tag tag-cuisine">Brunch Café</span></div>
+  <div class="venue-desc">The address of Ciao Paulette is 94 Rue du Temple, 75003 Paris, France. Ciao Paulette, Paris. 14 likes · 1 talking about this · 1 was here. 🔜 Coffee shop &amp; C…</div>
+</div><div class="venue-card">
+  <div class="venue-top">
+    <div class="venue-name">Brasserie Barbes</div>
+    
+  </div>
+  <div class="tags"><span class="tag tag-neighbourhood">📍 Montmartre</span><span class="tag tag-cuisine">Brasserie</span></div>
+  <div class="venue-desc">Brasserie Barbes, Paris: See 966 unbiased reviews of Brasserie Barbes, rated 3.4 of 5 on Tripadvisor and ranked #3,162 of 16,232 restaurants in Paris. Restauran…</div>
 </div>
 </div>
   </div>
-
-  <div class="reservations-section">
+  <div class="reservations">
   <h2>🗓 Reservations</h2>
-  <p class="empty">No reservations yet. Run travel-reservations.py after adding Resy URLs to venues.md.</p>
+  <p class="empty">No reservations yet. Add Resy URLs to venues and run travel-reservations.py.</p>
 </div>
-
   <footer>Built by Bot &nbsp;·&nbsp; travel-report.py</footer>
 </div>
 </body>

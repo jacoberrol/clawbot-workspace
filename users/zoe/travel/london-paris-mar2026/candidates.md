@@ -1,6 +1,6 @@
 # Top Candidates — london-paris-mar2026
 
-Generated: 2026-02-23 03:26 UTC
+Generated: 2026-02-23 03:42 UTC
 
 ---
 
@@ -14,7 +14,7 @@ Generated: 2026-02-23 03:26 UTC
 ### Satan’s Whiskers
 - **Website:** [https://www.satanswhiskers.com](https://www.satanswhiskers.com)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** We offer a full consultancy service on beverage, bar design, operations, systems, training and back of house.
+- **Notes:** We offer a full consultancy service on beverage, bar design, operations, systems, training and back of house. Looking every bit a down-and-out ... vin
 
 ### Bar Américain
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
@@ -63,7 +63,7 @@ Generated: 2026-02-23 03:26 UTC
 
 ### Frothee
 - **Website:** [https://www.frotheecafe.co.uk](https://www.frotheecafe.co.uk)
-- **Notes:** 60 Caledonian Road, Islington, N1 9DP · hello@frotheecafe.co.uk
+- **Notes:** 60 Caledonian Road, Islington, N1 9DP · hello@frotheecafe.co.uk See Instagram photos and videos from <strong>frothee</strong> (@frotheecafe) Frothee i
 - **WiFi/Outlets:** _(confirm on visit)_
 
 ### Pasero
@@ -99,7 +99,7 @@ Generated: 2026-02-23 03:26 UTC
 ### Folderol
 - **Website:** [https://www.folderol.fr](https://www.folderol.fr)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** <strong>Mercredi - Lundi : 16h - 23h</strong> · COMMANDES GATEAUX GLACÉES
+- **Notes:** <strong>Mercredi - Lundi : 16h - 23h</strong> · COMMANDES GATEAUX GLACÉES 48K Followers, 261 Following, 74 Posts - Folderol (@f.o.l.d.e.r.o.l) on Inst
 
 ### Liquiderie Bar
 - **Website:** [https://liquiderie-bar.wheree.com](https://liquiderie-bar.wheree.com)
@@ -107,6 +107,7 @@ Generated: 2026-02-23 03:26 UTC
 - **Notes:** Restaurant Liquiderie Bar, <strong>7, rue de la Présentation Paris 75011.</strong> Craving : Wine bar / Cave à manger. The extras : Open Sunday, Antid
 
 ### Kissproof
+- **Website:** [https://kissproof-belleville.wheree.com](https://kissproof-belleville.wheree.com)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
 - **Notes:** Since the bar is in one of the less-tourist-filled parts of Paris, in the old Chinatown of Belleville, it’s more of a neighborhood haunt where you’re 
 

@@ -29,6 +29,70 @@ from pathlib import Path
 TRIPS_FILE = Path(__file__).parent / "trips.json"
 BRAVE_API_URL = "https://api.search.brave.com/res/v1/web/search"
 
+# ---------------------------------------------------------------------------
+# Enrichment data: neighborhoods, cuisines, venue types, ratings
+# ---------------------------------------------------------------------------
+
+LONDON_NEIGHBOURHOODS = [
+    "Shoreditch", "Soho", "Mayfair", "Notting Hill", "Brixton", "Hackney",
+    "Covent Garden", "Hoxton", "Dalston", "Islington", "Borough", "Chelsea",
+    "Bermondsey", "Peckham", "Bethnal Green", "King's Cross", "Fitzrovia",
+    "Marylebone", "Clerkenwell", "Vauxhall", "Canary Wharf", "Whitechapel",
+    "Spitalfields", "Aldgate", "Holborn", "Bloomsbury", "Pimlico", "Battersea",
+    "Clapham", "Balham", "Tooting", "Waterloo", "Southwark", "London Bridge",
+    "Liverpool Street", "Angel", "Camden", "Primrose Hill", "Stoke Newington",
+]
+
+PARIS_NEIGHBOURHOODS = [
+    "Le Marais", "Montmartre", "Saint-Germain", "Pigalle", "Bastille",
+    "Belleville", "Oberkampf", "Canal Saint-Martin", "République",
+    "Châtelet", "Latin Quarter", "Quartier Latin", "Palais Royal",
+    "Batignolles", "South Pigalle", "SoPi", "Opéra", "Grands Boulevards",
+    "Nation", "Ménilmontant", "Butte aux Cailles", "Montparnasse",
+    "Saint-Paul", "Abbesses", "Blanche", "Concorde", "Trocadéro",
+    "Sciences Po", "Rue de Rivoli", "Place de la Bastille", "Île de la Cité",
+    "Beaubourg", "Temple", "Réaumur", "Arts et Métiers",
+]
+
+# Used to infer city from venue name lookup (for neighbourhood extraction)
+CITY_NEIGHBOURHOODS = {
+    "london": LONDON_NEIGHBOURHOODS,
+    "paris": PARIS_NEIGHBOURHOODS,
+}
+
+CUISINE_KEYWORDS = {
+    # Bar types
+    "cocktail bar": "Cocktail Bar", "wine bar": "Wine Bar", "champagne bar": "Champagne Bar",
+    "whisky bar": "Whisky Bar", "natural wine": "Natural Wine Bar", "sake bar": "Sake Bar",
+    "beer bar": "Beer Bar", "craft beer": "Craft Beer", "pub": "Pub",
+    # Restaurant cuisines
+    "french": "French", "italian": "Italian", "japanese": "Japanese",
+    "chinese": "Chinese", "mexican": "Mexican", "spanish": "Spanish",
+    "greek": "Greek", "thai": "Thai", "indian": "Indian", "korean": "Korean",
+    "vietnamese": "Vietnamese", "peruvian": "Peruvian", "middle eastern": "Middle Eastern",
+    "mediterranean": "Mediterranean", "british": "British", "american": "American",
+    "seafood": "Seafood", "steakhouse": "Steakhouse", "sushi": "Sushi",
+    "ramen": "Ramen", "pizza": "Pizza", "taqueria": "Mexican",
+    "bistro": "Bistro", "brasserie": "Brasserie", "gastropub": "Gastropub",
+    "farm-to-table": "Farm-to-Table", "seasonal": "Seasonal",
+    "small plates": "Small Plates", "tapas": "Tapas",
+    # Cafe types
+    "specialty coffee": "Specialty Coffee", "third wave": "Specialty Coffee",
+    "espresso bar": "Espresso Bar", "brunch": "Brunch Café",
+    "bakery": "Bakery", "patisserie": "Patisserie",
+}
+
+VENUE_TYPE_SIGNALS = {
+    "bar": ["cocktail bar", "wine bar", "bar ", " bar", "drinks", "cocktails",
+            "whisky", "speakeasy", "pub ", " pub", "tavern", "taproom"],
+    "restaurant": ["restaurant", "dining", "cuisine", "bistro", "brasserie",
+                   "eatery", "kitchen", "grill", "tasting menu", "michelin",
+                   "reservations required", "dinner", "lunch menu"],
+    "cafe": ["coffee", "café", "cafe", "espresso", "latte", "laptop", "wifi",
+             "co-working", "coworking", "pastry", "bakery", "brunch spot"],
+}
+
+
 # --- Search query templates (Pass 1) ---
 DINING_QUERIES = [
     "{city} best local restaurants 2025 2026 not touristy",
@@ -252,11 +316,74 @@ def extract_names_from_html(html: str) -> list[str]:
 # Pass 2b: for each venue name, find its direct website + reservation link
 # ---------------------------------------------------------------------------
 
-def find_venue_links(name: str, city: str, api_key: str) -> dict:
+def extract_neighbourhood(text: str, city: str) -> str:
+    """Find a neighbourhood mention in text for the given city."""
+    city_key = city.lower()
+    neighbourhoods = CITY_NEIGHBOURHOODS.get(city_key, [])
+    text_lower = text.lower()
+    for n in neighbourhoods:
+        if n.lower() in text_lower:
+            return n
+    return ""
+
+
+def extract_cuisine(text: str) -> str:
+    """Infer cuisine/bar type from description text."""
+    text_lower = text.lower()
+    for keyword, label in CUISINE_KEYWORDS.items():
+        if keyword in text_lower:
+            return label
+    return ""
+
+
+def infer_venue_type(text: str, is_work: bool = False) -> str:
+    """Classify venue as bar / restaurant / cafe from description text."""
+    if is_work:
+        return "cafe"
+    text_lower = text.lower()
+    scores = {vtype: 0 for vtype in VENUE_TYPE_SIGNALS}
+    for vtype, signals in VENUE_TYPE_SIGNALS.items():
+        for s in signals:
+            if s in text_lower:
+                scores[vtype] += 1
+    best = max(scores, key=lambda t: scores[t])
+    return best if scores[best] > 0 else "restaurant"
+
+
+def extract_rating(text: str) -> str:
+    """Pull a rating from description text (stars, scores, Michelin)."""
+    text_lower = text.lower()
+    # Michelin stars
+    if "three michelin" in text_lower or "3 michelin" in text_lower:
+        return "⭐⭐⭐ Michelin"
+    if "two michelin" in text_lower or "2 michelin" in text_lower:
+        return "⭐⭐ Michelin"
+    if "one michelin" in text_lower or "1 michelin" in text_lower or "michelin star" in text_lower:
+        return "⭐ Michelin"
+    if "michelin" in text_lower and "bib gourmand" in text_lower:
+        return "Michelin Bib Gourmand"
+    # World's 50 Best
+    if "world's 50 best" in text_lower or "worlds 50 best" in text_lower:
+        return "World's 50 Best"
+    # Numeric ratings: 4.8/5, 4.8 stars, 9.2/10
+    m = re.search(r'(\d+\.?\d*)\s*/\s*5\b', text)
+    if m and float(m.group(1)) >= 4.0:
+        return f"{m.group(1)}/5"
+    m = re.search(r'(\d+\.?\d*)\s*(?:star|★)', text, re.IGNORECASE)
+    if m and float(m.group(1)) >= 4.0:
+        return f"★ {m.group(1)}"
+    m = re.search(r'(\d+\.?\d*)\s*/\s*10\b', text)
+    if m and float(m.group(1)) >= 8.0:
+        return f"{m.group(1)}/10"
+    return ""
+
+
+def find_venue_links(name: str, city: str, api_key: str, is_work: bool = False) -> dict:
     """
-    Brave-search for the venue by name+city to find:
+    Brave-search for the venue to find:
       - official website
       - reservation platform (Resy, OpenTable, Tock, etc.)
+      - neighbourhood, cuisine, type, rating (enrichment)
     """
     query = f'"{name}" {city}'
     results = brave_search(query, api_key, count=6)
@@ -265,43 +392,50 @@ def find_venue_links(name: str, city: str, api_key: str) -> dict:
     website = None
     reservation_url = None
     reservation_platform = None
-    description = ""
+    all_desc: list[str] = []
 
     for r in results:
         url = r.get("url", "").rstrip("/")
         desc = r.get("description", "")
+        title = r.get("title", "")
+        if desc:
+            all_desc.append(desc)
 
-        if not description and desc:
-            description = desc
-
-        # Check reservation platforms first
+        # Check reservation platforms
         for domain, platform in RESERVATION_DOMAINS.items():
             if domain in url and not reservation_url:
                 reservation_url = url
                 reservation_platform = platform
                 break
 
-        # Check for official venue website
+        # Official venue website check
         is_noise = any(d in url for d in NON_VENUE_DOMAINS)
         if not is_noise and not website:
-            # Sanity check: domain should plausibly relate to venue name
             try:
                 domain = urllib.parse.urlparse(url).netloc.lower().lstrip("www.")
             except Exception:
                 domain = ""
-            slug = re.sub(r'[^a-z0-9]', '', name.lower())
-            # Accept if venue name words appear in domain OR it's a short, specific domain
             name_words = [w for w in re.split(r'\W+', name.lower()) if len(w) > 2]
-            domain_match = any(w in domain for w in name_words) or any(w in slug[:8] for w in [domain[:8]])
-            if domain_match or (len(name_words) >= 2 and any(w in domain for w in name_words)):
+            domain_match = any(w in domain for w in name_words)
+            if domain_match:
                 website = url
+
+    combined = " ".join(all_desc)
+    neighbourhood = extract_neighbourhood(combined, city)
+    cuisine = extract_cuisine(combined)
+    venue_type = infer_venue_type(combined, is_work=is_work)
+    rating = extract_rating(combined)
 
     return {
         "name": name,
         "website": website,
         "reservation_url": reservation_url,
         "reservation_platform": reservation_platform,
-        "description": description[:200] if description else "",
+        "description": combined[:250] if combined else "",
+        "neighbourhood": neighbourhood,
+        "cuisine": cuisine,
+        "type": venue_type,
+        "rating": rating,
     }
 
 
@@ -363,11 +497,11 @@ def _scout_category(city: str, prefs: dict, api_key: str, work: bool) -> list[di
 
     print(f"    {len(unique_names)} unique venue names — looking up links...")
 
-    # Pass 2b: find each venue's website + reservation link
+    # Pass 2b: find each venue's website + reservation link + enrichment
     venues: list[dict] = []
     for name in unique_names[:20]:  # cap at 20 to save API quota
         print(f"      → {name}")
-        details = find_venue_links(name, city, api_key)
+        details = find_venue_links(name, city, api_key, is_work=work)
         details["city"] = city
         venues.append(details)
 
@@ -383,11 +517,42 @@ def _venue_row(v: dict, i: int) -> str:
     website = v.get("website")
     res_url = v.get("reservation_url")
     res_platform = v.get("reservation_platform", "Book")
-    desc = (v.get("description") or "").replace("|", "-")[:100]
+    neighbourhood = v.get("neighbourhood", "")
+    cuisine = v.get("cuisine", "")
+    rating = v.get("rating", "")
+    tags = " · ".join(t for t in [neighbourhood, cuisine, rating] if t)
+    desc = (v.get("description") or "").replace("|", "-")[:80]
+    notes = f"{tags} | {desc}" if tags else desc
 
     name_cell = f"[{name}]({website})" if website else name
     book_cell = f"[{res_platform}]({res_url})" if res_url else "—"
-    return f"| {i} | {name_cell} | {book_cell} | {desc} |"
+    return f"| {i} | {name_cell} | {book_cell} | {notes[:120]} |"
+
+
+def write_venues_json(trip: dict, city_dining: dict[str, list], city_work: dict[str, list]) -> Path:
+    """Write structured venues.json for use by the report generator."""
+    trip_id = trip["id"]
+    out_dir = Path(__file__).parent / trip_id
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_file = out_dir / "venues.json"
+
+    data = {
+        "trip_id": trip_id,
+        "cities": trip["cities"],
+        "dates": trip.get("dates", {}),
+        "party_size": trip.get("party_size", 2),
+        "generated": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "venues": {},
+    }
+    for city in trip["cities"]:
+        data["venues"][city] = {
+            "dining": city_dining.get(city, []),
+            "work": city_work.get(city, []),
+        }
+
+    out_file.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"  → Wrote {out_file}")
+    return out_file
 
 
 def write_venues_md(trip: dict, city_dining: dict[str, list], city_work: dict[str, list]) -> Path:
@@ -410,20 +575,25 @@ def write_venues_md(trip: dict, city_dining: dict[str, list], city_work: dict[st
     ]
 
     for city in trip["cities"]:
-        lines += [f"## 🍽 {city} — Dining & Bars", ""]
+        # Split dining into bars vs restaurants
         dining = city_dining.get(city, [])
-        if dining:
-            lines += ["| # | Venue | Reserve | Notes |", "|---|-------|---------|-------|"]
-            for i, v in enumerate(dining, 1):
+        restaurants = [v for v in dining if v.get("type") == "restaurant"]
+        bars = [v for v in dining if v.get("type") == "bar"]
+        other = [v for v in dining if v.get("type") not in ("restaurant", "bar")]
+
+        for label, subset in [("🍽 Restaurants", restaurants), ("🍸 Bars", bars), ("✨ Other", other)]:
+            if not subset:
+                continue
+            lines += [f"## {city} — {label}", ""]
+            lines += ["| # | Venue | Reserve | Tags & Notes |", "|---|-------|---------|-------------|"]
+            for i, v in enumerate(subset, 1):
                 lines.append(_venue_row(v, i))
-        else:
-            lines.append("_No venues found._")
-        lines.append("")
+            lines.append("")
 
         work = city_work.get(city, [])
         if work:
-            lines += [f"### ☕ {city} — Work-Friendly Cafes", ""]
-            lines += ["| # | Venue | Reserve / Book | Notes |", "|---|-------|----------------|-------|"]
+            lines += [f"### ☕ {city} — Work Cafes", ""]
+            lines += ["| # | Venue | Book | Tags & Notes |", "|---|-------|------|-------------|"]
             for i, v in enumerate(work, 1):
                 lines.append(_venue_row(v, i))
             lines.append("")
@@ -523,6 +693,7 @@ def main():
             city_work[city] = work
             print(f"\n  {city}: {len(dining)} dining venues, {len(work)} work cafes extracted")
 
+        write_venues_json(trip, city_dining, city_work)
         write_venues_md(trip, city_dining, city_work)
         write_candidates_md(trip, city_dining, city_work)
         print(f"\n✓ Done: {trip['id']}")
