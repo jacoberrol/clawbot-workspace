@@ -1,119 +1,299 @@
 {
-  "all your friends": [],
-  "allegra krieger": [],
-  "amber mark": [],
-  "ariel elias": [],
-  "beauty school dropout": [
-    "rock"
-  ],
-  "bjrnck": [],
-  "bryce vine": [
-    "hip hop"
-  ],
-  "camoufly": [
-    "electronic",
-    "pop",
-    "dance"
-  ],
-  "cat power": [
-    "indie rock",
-    "folk",
-    "indie folk"
-  ],
-  "clinton kane": [],
-  "dj tokyo rose": [],
-  "ed gamble": [],
-  "emo night brooklyn": [],
-  "eric hutchinson": [
-    "pop",
-    "folk",
-    "power pop"
-  ],
-  "gary bartz": [
-    "jazz",
-    "free funk",
-    "modern creative"
-  ],
-  "guitarricadelafuente": [
-    "queer",
-    "spanish"
-  ],
-  "herbert holler": [],
-  "idk": [
-    "trap",
-    "hip hop"
-  ],
-  "in-zo": [],
-  "inzo (us)": [],
-  "jesse baez": [
-    "contemporary r&b",
-    "trap edm",
-    "r&b"
-  ],
-  "joey valence & brae": [
-    "hip hop",
-    "rap rock",
-    "boom bap"
-  ],
-  "juice": [
-    "j-pop",
-    "hello project",
-    "girl group"
-  ],
-  "kaiju big battel": [],
-  "lindsay ell": [
-    "country"
-  ],
-  "lots of hands": [],
-  "lynch mob": [
-    "hard rock",
-    "rock",
-    "heavy metal"
-  ],
-  "michael shannon": [],
-  "nate band": [],
-  "nathan evans": [
-    "pop",
-    "folk"
-  ],
-  "nobu woods": [
-    "r&b",
-    "alternative r&b",
-    "soul"
-  ],
-  "poolside": [
-    "mezcal",
-    "daytime disco",
-    "summer"
-  ],
-  "ratboys": [
-    "indie rock"
-  ],
-  "rich brian": [
-    "pop rap",
-    "trap"
-  ],
-  "rory scovel": [],
-  "sasha marie": [],
-  "spiritual cramp": [],
-  "sumsun": [],
-  "the greyboy allstars": [
-    "acid jazz"
-  ],
-  "timecop1983": [
-    "synthwave",
-    "eighties",
-    "dreamwave"
-  ],
-  "trixter": [
-    "hard rock"
-  ],
-  "truman sinclair": [],
-  "twin fin": [],
-  "vendredi sur mer": [],
-  "yazmin lacey": [
-    "r&b",
-    "jazz",
-    "funk"
-  ]
+  "all your friends": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781385740.214435,
+    "genres": []
+  },
+  "allegra krieger": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781558540.2144804,
+    "genres": []
+  },
+  "amber mark": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781644940.2144856,
+    "genres": []
+  },
+  "ariel elias": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780348940.2144887,
+    "genres": []
+  },
+  "beauty school dropout": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780867340.214491,
+    "genres": [
+      "rock"
+    ]
+  },
+  "bjrnck": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781990540.2144933,
+    "genres": []
+  },
+  "bryce vine": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781126540.2144954,
+    "genres": [
+      "hip hop"
+    ]
+  },
+  "camoufly": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1779744140.2144973,
+    "genres": [
+      "electronic",
+      "pop",
+      "dance"
+    ]
+  },
+  "cat power": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781644940.214499,
+    "genres": [
+      "indie rock",
+      "folk",
+      "indie folk"
+    ]
+  },
+  "clinton kane": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1779830540.214501,
+    "genres": []
+  },
+  "dj tokyo rose": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781990540.2145026,
+    "genres": []
+  },
+  "ed gamble": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781731340.2145045,
+    "genres": []
+  },
+  "emo night brooklyn": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1779744140.2145064,
+    "genres": []
+  },
+  "eric hutchinson": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781212940.2145083,
+    "genres": [
+      "pop",
+      "folk",
+      "power pop"
+    ]
+  },
+  "gary bartz": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781558540.21451,
+    "genres": [
+      "jazz",
+      "free funk",
+      "modern creative"
+    ]
+  },
+  "guitarricadelafuente": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781472140.2145119,
+    "genres": [
+      "queer",
+      "spanish"
+    ]
+  },
+  "herbert holler": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780521740.2145138,
+    "genres": []
+  },
+  "idk": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1779744140.2145154,
+    "genres": [
+      "trap",
+      "hip hop"
+    ]
+  },
+  "in-zo": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780435340.2145176,
+    "genres": []
+  },
+  "inzo (us)": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1779916940.2145193,
+    "genres": []
+  },
+  "jesse baez": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780953740.214521,
+    "genres": [
+      "contemporary r&b",
+      "trap edm",
+      "r&b"
+    ]
+  },
+  "joey valence & brae": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780176140.2145226,
+    "genres": [
+      "hip hop",
+      "rap rock",
+      "boom bap"
+    ]
+  },
+  "juice": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1779657740.2145247,
+    "genres": [
+      "j-pop",
+      "hello project",
+      "girl group"
+    ]
+  },
+  "kaiju big battel": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780953740.2145264,
+    "genres": []
+  },
+  "lindsay ell": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780435340.214528,
+    "genres": [
+      "country"
+    ]
+  },
+  "lots of hands": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1779744140.2145462,
+    "genres": []
+  },
+  "lynch mob": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1779830540.214548,
+    "genres": [
+      "hard rock",
+      "rock",
+      "heavy metal"
+    ]
+  },
+  "michael shannon": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781299340.21455,
+    "genres": []
+  },
+  "nate band": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781385740.2145522,
+    "genres": []
+  },
+  "nathan evans": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780608140.2145536,
+    "genres": [
+      "pop",
+      "folk"
+    ]
+  },
+  "nobu woods": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781644940.2145555,
+    "genres": [
+      "r&b",
+      "alternative r&b",
+      "soul"
+    ]
+  },
+  "poolside": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1779571340.2145572,
+    "genres": [
+      "mezcal",
+      "daytime disco",
+      "summer"
+    ]
+  },
+  "ratboys": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780694540.214559,
+    "genres": [
+      "indie rock"
+    ]
+  },
+  "rich brian": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780176140.2145607,
+    "genres": [
+      "pop rap",
+      "trap"
+    ]
+  },
+  "rory scovel": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781040140.2145627,
+    "genres": []
+  },
+  "sasha marie": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780089740.2145643,
+    "genres": []
+  },
+  "spiritual cramp": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780953740.2145662,
+    "genres": []
+  },
+  "sumsun": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780608140.21457,
+    "genres": []
+  },
+  "the greyboy allstars": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781990540.214574,
+    "genres": [
+      "acid jazz"
+    ]
+  },
+  "timecop1983": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780089740.2145758,
+    "genres": [
+      "synthwave",
+      "eighties",
+      "dreamwave"
+    ]
+  },
+  "trixter": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1781558540.2145777,
+    "genres": [
+      "hard rock"
+    ]
+  },
+  "truman sinclair": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780348940.2145793,
+    "genres": []
+  },
+  "twin fin": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780694540.214581,
+    "genres": []
+  },
+  "vendredi sur mer": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780176140.2145834,
+    "genres": []
+  },
+  "yazmin lacey": {
+    "cached_at": 1771795340.2144322,
+    "expires_at": 1780003340.214585,
+    "genres": [
+      "r&b",
+      "jazz",
+      "funk"
+    ]
+  }
 }
