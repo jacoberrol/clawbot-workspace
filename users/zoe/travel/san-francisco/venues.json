@@ -8,7 +8,7 @@
     "end": "TBD"
   },
   "party_size": 2,
-  "generated": "2026-02-23T03:55:50.564479+00:00",
+  "generated": "2026-02-23T04:34:16.413785+00:00",
   "venues": {
     "San Francisco": {
       "dining": [
@@ -145,48 +145,12 @@
           "city": "San Francisco"
         },
         {
-          "name": "The new spots we checked out—and loved.",
+          "name": "The Hit List",
           "website": null,
-          "reservation_url": null,
-          "reservation_platform": null,
-          "description": "Filipino fine dining spot. <strong>Restaurant Naides</strong> serves a $185 tasting menu that riffs on traditional dishes—think sinigang with abalone, puto topped with pork rillette, and more. We checked out <strong>Restaurant Naides</strong> and add",
-          "neighbourhood": "",
-          "cuisine": "",
-          "type": "restaurant",
-          "rating": "",
-          "city": "San Francisco"
-        },
-        {
-          "name": "The Hit List , Explained",
-          "website": null,
-          "reservation_url": null,
-          "reservation_platform": null,
-          "description": "",
-          "neighbourhood": "",
-          "cuisine": "",
-          "type": "restaurant",
-          "rating": "",
-          "city": "San Francisco"
-        },
-        {
-          "name": "New Openings",
-          "website": null,
-          "reservation_url": "https://blog.resy.com/new-on-resy/best-new-restaurant-openings-san-francisco-2",
+          "reservation_url": "https://blog.resy.com/the-hit-list/sf-restaurants-jan-2026",
           "reservation_platform": "Resy",
-          "description": "Book <strong>Benihana in San Mateo, Burlingame, and Concord</strong>, too. ... This cozy newcomer is a 100% plant-based restaurant from longtime vegan chef and Lower Haight resident Corbin Campbell. San Francisco’s popular burger chain, Habit Burger ",
-          "neighbourhood": "SoMa",
-          "cuisine": "Pub",
-          "type": "restaurant",
-          "rating": "",
-          "city": "San Francisco"
-        },
-        {
-          "name": "Hit List",
-          "website": null,
-          "reservation_url": "https://blog.resy.com/the-hit-list/sf-restaurants",
-          "reservation_platform": "Resy",
-          "description": "From a buzzy vinyl lounge to a dumpling spot in a mall, the Hit List is where you’ll find all of the best new restaurants in San Francisco. New on Resy and in the city are Laughing Monk, which pours Belgian-inspired beers and serves high-end pub grub",
-          "neighbourhood": "SoMa",
+          "description": "From a buzzy vinyl lounge to a dumpling spot in a mall, the Hit List is where you’ll find all of the best new restaurants in San Francisco. New to the Hit List (Jan. 2026) <strong>Dingles Public House, iPot, Kin Khao, La Cigale, Liholiho Yacht Club, ",
+          "neighbourhood": "",
           "cuisine": "Pub",
           "type": "restaurant",
           "rating": "",
@@ -198,7 +162,7 @@
           "reservation_url": null,
           "reservation_platform": null,
           "description": "AJI KIJI - Try Our New Menu - <strong>359 Kearny St, San Francisco, CA 94115</strong>, 681 Photos, Mon - Closed, Tue - 11:00 am - 4:00 pm, Wed - 11:00 am - 4:00 pm, Thu - 11:00 am - 4:00 pm, Fri - 11:00 am - 4:00 pm, Sat - 11:00 am - 4:00 pm, Sun - C",
-          "neighbourhood": "",
+          "neighbourhood": "Fillmore",
           "cuisine": "Japanese",
           "type": "restaurant",
           "rating": "",
@@ -275,6 +239,18 @@
           "type": "restaurant",
           "rating": "",
           "city": "San Francisco"
+        },
+        {
+          "name": "Gold Mirror",
+          "website": "https://thegoldmirrorsf.com",
+          "reservation_url": null,
+          "reservation_platform": null,
+          "description": "For more than 50 years, Gold Mirror Restaurant has been <strong>serving San Francisco with the freshest authentic Italian cuisine</strong>. GOLD MIRROR ITALIAN RESTAURANT, <strong>800 Taraval St, San Francisco, CA 94116</strong>, 471 Photos, Mon - Cl",
+          "neighbourhood": "",
+          "cuisine": "Italian",
+          "type": "restaurant",
+          "rating": "",
+          "city": "San Francisco"
         }
       ],
       "work": [
@@ -283,7 +259,7 @@
           "website": null,
           "reservation_url": null,
           "reservation_platform": null,
-          "description": "SŌHN (손) is an all-day café and multi-use gathering space in the heart of San Francisco’s Dogpatch neighborhood. She’d drive with her family to San Jose, maybe, or all the way to Los Angeles. But it wasn’t until Queens in San Francisco, the Korean su",
+          "description": "SŌHN (손) is an all-day café and multi-use gathering space in the heart of San Francisco’s Dogpatch neighborhood. Discover SOHN, <strong>a Korean-inspired café and community space in San Francisco&#x27;s Dogpatch</strong>. Enjoy handcrafted dishes, cu",
           "neighbourhood": "Dogpatch",
           "cuisine": "Korean",
           "type": "cafe",
@@ -319,7 +295,7 @@
           "website": "https://www.oceanbeachcafe.com",
           "reservation_url": null,
           "reservation_platform": null,
-          "description": "Ocean Beach Cafe is <strong>SF&#x27;s first non-alcoholic bar</strong>! Coffee, Sandwiches and a total vibe. Mocktails are out, NA Cocktails are at Ocean Beach! OCEAN BEACH CAFE - Try Our New Menu - <strong>734 La Playa St, San Francisco, CA 94121</s",
+          "description": "Ocean Beach Cafe is <strong>SF&#x27;s first Non Alcoholic bar</strong>! Coffee, Sandwiches and a Total Vibe. Mocktails are out, Free Samples are at Ocean Beach! OCEAN BEACH CAFE - Try Our New Menu - <strong>734 La Playa St, San Francisco, CA 94121</s",
           "neighbourhood": "",
           "cuisine": "",
           "type": "cafe",
@@ -355,7 +331,7 @@
           "website": "https://www.fiddlefigcoffee.com",
           "reservation_url": null,
           "reservation_platform": null,
-          "description": "FIDDLE FIG CAFE &amp; COFFEE - Try Our New Menu - <strong>790 Lombard St, San Francisco, CA 94133</strong>, 324 Photos, (415) 417-9733, Mon - 8:00 am - 4:00 pm, Tue - 8:00 am - 4:00 pm, Wed - 8:00 am - 4:00 pm, Thu - 8:00 am - 4:00 pm, Fri - 8:00 am ",
+          "description": "Order online from <strong>790 Lombard St</strong>, including Light Start, Bowls, Sandwich. Get the best prices and service by ordering direct! We cannot provide a description for this page right now FIDDLE FIG CAFE &amp; COFFEE - Try Our New Menu - <",
           "neighbourhood": "North Beach",
           "cuisine": "Bakery",
           "type": "cafe",
@@ -513,30 +489,6 @@
           "reservation_platform": null,
           "description": "2 Sanchez st, San Francisco, CA 94110 · +1 415 621.1108 · &quot;Great place to get some work done out in the sun. This cafe is <strong>right opposite Duboce Triangle park</strong>. Good selection of beverages and free wifi. DUBOCE PARK CAFE - Try Our",
           "neighbourhood": "Mission",
-          "cuisine": "",
-          "type": "cafe",
-          "rating": "",
-          "city": "San Francisco"
-        },
-        {
-          "name": "Atlas Cafe",
-          "website": null,
-          "reservation_url": null,
-          "reservation_platform": null,
-          "description": "ATLAS CAFE - Fast Response Time - <strong>3049 20th St, San Francisco, CA 94110</strong>, 302 Photos, Mon - 8:00 AM - 6:00 PM, Tue - 8:00 AM - 6:00 PM, Wed - 8:00 AM - 6:00 PM, Thu - 8:00 AM - 6:00 PM, Fri - 8:00 AM - 6:00 PM, Sat - 8:00 AM - 6:00 PM",
-          "neighbourhood": "Mission",
-          "cuisine": "Pizza",
-          "type": "cafe",
-          "rating": "",
-          "city": "San Francisco"
-        },
-        {
-          "name": "Java Beach Cafe",
-          "website": "https://javabeachcafe.com",
-          "reservation_url": null,
-          "reservation_platform": null,
-          "description": "A San Francisco institution, Java Beach Café has been serving homemade &amp; locally sourced eats for decades. JAVA BEACH CAFE - Try Our New Menu - <strong>1396 La Playa St, San Francisco, CA 94122</strong>, 628 Photos, (415) 665-5282, Mon - 7:00 am ",
-          "neighbourhood": "Outer Sunset",
           "cuisine": "",
           "type": "cafe",
           "rating": "",

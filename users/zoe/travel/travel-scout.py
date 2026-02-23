@@ -308,6 +308,18 @@ def extract_names_from_html(html: str) -> list[str]:
         "more in dining out in sf", "more maps in eater sf",
         "nicola parisi dining out in sf", "dining out in sf", "the latest",
         "youtube", "more maps", "visit website", "link", "booking",
+        # Footer / legal / nav links
+        "editorial guidelines", "accessibility statement", "terms of use",
+        "modern slavery statement", "privacy policy", "cookie policy",
+        "advertise with us", "contact us", "about us", "our team",
+        "advertising", "sitemap", "newsletter signup", "press",
+        "investor relations", "our awards", "work for time out",
+        "privacy notice", "do not sell my information", "manage cookies",
+        "get listed", "claim your listing", "time out offers faq",
+        "time out offers", "time out market", "time out worldwide",
+        "press office", "stay in the loop", "movies", "restaurants",
+        "bars", "music", "film", "theatre", "art", "travel",
+        "things to do", "nightlife", "shopping", "hotels",
     }
     NOISE_PATTERNS = [
         r'^\d{4}',                          # Starts with year like "2025:"
@@ -330,6 +342,37 @@ def extract_names_from_html(html: str) -> list[str]:
         r'^🏡',
         r'ready to book',
         r'ultimate guide to',
+        r'\brestaurants$',           # "Fine Dining Restaurants", "Asian & African Restaurants"
+        r'^(fine dining|casual dining)',
+        r'food in (paris|london|san francisco)',
+        r'^hit list\b',
+        r'^new openings\b',
+        r'^the new spots\b',
+        r'^the new restaurants\b',
+        r'sign up to our',
+        r'\btime out\b',
+        r'^\d+ comment',
+        r'^sign up\b',
+        # Infatuation "stats card" patterns (descriptive review metrics, not venue names)
+        r'\baverage bill\b',
+        r'\bteam visits\b',
+        r'\bseats at\b',
+        r'\bwait time\b',
+        r'\bwalk-?in\b.*\bchance\b',
+        r'\bthat made us\b',
+        r'\bmid-sentence\b',
+        r'\bdelivered by\b',
+        r'\bdramatically presented\b',
+        r'\bnumber of bites\b',
+        r'\bbefore you realise\b',
+        r'\bworth ordering\b',
+        r'\bworth the\b',
+        r'\bdistance between\b',
+        r'\bblowtorch\b',
+        r'^guide to (the|our|a|an)\b',
+        r'^french style\b',
+        r'^(latest|subscribe|newsletter)\b',
+        r'\btravel guide',
     ]
 
     seen: set[str] = set()
@@ -521,53 +564,54 @@ def _scout_category(city: str, prefs: dict, api_key: str, work: bool) -> list[di
     label = "work cafes" if work else "dining"
     print(f"    Found {len(articles)} {label} articles for {city}")
 
-    if not work:
-        # Sort: restaurant articles first, then bars, then general
-        articles = sorted(articles, key=lambda a: (
-            0 if _article_type_hint(a["url"]) == "restaurant" else
-            1 if _article_type_hint(a["url"]) == "bar" else 2
-        ))
-
-    # Fetch articles until we have ≥10 restaurant names AND ≥10 bar names
-    # (or have fetched 7 articles). Ensures balanced representation.
     all_pairs: list[tuple[str, str]] = []   # (name, source_type_hint)
-    articles_fetched = 0
-    for article in articles[:8]:
+
+    if not work:
+        # Explicitly balance: fetch 3 best restaurant articles + 3 best bar articles
+        rest_articles = [a for a in articles if _article_type_hint(a["url"]) == "restaurant"]
+        bar_articles  = [a for a in articles if _article_type_hint(a["url"]) == "bar"]
+        general_articles = [a for a in articles if _article_type_hint(a["url"]) == ""]
+        fetch_list = rest_articles[:3] + bar_articles[:3] + general_articles[:2]
+        print(f"    Article mix: {len(rest_articles[:3])} restaurant, {len(bar_articles[:3])} bar, {len(general_articles[:2])} general")
+    else:
+        fetch_list = articles[:5]
+
+    for article in fetch_list:
         url = article["url"]
         hint = _article_type_hint(url)
-        print(f"    Fetching {url[:70]}...")
+        print(f"    Fetching [{hint or 'general'}] {url[:65]}...")
         html = fetch_page(url)
         if not html:
             continue
         names = extract_names_from_html(html)
-        print(f"      Extracted {len(names)} names [{hint or 'general'}]")
+        print(f"      Extracted {len(names)} names")
         all_pairs.extend((n, hint) for n in names)
-        articles_fetched += 1
         time.sleep(0.3)
-        if not work and articles_fetched >= 2:
-            restaurant_count = sum(1 for _, h in all_pairs if h == "restaurant")
-            bar_count = sum(1 for _, h in all_pairs if h in ("bar", ""))
-            total_unique = len(set(p[0].lower() for p in all_pairs))
-            if restaurant_count >= 8 and bar_count >= 8 and total_unique >= 18:
-                break
-        elif work and len(set(p[0].lower() for p in all_pairs)) >= 18:
-            break
+
+    def _clean_venue_name(n: str) -> str:
+        """Strip appended location suffixes like ', Kentish Town' or ' - South Kensington'."""
+        n = re.sub(r'\s*[,\-–]\s*[A-Z][a-zA-Z\s]{3,25}$', '', n).strip()
+        return n
 
     seen: set[str] = set()
     unique: list[tuple[str, str]] = []
-    for n, hint in all_pairs:
+    for raw_n, hint in all_pairs:
+        n = _clean_venue_name(raw_n)
         key = n.lower().strip()
-        if key not in seen:
+        if key not in seen and len(key) > 3:
             seen.add(key)
             unique.append((n, hint))
 
     print(f"    {len(unique)} unique names — looking up links...")
 
     venues: list[dict] = []
-    for name, source_hint in unique[:22]:
+    for name, source_hint in unique[:30]:
         print(f"      → {name}")
         details = find_venue_links(name, city, api_key, is_work=work)
         details["city"] = city
+        # Drop obvious noise: no description and no website means the search found nothing real
+        if not details.get("description") and not details.get("website"):
+            continue
         # Apply source hint if type inference was ambiguous
         if source_hint and details.get("type") not in ("bar", "restaurant", "cafe"):
             details["type"] = source_hint
@@ -576,6 +620,8 @@ def _scout_category(city: str, prefs: dict, api_key: str, work: bool) -> list[di
             if any(w in desc for w in ["restaurant", "cuisine", "chef", "dinner", "dining", "menu", "kitchen"]):
                 details["type"] = "restaurant"
         venues.append(details)
+        if len(venues) >= 20:  # Cap clean results at 20
+            break
 
     return venues
 

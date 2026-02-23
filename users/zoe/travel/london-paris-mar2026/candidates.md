@@ -1,44 +1,48 @@
 # Top Candidates — london-paris-mar2026
 
-Generated: 2026-02-23 03:59 UTC
+Generated: 2026-02-23 04:33 UTC
 
 ---
 
 ## London — Top Dining & Bars
 
-### The best new restaurants that opened in London in 2025
+### Belly Bistro
+- **Website:** [https://www.bellylondon.com](https://www.bellylondon.com)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** 
+- **Notes:** Belly is an <strong>independent restaurant in London</strong>, known for reworking classic French bistro cooking through a distinctly Filipino lens. S
 
-### Belly Bistro, Kentish Town
+### The Lavery
+- **Website:** [https://thelavery.co.uk](https://thelavery.co.uk)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** 
+- **Notes:** The Lavery is home to a restaurant, café and elegant events spaces located on South Kensington’s Cromwell Place in London. The building takes its name
 
-### The Lavery, South Kensington
-- **Website:** [https://www.thegoodfoodguide.co.uk/restaurant/the-lavery/id/92856](https://www.thegoodfoodguide.co.uk/restaurant/the-lavery/id/92856)
+### Martinos
+- **Website:** [https://www.martinoslondon.com/contact](https://www.martinoslondon.com/contact)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** The thing is, The Lavery is <strong>a smartly uniformed restaurant</strong>. You do want to dress up to be here, if only to fit your surrounds. The co
+- **Notes:** martinoslondon.com · Cookie Preferences•Report•Privacy• · See Instagram photos and videos from <strong>MARTINO</strong>&#x27;S (@martinoslondon) Kuczm
 
-### Martinos, Chelsea
+### Gina
+- **Website:** [https://ginalondon.com](https://ginalondon.com)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** 
+- **Notes:** With a focus on reputation management, Gina <strong>works with global leaders, from Fortune 500 executives to political figures and high-net-worth ind
 
-### Gina, Chingford
+### Himi
+- **Website:** [https://himi.uk](https://himi.uk)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** <strong>Located where the outer London suburbs fray into the thickets of Epping Forest</strong>, Gina has brought a beam of gastronomic sunshine to th
+- **Notes:** <strong>Japanese restaurant in Soho near Oxford Circus</strong>, serving elevated izakaya dishes by a husband and wife chef team, with an excellent sa
 
-### Stay in the loop: sign up to our
+### One Club Row
+- **Website:** [https://oneclubrow.com](https://oneclubrow.com)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Get the latest and greatest from ... WhatsApp channel. Stay in the loop: sign up to our <strong>free Time Out London newsletter for the best of the ci
+- **Notes:** Enter Site See Instagram photos and videos from <strong>One</strong> <strong>Club</strong> <strong>Row</strong> (@oneclubrow) One Club Row <strong>1 C
 
-### Press office
-- **Website:** [https://www.thepressoffice.uk.com](https://www.thepressoffice.uk.com)
+### Eel Sushi Bar
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** For urgent media enquiries outside office hours and at weekends please call: <strong>020 7983 4000</strong> and ask for the duty press officer. To con
+- **Notes:** Now there is Eel Sushi Bar, which <strong>sits on the opposite side of the road to Dorian</strong>. It is a boxy thing, covered in pale wood. let us h
 
-### Investor relations
+### Unofficial dress code
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Information for shareholders, investors ... Debtholder · Annual Report · <strong>LSEG is a leading global financial markets infrastructure and data pr
+- **Notes:** When asked about his shows&#x27; expected &quot;dress code,&quot; which has previously featured on-theme feather boas and disco era-inspired apparel, 
 
 ## London — ☕ Work Cafes
 
@@ -91,11 +95,7 @@ Generated: 2026-02-23 03:59 UTC
 
 ### La Rotisserie d’Argent
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** La Rotisserie d&#x27;Argent is <strong>a classic French bistro serving what might be the best roast chicken in Paris</strong>. Located next to the Sei
-
-### Speciality Wine & Small Sharing Plate Restaurants
-- **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** 
+- **Notes:** La Rotisserie d’Argent is <strong>a classic French bistro serving what might be the best roast chicken in Paris</strong>. https://tourdargent.com/en/l
 
 ### Aux Deux Amis
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
@@ -106,15 +106,12 @@ Generated: 2026-02-23 03:59 UTC
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
 - **Notes:** Welcome to the offical website of Au Passage &amp; Au Petit Passage in Paris - WINE-BISTROT-RESTAURANT BAR, read our customer reviews and book online 
 
+### Le Servan
+- **Website:** [https://www.leservan.fr](https://www.leservan.fr)
+- **Reservation:** _(not found — check Resy/OpenTable manually)_
+- **Notes:** LE SERVAN EST OUVERT DU LUNDI AU SAMEDI · 12H - 14H · 19H30 - 22H30 · À TRÈS BIENTÔT! L’ÉQUIPE DU SERVAN · - OPENING HOURS: MONDAY TO SATURDAY FOR LUN
+
 ## Paris — ☕ Work Cafes
-
-### Map of Cafes to Work in Paris
-- **Notes:** 
-- **WiFi/Outlets:** _(confirm on visit)_
-
-### 25 Best Laptop Friendly Cafes in Paris
-- **Notes:** 
-- **WiFi/Outlets:** _(confirm on visit)_
 
 ### Back in Black
 - **Website:** [https://www.backinblackcoffee.com](https://www.backinblackcoffee.com)
@@ -130,4 +127,13 @@ Generated: 2026-02-23 03:59 UTC
 - **Website:** [https://www.fontaine-de-mars.com/en](https://www.fontaine-de-mars.com/en)
 - **Book:** [https://www.opentable.com/r/la-fontaine-gaillon-paris](https://www.opentable.com/r/la-fontaine-gaillon-paris)
 - **Notes:** A few steps from the Eiffel Tower, on a small square refreshed by the Fontaine de Mars, this bistro-brasserie is not the latest fashionable place... I
+- **WiFi/Outlets:** _(confirm on visit)_
+
+### Cafeinoman
+- **Notes:** 1,590 Followers, 360 Following, 260 Posts - Cafeinoman by Pfaff (@cafeinoman75) on Instagram: &quot;📍<strong>Coffee Shop Paris 11</strong> ☕️ Vente de
+- **WiFi/Outlets:** _(confirm on visit)_
+
+### Le Bichat
+- **Website:** [http://www.lebichat.fr](http://www.lebichat.fr)
+- **Notes:** Bienvenue sur le site du Restaurant Bar Traiteur Bio &quot;Le Bichat&quot; <strong>11 rue bichat 75010 PARIS</strong> Le Bichat, Paris. 6,918 likes · 
 - **WiFi/Outlets:** _(confirm on visit)_

@@ -1,6 +1,6 @@
 # Top Candidates — san-francisco
 
-Generated: 2026-02-23 03:55 UTC
+Generated: 2026-02-23 04:34 UTC
 
 ---
 
@@ -47,7 +47,7 @@ Generated: 2026-02-23 03:55 UTC
 ## San Francisco — ☕ Work Cafes
 
 ### Sōhn
-- **Notes:** SŌHN (손) is an all-day café and multi-use gathering space in the heart of San Francisco’s Dogpatch neighborhood. She’d drive with her family to San Jo
+- **Notes:** SŌHN (손) is an all-day café and multi-use gathering space in the heart of San Francisco’s Dogpatch neighborhood. Discover SOHN, <strong>a Korean-inspi
 - **WiFi/Outlets:** _(confirm on visit)_
 
 ### Cafe International
@@ -62,7 +62,7 @@ Generated: 2026-02-23 03:55 UTC
 
 ### Ocean Beach Cafe
 - **Website:** [https://www.oceanbeachcafe.com](https://www.oceanbeachcafe.com)
-- **Notes:** Ocean Beach Cafe is <strong>SF&#x27;s first non-alcoholic bar</strong>! Coffee, Sandwiches and a total vibe. Mocktails are out, NA Cocktails are at Oc
+- **Notes:** Ocean Beach Cafe is <strong>SF&#x27;s first Non Alcoholic bar</strong>! Coffee, Sandwiches and a Total Vibe. Mocktails are out, Free Samples are at Oc
 - **WiFi/Outlets:** _(confirm on visit)_
 
 ### Pixlcat
