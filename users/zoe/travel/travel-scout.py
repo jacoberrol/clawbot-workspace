@@ -111,6 +111,8 @@ DINING_QUERIES = [
     "{city} best cocktail bars locals favorite hidden gems",
     "{city} best dinner restaurants {vibe} 2025",
     "{city} city highlights must visit not tourist trap",
+    "{city} best new restaurants chef driven 2025",
+    "{city} best bars drinks scene 2025",
 ]
 WORK_QUERIES = [
     "{city} best cafes laptop wifi outlets work friendly 2025",
@@ -215,10 +217,17 @@ def strip_tags(html: str) -> str:
 # Pass 1: find curated articles
 # ---------------------------------------------------------------------------
 
-def search_articles(city: str, prefs: dict, api_key: str, work: bool = False) -> list[dict]:
-    """Run search queries, return top article results from trusted domains."""
+def search_articles(city: str, prefs: dict, api_key: str, work: bool = False,
+                    hint_type: str = "") -> list[dict]:
+    """
+    Run search queries, return top article results from trusted domains.
+    hint_type: "restaurant" | "bar" | "" — propagated to articles for type tagging.
+    """
     vibe = prefs.get("vibe", "upscale-casual local")
-    queries = WORK_QUERIES if work else DINING_QUERIES
+    queries = WORK_QUERIES if work else (
+        RESTAURANT_QUERIES if hint_type == "restaurant" else
+        BAR_QUERIES if hint_type == "bar" else DINING_QUERIES
+    )
     seen_urls: set[str] = set()
     articles = []
 
@@ -236,10 +245,10 @@ def search_articles(city: str, prefs: dict, api_key: str, work: bool = False) ->
                 "title": r.get("title", ""),
                 "description": r.get("description", ""),
                 "trusted": domain_match,
+                "hint_type": hint_type,
             })
         time.sleep(0.4)
 
-    # Sort: trusted sources first
     articles.sort(key=lambda a: (not a["trusted"], -len(a["description"])))
     return articles
 
@@ -289,19 +298,38 @@ def extract_names_from_html(html: str) -> list[str]:
         "learn more", "see more", "reservations", "book now", "click here",
         "visit website", "get directions", "view on map", "instagram",
         "twitter", "facebook", "share", "newsletter", "sign up", "login",
-        "search", "london", "paris", "new york", "the spots", "central",
-        "north", "south", "east", "west", "map", "back to top",
+        "search", "london", "paris", "new york", "san francisco", "the spots",
+        "central", "north", "south", "east", "west", "map", "back to top",
         "choose a city", "choose a time out city", "choose a time out market",
+        # Michelin / structured page labels
+        "address", "opening hours", "opening times", "expect to pay",
+        "telephone", "website", "email", "cuisine", "price range", "facilities",
+        "link visit website", "book a table", "booking book a table",
+        "more in dining out in sf", "more maps in eater sf",
+        "nicola parisi dining out in sf", "dining out in sf", "the latest",
+        "youtube", "more maps", "visit website", "link", "booking",
     }
     NOISE_PATTERNS = [
-        r'^\d{4}',              # Starts with year like "2025:"
-        r'[?!]$',              # Ends with question/exclamation
-        r'^(what|why|how|where|when|who)\b',  # Question words
-        r'^\s*:',              # Starts with colon
-        r'^(top|best|the best|our|we|i)\s+\d',  # "Top 10..." type headers
-        r'\bcocktail bars\b',  # Generic category labels
+        r'^\d{4}',                          # Starts with year like "2025:"
+        r'[?!]$',                           # Ends with question/exclamation
+        r'^(what|why|how|where|when|who)\b', # Question words
+        r'^\s*:',                           # Starts with colon
+        r'^(top|best|the best|our|we|i)\s+\d', # "Top 10..." headers
+        r'\bcocktail bars\b',
         r'\brestaurants in\b',
         r'\bbars in\b',
+        r'^\+?\d[\d\s\(\)\-]{6,}',           # Phone numbers
+        r'^phone\b',                         # "Phone ..."
+        r'^(more\s+(in|maps)\b)',            # "More in..." / "More maps..."
+        r'\bvisit website\b',
+        r'^link\b',
+        r'@',                               # Email addresses
+        r'^\w+\.com\b',                     # Bare domain names
+        r'^\d+\s+comment',                  # "1 Comment"
+        r'^📍',                             # Emoji nav items
+        r'^🏡',
+        r'ready to book',
+        r'ultimate guide to',
     ]
 
     seen: set[str] = set()
@@ -474,47 +502,79 @@ def scout_city(city: str, trip: dict, api_key: str) -> tuple[list[dict], list[di
     return dining, work
 
 
+def _article_type_hint(url: str) -> str:
+    """Infer restaurant/bar/general from article URL."""
+    u = url.lower()
+    if any(k in u for k in ["restaurant", "dining", "eat", "food", "where-to-eat"]):
+        return "restaurant"
+    if any(k in u for k in ["bar", "cocktail", "drink", "pub", "speakeasy"]):
+        return "bar"
+    return ""
+
+
 def _scout_category(city: str, prefs: dict, api_key: str, work: bool) -> list[dict]:
     """
     One category (dining OR work) for a city.
-    Pass 1 → articles. Pass 2 → extract names → lookup links.
+    Pass 1 → articles. Pass 2 → extract names → lookup links + enrich.
     """
-    label = "work cafes" if work else "dining"
-
-    # Pass 1: find listicle articles
     articles = search_articles(city, prefs, api_key, work=work)
-    print(f"    Found {len(articles)} articles for {city} {label}")
+    label = "work cafes" if work else "dining"
+    print(f"    Found {len(articles)} {label} articles for {city}")
 
-    # Pass 2: fetch top articles and extract venue names
-    all_names: list[str] = []
-    for article in articles[:5]:  # fetch top 5 articles
+    if not work:
+        # Sort: restaurant articles first, then bars, then general
+        articles = sorted(articles, key=lambda a: (
+            0 if _article_type_hint(a["url"]) == "restaurant" else
+            1 if _article_type_hint(a["url"]) == "bar" else 2
+        ))
+
+    # Fetch articles until we have ≥10 restaurant names AND ≥10 bar names
+    # (or have fetched 7 articles). Ensures balanced representation.
+    all_pairs: list[tuple[str, str]] = []   # (name, source_type_hint)
+    articles_fetched = 0
+    for article in articles[:8]:
         url = article["url"]
+        hint = _article_type_hint(url)
         print(f"    Fetching {url[:70]}...")
         html = fetch_page(url)
         if not html:
             continue
         names = extract_names_from_html(html)
-        print(f"      Extracted {len(names)} names")
-        all_names.extend(names)
+        print(f"      Extracted {len(names)} names [{hint or 'general'}]")
+        all_pairs.extend((n, hint) for n in names)
+        articles_fetched += 1
         time.sleep(0.3)
+        if not work and articles_fetched >= 2:
+            restaurant_count = sum(1 for _, h in all_pairs if h == "restaurant")
+            bar_count = sum(1 for _, h in all_pairs if h in ("bar", ""))
+            total_unique = len(set(p[0].lower() for p in all_pairs))
+            if restaurant_count >= 8 and bar_count >= 8 and total_unique >= 18:
+                break
+        elif work and len(set(p[0].lower() for p in all_pairs)) >= 18:
+            break
 
-    # Deduplicate names across articles
     seen: set[str] = set()
-    unique_names: list[str] = []
-    for n in all_names:
+    unique: list[tuple[str, str]] = []
+    for n, hint in all_pairs:
         key = n.lower().strip()
         if key not in seen:
             seen.add(key)
-            unique_names.append(n)
+            unique.append((n, hint))
 
-    print(f"    {len(unique_names)} unique venue names — looking up links...")
+    print(f"    {len(unique)} unique names — looking up links...")
 
-    # Pass 2b: find each venue's website + reservation link + enrichment
     venues: list[dict] = []
-    for name in unique_names[:20]:  # cap at 20 to save API quota
+    for name, source_hint in unique[:22]:
         print(f"      → {name}")
         details = find_venue_links(name, city, api_key, is_work=work)
         details["city"] = city
+        # Apply source hint if type inference was ambiguous
+        if source_hint and details.get("type") not in ("bar", "restaurant", "cafe"):
+            details["type"] = source_hint
+        elif source_hint == "restaurant" and details.get("type") == "bar":
+            desc = details.get("description", "").lower()
+            if any(w in desc for w in ["restaurant", "cuisine", "chef", "dinner", "dining", "menu", "kitchen"]):
+                details["type"] = "restaurant"
         venues.append(details)
 
     return venues

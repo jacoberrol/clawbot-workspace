@@ -1,14 +1,10 @@
 # Top Candidates — san-francisco
 
-Generated: 2026-02-23 03:47 UTC
+Generated: 2026-02-23 03:55 UTC
 
 ---
 
 ## San Francisco — Top Dining & Bars
-
-### More maps in Eater SF
-- **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** 
 
 ### April Jean
 - **Website:** [https://www.barapriljean.com](https://www.barapriljean.com)
@@ -43,6 +39,11 @@ Generated: 2026-02-23 03:47 UTC
 - **Reservation (Tock):** [https://www.exploretock.com/truelaurelsf](https://www.exploretock.com/truelaurelsf)
 - **Notes:** true laurel serves food and drinks for dining outdoors on our patio, indoors, for to-go, or for delivery! TRUE LAUREL - Try Our New Menu - <strong>753
 
+### Lost Resort
+- **Website:** [https://www.lostresortsf.com](https://www.lostresortsf.com)
+- **Reservation:** _(not found — check Resy/OpenTable manually)_
+- **Notes:** LOST RESORT - Try Our New Menu - <strong>2736 20th St, San Francisco, CA 94110</strong>, 473 Photos, (415) 237-0770, Mon - 4:00 pm - 12:00 am, Tue - 4
+
 ## San Francisco — ☕ Work Cafes
 
 ### Sōhn
@@ -61,7 +62,7 @@ Generated: 2026-02-23 03:47 UTC
 
 ### Ocean Beach Cafe
 - **Website:** [https://www.oceanbeachcafe.com](https://www.oceanbeachcafe.com)
-- **Notes:** Ocean Beach Cafe is <strong>SF&#x27;s first Non Alcoholic bar</strong>! Coffee, Sandwiches and a Total Vibe. Mocktails are out, Free Samples are at Oc
+- **Notes:** Ocean Beach Cafe is <strong>SF&#x27;s first non-alcoholic bar</strong>! Coffee, Sandwiches and a total vibe. Mocktails are out, NA Cocktails are at Oc
 - **WiFi/Outlets:** _(confirm on visit)_
 
 ### Pixlcat

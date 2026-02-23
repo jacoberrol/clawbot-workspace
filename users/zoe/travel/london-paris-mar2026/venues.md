@@ -3,7 +3,7 @@
 **Cities:** London, Paris
 **Dates:** 2026-03-01 → 2026-03-07
 **Party size:** 2
-**Generated:** 2026-02-23 03:42 UTC
+**Generated:** 2026-02-23 03:59 UTC
 
 ---
 
@@ -11,31 +11,33 @@
 
 | # | Venue | Reserve | Tags & Notes |
 |---|-------|---------|-------------|
-| 1 | July 2025: | — | Craft Beer | The very best things to do, events, shows, and openings in London throughout Jul |
-| 2 | Address: | — | Thai | Royal Thai Embassy, London สถานเอกอัครราชทูต ณ กรุงลอนดอน |
-| 3 | Opening hours: | — | British | Under normal circumstances lines on the London underground operate from <strong> |
-| 4 | Expect to pay: | — |  |
-| 5 | Opening times: | — |  |
+| 1 | The best new restaurants that opened in London in 2025 | — |  |
+| 2 | Belly Bistro, Kentish Town | — |  |
+| 3 | [The Lavery, South Kensington](https://www.thegoodfoodguide.co.uk/restaurant/the-lavery/id/92856) | — | The thing is, The Lavery is <strong>a smartly uniformed restaurant</strong>. You |
+| 4 | Martinos, Chelsea | — |  |
+| 5 | Gina, Chingford | — | <strong>Located where the outer London suburbs fray into the thickets of Epping  |
+| 6 | Stay in the loop: sign up to our | — | Get the latest and greatest from ... WhatsApp channel. Stay in the loop: sign up |
+| 7 | Investor relations | — | Information for shareholders, investors ... Debtholder · Annual Report · <strong |
+| 8 | [Our awards](https://creativeawards.co.uk/products/aspire-award) | — | ★ 5 | To create the best off-the-shelf awards for your business, we work with a range  |
+| 9 | Work for Time Out | — | Hello there! I work for Time Out magazine as an <strong>editor and theatre criti |
+| 10 | Privacy notice | — | The City of London Corporation (“the City Corporation”) is committed to protecti |
+| 11 | Do not sell my information | — | One such difference is that while the CCPA allowed consumers to use a &quot;Do N |
+| 12 | Cookie policy | — | Tell users about the cookies you’re setting on their device and let them accept  |
+| 13 | Manage cookies | — | Manage cookiesAccept only essential cookiesAccept all cookies Learn how you can  |
+| 14 | Get Listed | — | Pub | Check out the options below... ... <strong>Use the site search to locate your bu |
+| 15 | Claim your listing | — | Claim your listing today and you’ll be able to login at any time to: - Add a bri |
+| 16 | Time Out Offers FAQ | — | If you checked out as a registered user, fear not – your voucher can also be fou |
+| 17 | [Advertising](https://www.londonadvertising.com) | — | Soho | about · contact · Our work · Thank You Mandarin Oriental · See more · Mandarin O |
 
 ## London — 🍸 Bars
 
 | # | Venue | Reserve | Tags & Notes |
 |---|-------|---------|-------------|
-| 1 | [Umbrella Workshop](https://theumbrellaproject.co.uk/bricks-and-mortar) | — | Shoreditch · Natural Wine Bar | Book a table at Umbrella Workshop · Logo: Project No: UB03 · Project Completed:  |
-| 2 | [Satan’s Whiskers](https://www.satanswhiskers.com) | — | Bethnal Green · Cocktail Bar | We offer a full consultancy service on beverage, bar design, operations, systems |
-| 3 | Bar Américain | — | Soho · Brasserie | From curtain up to last call, let us transport you to a Parisian Christmas, righ |
-| 4 | [Tayēr + Elementary](https://tayer-elementary.com) | — | Cocktail Bar | Tayēr + Elementary is <strong>a cocktail bar established in 2019 in London</stro |
-| 5 | Three Sheets Soho | — | Soho · Cocktail Bar | Since its opening in 2016, the outwardly unassuming Dalston cocktail bar Three S |
-| 6 | [Little Mercies](https://littlemercies.co.uk) | [OpenTable](https://www.opentable.com/r/little-mercies-london) | Soho · Cocktail Bar | Opened in October 2018, we are <strong>a multi award winning local neighbourhood |
-| 7 | [Seed Library](https://www.seedlibraryshoreditch.com) | — | Shoreditch · Cocktail Bar | Seed Library is <strong>a laid-back cocktail bar by Mr Lyan in the heart of Shor |
-| 8 | [Swift](https://www.barswift.com) | — | Shoreditch · Cocktail Bar | Discover the best cocktails in Borough, London Bridge, Shoreditch, and Soho at B |
-| 9 | [Lyaness](https://www.lyaness.com) | — | Cocktail Bar | Located at <strong>Sea Containers London</strong>, Lyaness is the flagship cockt |
-| 10 | [69 Colebrooke Row](http://www.69colebrookerow.com) | [Tock](https://www.exploretock.com/69colebrookerow) | Islington | <strong>THE BAR WITH NO NAME TUCKED AWAY FROM THE MAIN ROAD, OFFERING COCKTAILS, |
-| 11 | [The Connaught Bar](https://www.the-connaught.co.uk/restaurants-bars/connaught-bar) | — | Mayfair · Cocktail Bar | Experience the award-winning Connaught Bar, <strong>a luxury cocktail bar in Lon |
-| 12 | [Happiness Forgets](https://www.happinessforgets.com) | — | Shoreditch | In the basement, <strong>8-9 Hoxton Square, London, N1 6NU</strong> (map) Open f |
-| 13 | [Homeboy](https://homeboybar.com) | — | Islington · Cocktail Bar | 11th &amp; Social are taking over the bar on Wednesday 9th October from 7-11pm…b |
-| 14 | [Nightjar](https://www.barnightjar.com) | — | Shoreditch · Cocktail Bar | Experience Nightjar&#x27;s renowned ... with delectable snacks. Enjoy the best v |
-| 15 | Expect to pay | — | Pub | To begin, a drink in a bar or pub, ... to take turns buying rounds of drinks. Go |
+| 1 | [Press office](https://www.thepressoffice.uk.com) | — | Pub | For urgent media enquiries outside office hours and at weekends please call: <st |
+| 2 | Editorial guidelines | — | Pub | This guide aims to inform our stakeholders and contributors of our Think editori |
+| 3 | Accessibility statement | — | Pub | This accessibility statement applies to www.cityoflondon.gov.uk · This website i |
+| 4 | Terms of use | — | Pub | You agree that in addition to these Terms of use your access and use of the Site |
+| 5 | [Modern slavery statement](https://modern-slavery-statement-registry.service.gov.uk) | — | Borough · Pub | <strong>The City Corporation&#x27;s first Modern Slavery Statement</strong> brin |
 
 ### ☕ London — Work Cafes
 
@@ -57,35 +59,39 @@
 | 14 | Project 44 | — | Shoreditch · Wine Bar | See Instagram photos and videos from <strong>Project</strong> <strong>44</strong |
 | 15 | [Sabretooth](https://sabretooth.london) | — | Hoxton · Indian | <strong>In a small independent shop in the heart of Hoxton</strong>, we&#x27;ve  |
 | 16 | [Commons at Old Street Works](https://www.commonsat.co.uk/osw) | — | Specialty Coffee | Commons at Old Street Works (OSW) is our <strong>flagship store</strong>. We&#x2 |
-| 17 | [Batch Baby](https://www.batchbaby.co.uk/about) | — | 11K Followers, 1,145 Following, 224 Posts - BATCH BABY (@batchbabycoffee) on Ins |
+| 17 | [Batch Baby](https://www.batchbaby.co.uk/about) | — | Bakery | 11K Followers, 1,145 Following, 224 Posts - BATCH BABY (@batchbabycoffee) on Ins |
 | 18 | [Wave](https://www.thewave.com/wp-content/uploads/2025/02/The-Wave-London.pdf) | — | Italian | Every one of the UK wave sites has had massive delays, Lost Shore in Edinburgh w |
 | 19 | Coffee Junction | — | Shoreditch | We had chicken schnitzel and with each main you get to choose four salad options |
 | 20 | [Market Cafe](https://www.market-cafe.co.uk) | — | Italian | <strong>2 Broadway Market London E8 4QJ</strong> · t. 020 7249 9070 e. info@mark |
+| 21 | [New Forms](https://newforms.uk) | — | Chelsea | <strong>Rooted in sound, community, and culture, New Forms marks a new chapter f |
+| 22 | Chestnut Bakery Belgravia | — | Bakery | I loved this bakery, loving welcoming athomosfere with a good soundtrack. The se |
 
-## Paris — 🍸 Bars
+## Paris — 🍽 Restaurants
 
 | # | Venue | Reserve | Tags & Notes |
 |---|-------|---------|-------------|
-| 1 | Jolyne | — | Wine Bar | Bar Jolyne, <strong>11 Rue Rochebrune, 75011 Paris, France</strong>. Cravings: W |
-| 2 | [Coyote](https://www.moncoyote.com/fr/store/paris.html) | — | Wine Bar | 64K Followers, 966 Following, 1,128 Posts - le coyote paris 3 (@lecoyoteparis) o |
-| 3 | Mésures | — | Nation · Pub | Interprétation Géologique des Mésures Effectuées au Spectromètre de Masse dans l |
-| 4 | [Bar De Vie](https://devie.bar) | — | Cocktail Bar | <strong>An award winning, dual concept cocktail bar and restaurant celebrating l |
-| 5 | [Experimental Cocktail Club](https://www.experimentalcocktailclub.com/paris) | — | Nation · Cocktail Bar | Experimental Cocktail Club quickly became the epicentre of a phenomenon that wou |
-| 6 | [Folderol](https://www.folderol.fr) | — | Wine Bar | <strong>Mercredi - Lundi : 16h - 23h</strong> · COMMANDES GATEAUX GLACÉES 48K Fo |
-| 7 | [Liquiderie Bar](https://liquiderie-bar.wheree.com) | — | Wine Bar | Restaurant Liquiderie Bar, <strong>7, rue de la Présentation Paris 75011.</stron |
-| 8 | [Kissproof](https://kissproof-belleville.wheree.com) | — | Pigalle | Since the bar is in one of the less-tourist-filled parts of Paris, in the old Ch |
-| 9 | Les Ambassadeurs | — | Concorde · Cocktail Bar | <strong>Creative cocktails &amp; live music overlooking Place de la Concorde</st |
-| 10 | [Sister Midnight](https://www.sistermidnightparis.com) | — | Pigalle · Cocktail Bar | Sister Midnight is <strong>an award-winning cocktail bar in Pigalle, from the cr |
-| 11 | Bar Nouveau | — | Tucked away in Paris&#x27;s vibrant Marais district, Bar Nouveau was <strong>co- |
-| 12 | [CopperBay](http://www.copperbay.fr) | — | Grands Boulevards | <strong>5 rue Bouchardon - 75010 Paris</strong> - paris@copperbay.fr Copperbay,  |
-| 13 | [Candelaria](https://www.candelaria-paris.com) | — | Cocktail Bar | <strong>Authentic Mexican taqueria in the heart of Paris</strong>, where everyth |
-| 14 | [Cambridge Public House](https://www.thecambridge.paris/en) | — | Le Marais · Pub | Opened in early 2019 following a meeting in London, The Cambridge Public House i |
-| 15 | Bar Hemingway | — | Stories that intersect, encounters that connect, iconic cocktails... at the inti |
-| 16 | [Maison Proust](https://www.maison-proust.com/en/maison-proust) | — | Pigalle | With infinite gratitude and building ... Maison Proust. Maison Proust <strong>re |
-| 17 | Harry's New York Bar | — | Opéra · American | Harry&#x27;s New York Bar is a bar in Paris, France located at <strong>5, Rue Da |
-| 18 | [Cravan](https://www.cravanparis.com/en) | — | Saint-Germain · Cocktail Bar | 37K Followers, 0 Following, 737 Posts - CRAVAN (@cravanparis) on Instagram: &quo |
-| 19 | [Bar Sur Le Toit](https://besthotelbar.com/bar/bar-sur-le-toit) | [SevenRooms](https://www.sevenrooms.com/reservations/lebarsurletoit) | Montmartre | Le Café, <strong>ouvert sur la rue Cadet</strong>, accompagne les journées avec  |
-| 20 | Fréquence | — | Paris, France · Fréquence was <strong>founded by two friends Matthieu Biron (for |
+| 1 | [Les Enfants du Marché](https://www.lesenfantsdumarche.fr) | — | French | Comptoir bistronomique et vivant situé au cœur de l’emblématique Marché des Enfa |
+| 2 | [Pristine](https://pristineparis.com) | — | French | Pristine is <strong>a produce driven restaurant bar</strong>, offering a modern  |
+| 3 | [Clown Bar](https://www.clownbar.fr) | — | République · Wine Bar | Depuis 1995, le restaurant <strong>Le Clown Bar</strong> est classé aux monument |
+| 4 | [Café des Ministères](https://www.cafedesministeres.fr/en) | — | Nation · French | Welcome to the offical website of Café des Ministères in Paris - Traditional Fre |
+| 5 | La Rotisserie d’Argent | — | French | La Rotisserie d&#x27;Argent is <strong>a classic French bistro serving what migh |
+| 6 | Speciality Wine & Small Sharing Plate Restaurants | — |  |
+| 7 | Aux Deux Amis | — | Oberkampf · Wine Bar | Aux Deux Amis, Paris: See 169 unbiased reviews of Aux Deux Amis, rated 3.1 of 5  |
+| 8 | [Au Passage](https://www.restaurant-aupassage.fr/en) | — | Wine Bar | Welcome to the offical website of Au Passage &amp; Au Petit Passage in Paris - W |
+| 9 | [Le Servan](https://www.leservan.fr) | — | French | LE SERVAN EST OUVERT DU LUNDI AU SAMEDI · 12H - 14H · 19H30 - 22H30 · À TRÈS BIE |
+| 10 | [Le Jourdain](https://www.lejourdain.fr/en) | — | Belleville · Bistro | Welcome to the offical website of Le Jourdain in Paris 20 - restaurant, read our |
+| 11 | Fine Dining Restaurants | [TheFork](https://www.thefork.com/restaurants/paris-c415144/gourmet-t383) | French | Every meal we had in Paris was excellent but this one was exceptional ... We wer |
+| 12 | [19 Saint Roch](https://www.19saint-roch.com) | — | French | 19 SAINT ROCH. 01 40 15 00 89 <strong>19 rue Saint-Roch 75001 Paris</strong> Par |
+| 13 | Passionné | [OpenTable](https://www.opentable.com/r/passionne-restaurant-paris) | Grands Boulevards · French | Led by chef Satoshi Horiuchi, Le Passionné is <strong>a new gourmet restaurant i |
+| 14 | [Semilla](https://www.semillaparis.com/en) | — | Saint-Germain · Spanish | Semilla is <strong>a fine dining restaurant located in a neighborhood filled wit |
+| 15 | [Dilia](https://www.dilia.fr) | — | Nation · French | Quoi ? Le Dilia, <strong>restaurant qui remplace le Roseval</strong> · Où ? Au 1 |
+| 16 | [Le Clarence](https://www.le-clarence.paris/en) | — | French | <strong>Double Michelin-starred fine dining restaurant, located in the heart of  |
+| 17 | [Septime](https://www.septime-charonne.fr/en) | — | French · ⭐ Michelin | SEPTIME BOOK IS OUT NOW! - ORDER YOUR COPY HERE! Tasting menu in 5 steps 85 · Wi |
+| 18 | L’Orangerie | — | Concorde · French | L’Orangerie at Four Seasons Hotel George V, Paris is <strong>an intimate restaur |
+| 19 | [Ze Kitchen Galerie](https://zekitchengalerie.fr/en) | — | Small Plates | Chef français étoilé, William Ledeuil est aux commandes de 2 restaurants reconnu |
+| 20 | [Auguste](https://www.restaurantauguste.fr) | [TheFork](https://www.thefork.com/restaurant/restaurant-auguste-gael-orieux-r26201) | French | Français Auguste Restaurant Menu · Offrir Réserver · Du lundi au vendredi : de 1 |
+| 21 | Asian & African Restaurants | — |  |
+| 22 | Italian & Spanish Food in Paris | — |  |
 
 ### ☕ Paris — Work Cafes
 
@@ -111,3 +117,5 @@
 | 18 | La Compagnie du Cafe | — | French | La Compagnie du Café is <strong>a coffee shop, coffee roaster and a lunch cantin |
 | 19 | [Ciao Paulette](https://ciao-paulette.wheree.com) | — | Temple · Brunch Café | The address of Ciao Paulette is <strong>94 Rue du Temple, 75003 Paris, France</s |
 | 20 | Brasserie Barbes | — | Montmartre · Brasserie | Brasserie Barbes, Paris: See 966 unbiased reviews of Brasserie Barbes, rated 3.4 |
+| 21 | [Plural](https://www.isplural.com/plural_singular/paris') | — | Wait what, I’m confused, can you explain. Like OP, I would assume Paris’s is wro |
+| 22 | Cafe Des Delices | — | Belleville · Pub | Restaurant Le Cafe Des Delices - Gilles Choukroun, restaurant à Paris, restauran |

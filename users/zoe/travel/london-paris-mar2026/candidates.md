@@ -1,48 +1,44 @@
 # Top Candidates — london-paris-mar2026
 
-Generated: 2026-02-23 03:42 UTC
+Generated: 2026-02-23 03:59 UTC
 
 ---
 
 ## London — Top Dining & Bars
 
-### Umbrella Workshop
-- **Website:** [https://theumbrellaproject.co.uk/bricks-and-mortar](https://theumbrellaproject.co.uk/bricks-and-mortar)
+### The best new restaurants that opened in London in 2025
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Book a table at Umbrella Workshop · Logo: Project No: UB03 · Project Completed: FEBRUARY 2022 · Telephone No: 020 7739 4951 · Social: @INSTAGRAM · Add
+- **Notes:** 
 
-### Satan’s Whiskers
-- **Website:** [https://www.satanswhiskers.com](https://www.satanswhiskers.com)
+### Belly Bistro, Kentish Town
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** We offer a full consultancy service on beverage, bar design, operations, systems, training and back of house. Looking every bit a down-and-out ... vin
+- **Notes:** 
 
-### Bar Américain
+### The Lavery, South Kensington
+- **Website:** [https://www.thegoodfoodguide.co.uk/restaurant/the-lavery/id/92856](https://www.thegoodfoodguide.co.uk/restaurant/the-lavery/id/92856)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** From curtain up to last call, let us transport you to a Parisian Christmas, right here in the heart of London. ... ... Transport yourself to 1920s Par
+- **Notes:** The thing is, The Lavery is <strong>a smartly uniformed restaurant</strong>. You do want to dress up to be here, if only to fit your surrounds. The co
 
-### Tayēr + Elementary
-- **Website:** [https://tayer-elementary.com](https://tayer-elementary.com)
+### Martinos, Chelsea
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Tayēr + Elementary is <strong>a cocktail bar established in 2019 in London</strong>. A sincere interest in ingredients, intelligent design and meticul
+- **Notes:** 
 
-### Three Sheets Soho
+### Gina, Chingford
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Since its opening in 2016, the outwardly unassuming Dalston cocktail bar Three Sheets – <strong>owned and run by brothers Max and Noel Venning</strong
+- **Notes:** <strong>Located where the outer London suburbs fray into the thickets of Epping Forest</strong>, Gina has brought a beam of gastronomic sunshine to th
 
-### Little Mercies
-- **Website:** [https://littlemercies.co.uk](https://littlemercies.co.uk)
-- **Reservation (OpenTable):** [https://www.opentable.com/r/little-mercies-london](https://www.opentable.com/r/little-mercies-london)
-- **Notes:** Opened in October 2018, we are <strong>a multi award winning local neighbourhood cocktail bar and restaurant</strong>. Our food menu might also be the
-
-### Seed Library
-- **Website:** [https://www.seedlibraryshoreditch.com](https://www.seedlibraryshoreditch.com)
+### Stay in the loop: sign up to our
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Seed Library is <strong>a laid-back cocktail bar by Mr Lyan in the heart of Shoreditch, East London</strong> where you can enjoy a cocktail or selecti
+- **Notes:** Get the latest and greatest from ... WhatsApp channel. Stay in the loop: sign up to our <strong>free Time Out London newsletter for the best of the ci
 
-### Swift
-- **Website:** [https://www.barswift.com](https://www.barswift.com)
+### Press office
+- **Website:** [https://www.thepressoffice.uk.com](https://www.thepressoffice.uk.com)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Discover the best cocktails in Borough, London Bridge, Shoreditch, and Soho at Bar Swift. Enjoy seasonal specials and classics drinks at our award win
+- **Notes:** For urgent media enquiries outside office hours and at weekends please call: <strong>020 7983 4000</strong> and ask for the duty press officer. To con
+
+### Investor relations
+- **Reservation:** _(not found — check Resy/OpenTable manually)_
+- **Notes:** Information for shareholders, investors ... Debtholder · Annual Report · <strong>LSEG is a leading global financial markets infrastructure and data pr
 
 ## London — ☕ Work Cafes
 
@@ -73,43 +69,42 @@ Generated: 2026-02-23 03:42 UTC
 
 ## Paris — Top Dining & Bars
 
-### Jolyne
+### Les Enfants du Marché
+- **Website:** [https://www.lesenfantsdumarche.fr](https://www.lesenfantsdumarche.fr)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Bar Jolyne, <strong>11 Rue Rochebrune, 75011 Paris, France</strong>. Cravings: Wine bar. Extras: Amuse-bouche, Naturopath, Open all day, Open Tuesdays
+- **Notes:** Comptoir bistronomique et vivant situé au cœur de l’emblématique Marché des Enfants Rouges dans le quartier historique du Marais ! Marché des Enfants 
 
-### Coyote
-- **Website:** [https://www.moncoyote.com/fr/store/paris.html](https://www.moncoyote.com/fr/store/paris.html)
+### Pristine
+- **Website:** [https://pristineparis.com](https://pristineparis.com)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** 64K Followers, 966 Following, 1,128 Posts - le coyote paris 3 (@lecoyoteparis) on Instagram: &quot;lesbian and queer saloon | café journée | restauran
+- **Notes:** Pristine is <strong>a produce driven restaurant bar</strong>, offering a modern french cuisine to share and contemporary cocktails in a cosy ambiance.
 
-### Mésures
+### Clown Bar
+- **Website:** [https://www.clownbar.fr](https://www.clownbar.fr)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Interprétation Géologique des Mésures Effectuées au Spectromètre de Masse dans le Domaine de la Géochronologie Absolue. Colloques Internationaux du Ce
+- **Notes:** Depuis 1995, le restaurant <strong>Le Clown Bar</strong> est classé aux monuments historiques. Privatisez notre restaurant pour un évènement particuli
 
-### Bar De Vie
-- **Website:** [https://devie.bar](https://devie.bar)
+### Café des Ministères
+- **Website:** [https://www.cafedesministeres.fr/en](https://www.cafedesministeres.fr/en)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** <strong>An award winning, dual concept cocktail bar and restaurant celebrating locality, seasonality and craft in Paris&#x27; Montorgueil quarter</str
+- **Notes:** Welcome to the offical website of Café des Ministères in Paris - Traditional French restaurant, read our customer reviews and book online - Dear frien
 
-### Experimental Cocktail Club
-- **Website:** [https://www.experimentalcocktailclub.com/paris](https://www.experimentalcocktailclub.com/paris)
+### La Rotisserie d’Argent
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Experimental Cocktail Club quickly became the epicentre of a phenomenon that would transform Paris’s nightlife through accessible prices and audacious
+- **Notes:** La Rotisserie d&#x27;Argent is <strong>a classic French bistro serving what might be the best roast chicken in Paris</strong>. Located next to the Sei
 
-### Folderol
-- **Website:** [https://www.folderol.fr](https://www.folderol.fr)
+### Speciality Wine & Small Sharing Plate Restaurants
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** <strong>Mercredi - Lundi : 16h - 23h</strong> · COMMANDES GATEAUX GLACÉES 48K Followers, 261 Following, 74 Posts - Folderol (@f.o.l.d.e.r.o.l) on Inst
+- **Notes:** 
 
-### Liquiderie Bar
-- **Website:** [https://liquiderie-bar.wheree.com](https://liquiderie-bar.wheree.com)
+### Aux Deux Amis
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Restaurant Liquiderie Bar, <strong>7, rue de la Présentation Paris 75011.</strong> Craving : Wine bar / Cave à manger. The extras : Open Sunday, Antid
+- **Notes:** Aux Deux Amis, Paris: See 169 unbiased reviews of Aux Deux Amis, rated 3.1 of 5 on Tripadvisor and ranked #15,106 of 16,196 restaurants in Paris. Aux 
 
-### Kissproof
-- **Website:** [https://kissproof-belleville.wheree.com](https://kissproof-belleville.wheree.com)
+### Au Passage
+- **Website:** [https://www.restaurant-aupassage.fr/en](https://www.restaurant-aupassage.fr/en)
 - **Reservation:** _(not found — check Resy/OpenTable manually)_
-- **Notes:** Since the bar is in one of the less-tourist-filled parts of Paris, in the old Chinatown of Belleville, it’s more of a neighborhood haunt where you’re 
+- **Notes:** Welcome to the offical website of Au Passage &amp; Au Petit Passage in Paris - WINE-BISTROT-RESTAURANT BAR, read our customer reviews and book online 
 
 ## Paris — ☕ Work Cafes
 
