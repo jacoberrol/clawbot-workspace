@@ -1,10 +1,7 @@
 # Upcoming Events
-_Last updated: 2026-02-22 13:58 EST_
+_Last updated: 2026-02-23 02:01 EST_
 
 ## New York City
-### Feb 22, 2026
-- **Twin Fin** @ Baby's All Right — [Info / Tickets](https://www.babysallright.com/)
-- **Rory Scovel** @ The Bell House — [Info / Tickets](https://www.songkick.com/concerts/42783316-rory-scovel-at-bell-house?utm_medium=organic\u0026utm_source=microformat)
 ### Feb 24, 2026
 - **Joey Valence &amp; Brae** @ Brooklyn Steel — [Info / Tickets](https://www.brooklynsteel.com/events/)
 ### Feb 25, 2026
@@ -273,7 +270,7 @@ _Last updated: 2026-02-22 13:58 EST_
 - **Skullcrusher** @ Music Hall of Williamsburg — [Info / Tickets](https://www.musichallofwilliamsburg.com/events/)
 - **Ryan Montblueau Band** @ Le Poisson Rouge — [Info / Tickets](https://lpr.com/events/)
 - **The Growlers** @ Brooklyn Steel — [Info / Tickets](https://www.songkick.com/concerts/42894326-growlers-at-brooklyn-steel?utm_medium=organic\u0026utm_source=microformat)
-- **Alok** @ The Bell House — [Info / Tickets](https://www.songkick.com/concerts/43057866-alok-at-bell-house?utm_medium=organic\u0026utm_source=microformat)
+- **Alok** @ The Bell House — [Info / Tickets](https://www.songkick.com/concerts/43058131-alok-at-bell-house?utm_medium=organic\u0026utm_source=microformat)
 - **Thomas Dolby** @ Racket NYC — [Info / Tickets](https://www.racketnyc.com/events)
 ### Apr 16, 2026
 - **King Tuff** @ Music Hall of Williamsburg — [Info / Tickets](https://www.musichallofwilliamsburg.com/events/)
@@ -285,6 +282,7 @@ _Last updated: 2026-02-22 13:58 EST_
 - **Boys Go To Jupiter** @ Bowery Ballroom — [Info / Tickets](https://www.boweryballroom.com/events/)
 - **Together PANGEA** @ Le Poisson Rouge — [Info / Tickets](https://lpr.com/events/)
 - **Good Kid** @ Brooklyn Steel — [Info / Tickets](https://www.brooklynsteel.com/events/)
+- **Lala Lala** @ Baby's All Right — [Info / Tickets](https://www.songkick.com/concerts/42978241-lala-lala-at-babys-all-right?utm_medium=organic\u0026utm_source=microformat)
 - **Frog** @ Elsewhere — [Info / Tickets](https://www.songkick.com/concerts/43057342-frog-at-elsewhere?utm_medium=organic\u0026utm_source=microformat)
 ### Apr 18, 2026
 - **Femtanyl** @ Music Hall of Williamsburg — [Info / Tickets](https://www.musichallofwilliamsburg.com/events/)
@@ -474,13 +472,6 @@ _Last updated: 2026-02-22 13:58 EST_
 - **Duncan Trussell** @ The Bell House — [Info / Tickets](https://www.thebellhouseny.com/events/)
 
 ## San Francisco
-### Feb 22, 2026
-- **Jordan Ward** @ August Hall — [Info / Tickets](https://augusthallsf.com/events/)
-- **Fox Stevenson** @ The Independent — [Info / Tickets](https://www.theindependentsf.com/calendar)
-- **Wisp** @ Great American Music Hall — [Info / Tickets](https://www.gamh.com/events/)
-- **Caravan 222** @ The Chapel — [Info / Tickets](https://www.songkick.com/concerts/42983571-caravan-222-at-chapel?utm_medium=organic\u0026utm_source=microformat)
-- **J. Robbins** @ Bottom of the Hill — [Info / Tickets](https://www.bottomofthehill.com/calendar.html)
-- **Fevr** @ DNA Lounge — [Info / Tickets](https://www.dnalounge.com/calendar/)
 ### Feb 23, 2026
 - **Stephen Malkmus** @ Great American Music Hall — [Info / Tickets](https://www.gamh.com/events/)
 ### Feb 24, 2026

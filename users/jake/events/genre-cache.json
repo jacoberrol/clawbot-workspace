@@ -1,4 +1,33 @@
 {
+  "aaron mccann": {
+    "cached_at": 1771840869.536647,
+    "expires_at": 1781258469.536669,
+    "genres": []
+  },
+  "acopia": {
+    "cached_at": 1771840864.7327118,
+    "expires_at": 1780135264.7327466,
+    "genres": [
+      "ambient",
+      "dream pop"
+    ]
+  },
+  "aeon": {
+    "cached_at": 1771840826.5817966,
+    "expires_at": 1781258426.5818138,
+    "genres": [
+      "death metal"
+    ]
+  },
+  "against the current": {
+    "cached_at": 1771840872.7275364,
+    "expires_at": 1781172072.72756,
+    "genres": [
+      "rock",
+      "alternative rock",
+      "pop"
+    ]
+  },
   "all your friends": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781385740.214435,
@@ -14,10 +43,22 @@
     "expires_at": 1781644940.2144856,
     "genres": []
   },
+  "amie blu": {
+    "cached_at": 1771840885.5960212,
+    "expires_at": 1781431285.596041,
+    "genres": []
+  },
   "ariel elias": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780348940.2144887,
     "genres": []
+  },
+  "arlo": {
+    "cached_at": 1771840815.3428383,
+    "expires_at": 1779962415.3428571,
+    "genres": [
+      "folk"
+    ]
   },
   "beauty school dropout": {
     "cached_at": 1771795340.2144322,
@@ -47,6 +88,15 @@
       "dance"
     ]
   },
+  "cass mccombs": {
+    "cached_at": 1771840882.3527105,
+    "expires_at": 1779962482.3527484,
+    "genres": [
+      "4ad",
+      "rock and indie",
+      "rock"
+    ]
+  },
   "cat power": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781644940.214499,
@@ -61,15 +111,68 @@
     "expires_at": 1779830540.214501,
     "genres": []
   },
+  "cyberia": {
+    "cached_at": 1771840895.1995013,
+    "expires_at": 1781863295.199518,
+    "genres": []
+  },
+  "dan reeder": {
+    "cached_at": 1771840845.6838713,
+    "expires_at": 1780135245.683892,
+    "genres": []
+  },
+  "dessa": {
+    "cached_at": 1771840888.8086493,
+    "expires_at": 1780826488.8086674,
+    "genres": [
+      "hip hop"
+    ]
+  },
   "dj tokyo rose": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781990540.2145026,
+    "genres": []
+  },
+  "dodie": {
+    "cached_at": 1771840804.1173298,
+    "expires_at": 1780480804.117352,
+    "genres": [
+      "indie pop",
+      "singer-songwriter",
+      "bedroom pop"
+    ]
+  },
+  "dr. gabba": {
+    "cached_at": 1771840851.91747,
+    "expires_at": 1780653651.917487,
+    "genres": []
+  },
+  "dream, ivory": {
+    "cached_at": 1771840842.4853082,
+    "expires_at": 1780653642.4853284,
+    "genres": []
+  },
+  "e.a.r": {
+    "cached_at": 1771840880.7444427,
+    "expires_at": 1780567280.7444615,
+    "genres": []
+  },
+  "ear (usa)": {
+    "cached_at": 1771840879.1184556,
+    "expires_at": 1780740079.118476,
     "genres": []
   },
   "ed gamble": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781731340.2145045,
     "genres": []
+  },
+  "emmy meli": {
+    "cached_at": 1771840805.7124903,
+    "expires_at": 1780308005.7125072,
+    "genres": [
+      "pop"
+    ]
   },
   "emo night brooklyn": {
     "cached_at": 1771795340.2144322,
@@ -85,6 +188,13 @@
       "power pop"
     ]
   },
+  "gabi hartmann": {
+    "cached_at": 1771840832.9918642,
+    "expires_at": 1779876032.9918833,
+    "genres": [
+      "jazz"
+    ]
+  },
   "gary bartz": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781558540.21451,
@@ -94,6 +204,16 @@
       "modern creative"
     ]
   },
+  "gimme gimme disco": {
+    "cached_at": 1771840820.138052,
+    "expires_at": 1779703220.138071,
+    "genres": []
+  },
+  "glitterer": {
+    "cached_at": 1771840840.8461828,
+    "expires_at": 1780740040.846201,
+    "genres": []
+  },
   "guitarricadelafuente": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781472140.2145119,
@@ -102,9 +222,23 @@
       "spanish"
     ]
   },
+  "gurriers": {
+    "cached_at": 1771840861.3385913,
+    "expires_at": 1780826461.3386052,
+    "genres": [
+      "alternative rock",
+      "indie rock",
+      "post-punk"
+    ]
+  },
   "herbert holler": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780521740.2145138,
+    "genres": []
+  },
+  "humble the great": {
+    "cached_at": 1771840813.7395468,
+    "expires_at": 1780048813.7395654,
     "genres": []
   },
   "idk": {
@@ -113,6 +247,15 @@
     "genres": [
       "trap",
       "hip hop"
+    ]
+  },
+  "imanu": {
+    "cached_at": 1771840824.9788048,
+    "expires_at": 1779616824.9788249,
+    "genres": [
+      "drum and bass",
+      "electronic",
+      "house"
     ]
   },
   "in-zo": {
@@ -134,6 +277,16 @@
       "r&b"
     ]
   },
+  "jessica audiffred": {
+    "cached_at": 1771840893.6020672,
+    "expires_at": 1779876093.6020882,
+    "genres": []
+  },
+  "joanna wang": {
+    "cached_at": 1771840892.0033314,
+    "expires_at": 1780912892.00335,
+    "genres": []
+  },
   "joey valence & brae": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780176140.2145226,
@@ -141,6 +294,15 @@
       "hip hop",
       "rap rock",
       "boom bap"
+    ]
+  },
+  "jordana": {
+    "cached_at": 1771840896.7963614,
+    "expires_at": 1780480896.796378,
+    "genres": [
+      "indie rock",
+      "indie pop",
+      "bedroom pop"
     ]
   },
   "juice": {
@@ -157,6 +319,21 @@
     "expires_at": 1780953740.2145264,
     "genres": []
   },
+  "kaivon": {
+    "cached_at": 1771840890.4084916,
+    "expires_at": 1779962490.4085083,
+    "genres": []
+  },
+  "labiahead": {
+    "cached_at": 1771840802.5165505,
+    "expires_at": 1780826402.5165792,
+    "genres": []
+  },
+  "landon conrath": {
+    "cached_at": 1771840812.139475,
+    "expires_at": 1781863212.1394942,
+    "genres": []
+  },
   "lindsay ell": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780435340.214528,
@@ -169,6 +346,11 @@
     "expires_at": 1779744140.2145462,
     "genres": []
   },
+  "lykn": {
+    "cached_at": 1771840831.379237,
+    "expires_at": 1780912831.379255,
+    "genres": []
+  },
   "lynch mob": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1779830540.214548,
@@ -178,9 +360,33 @@
       "heavy metal"
     ]
   },
+  "mariah the scientist": {
+    "cached_at": 1771840808.9303396,
+    "expires_at": 1781517608.9303617,
+    "genres": [
+      "r&b",
+      "contemporary r&b",
+      "r&b/soul"
+    ]
+  },
+  "mary droppinz": {
+    "cached_at": 1771840816.9396524,
+    "expires_at": 1780999216.9397395,
+    "genres": []
+  },
   "michael shannon": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781299340.21455,
+    "genres": []
+  },
+  "molina": {
+    "cached_at": 1771840887.203772,
+    "expires_at": 1781949687.2037911,
+    "genres": []
+  },
+  "natalie jane": {
+    "cached_at": 1771840877.5194058,
+    "expires_at": 1780308077.519424,
     "genres": []
   },
   "nate band": {
@@ -203,6 +409,37 @@
       "r&b",
       "alternative r&b",
       "soul"
+    ]
+  },
+  "okayval": {
+    "cached_at": 1771840848.7169986,
+    "expires_at": 1779962448.7170162,
+    "genres": []
+  },
+  "oneida": {
+    "cached_at": 1771840883.9733837,
+    "expires_at": 1781863283.973402,
+    "genres": [
+      "drone",
+      "indie rock",
+      "psychedelic rock"
+    ]
+  },
+  "otta": {
+    "cached_at": 1771840858.1434083,
+    "expires_at": 1781949658.14343,
+    "genres": []
+  },
+  "peter mcpoland": {
+    "cached_at": 1771840807.3275478,
+    "expires_at": 1780394407.3275661,
+    "genres": []
+  },
+  "piri & tommy": {
+    "cached_at": 1771840834.5961826,
+    "expires_at": 1780394434.5961983,
+    "genres": [
+      "drum and bass"
     ]
   },
   "poolside": {
@@ -234,9 +471,54 @@
     "expires_at": 1781040140.2145627,
     "genres": []
   },
+  "rubii": {
+    "cached_at": 1771840844.0804005,
+    "expires_at": 1780308044.0804179,
+    "genres": []
+  },
+  "samm henshaw": {
+    "cached_at": 1771840829.7783267,
+    "expires_at": 1779789629.778346,
+    "genres": [
+      "neo-soul"
+    ]
+  },
   "sasha marie": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780089740.2145643,
+    "genres": []
+  },
+  "sasquatch": {
+    "cached_at": 1771840837.607937,
+    "expires_at": 1780480837.6079578,
+    "genres": [
+      "stoner metal",
+      "alternative metal",
+      "hard rock"
+    ]
+  },
+  "saxsquatch & bridge band": {
+    "cached_at": 1771840839.2495775,
+    "expires_at": 1780221639.2496026,
+    "genres": []
+  },
+  "sienna spiro": {
+    "cached_at": 1771840862.9354625,
+    "expires_at": 1781776862.9354799,
+    "genres": [
+      "pop soul",
+      "pop",
+      "singer-songwriter"
+    ]
+  },
+  "sofia d'angelo": {
+    "cached_at": 1771840828.1785905,
+    "expires_at": 1779962428.178608,
+    "genres": []
+  },
+  "sophia galat\u00e9": {
+    "cached_at": 1771840866.3364847,
+    "expires_at": 1779876066.3365037,
     "genres": []
   },
   "spiritual cramp": {
@@ -244,10 +526,51 @@
     "expires_at": 1780953740.2145662,
     "genres": []
   },
+  "st. lucia": {
+    "cached_at": 1771840856.542511,
+    "expires_at": 1780394456.5425293,
+    "genres": [
+      "synthpop",
+      "alternative dance"
+    ]
+  },
+  "steph strings": {
+    "cached_at": 1771840874.3230076,
+    "expires_at": 1782036074.3230271,
+    "genres": []
+  },
+  "stephen kellogg": {
+    "cached_at": 1771840810.5324454,
+    "expires_at": 1780394410.5324607,
+    "genres": []
+  },
   "sumsun": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780608140.21457,
     "genres": []
+  },
+  "suzanne vega": {
+    "cached_at": 1771840867.9361467,
+    "expires_at": 1782122467.9361653,
+    "genres": [
+      "art pop",
+      "pop",
+      "singer-songwriter"
+    ]
+  },
+  "taiki nulight": {
+    "cached_at": 1771840854.9442406,
+    "expires_at": 1779789654.9442637,
+    "genres": []
+  },
+  "telykast": {
+    "cached_at": 1771840818.5370684,
+    "expires_at": 1780394418.5370889,
+    "genres": [
+      "house",
+      "trance",
+      "electronic"
+    ]
   },
   "the greyboy allstars": {
     "cached_at": 1771795340.2144322,
@@ -287,6 +610,34 @@
     "expires_at": 1780176140.2145834,
     "genres": []
   },
+  "victoryland": {
+    "cached_at": 1771840821.7321086,
+    "expires_at": 1780394421.7321265,
+    "genres": []
+  },
+  "what so not": {
+    "cached_at": 1771840823.3303146,
+    "expires_at": 1780999223.3303325,
+    "genres": []
+  },
+  "whatmore": {
+    "cached_at": 1771840850.3171062,
+    "expires_at": 1780653650.3171246,
+    "genres": [
+      "rap",
+      "hip hop",
+      "indie"
+    ]
+  },
+  "xmal deutschland": {
+    "cached_at": 1771840871.133371,
+    "expires_at": 1780653671.1333888,
+    "genres": [
+      "neue deutsche welle",
+      "alternative rock",
+      "germany"
+    ]
+  },
   "yazmin lacey": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780003340.214585,
@@ -295,5 +646,17 @@
       "jazz",
       "funk"
     ]
+  },
+  "yellow days": {
+    "cached_at": 1771840875.9204254,
+    "expires_at": 1779703275.920444,
+    "genres": [
+      "bedroom pop"
+    ]
+  },
+  "young me and the moons": {
+    "cached_at": 1771840859.7375708,
+    "expires_at": 1780135259.737591,
+    "genres": []
   }
 }
