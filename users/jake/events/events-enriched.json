@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-23T02:01:02.246526-05:00",
+  "generated_at": "2026-02-24T02:01:01.590226-05:00",
   "cities": {
     "New York City": [
       {
@@ -732,7 +732,11 @@
         "neighborhood": "Manhattan/Greenwich Village",
         "date": "2026-03-10",
         "url": "https://www.songkick.com/concerts/42834964-josman-at-le-poisson-rouge?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "rap",
+          "hip hop",
+          "cloud rap"
+        ],
         "is_theater": false
       },
       {
@@ -799,7 +803,9 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-12",
         "url": "https://www.babysallright.com/",
-        "genres": [],
+        "genres": [
+          "classic pop and rock"
+        ],
         "is_theater": false
       },
       {
@@ -830,7 +836,9 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-13",
         "url": "https://www.babysallright.com/",
-        "genres": [],
+        "genres": [
+          "classic pop and rock"
+        ],
         "is_theater": false
       },
       {
@@ -848,7 +856,9 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-14",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "folk pop"
+        ],
         "is_theater": false
       },
       {
@@ -878,7 +888,9 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-14",
         "url": "https://www.babysallright.com/",
-        "genres": [],
+        "genres": [
+          "classic pop and rock"
+        ],
         "is_theater": false
       },
       {
@@ -905,7 +917,9 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-15",
         "url": "https://www.babysallright.com/",
-        "genres": [],
+        "genres": [
+          "classic pop and rock"
+        ],
         "is_theater": false
       },
       {
@@ -1191,7 +1205,11 @@
         "neighborhood": "Brooklyn/Greenpoint",
         "date": "2026-03-20",
         "url": "https://www.warsawconcerts.com/events/",
-        "genres": [],
+        "genres": [
+          "alternative rock",
+          "emo",
+          "midwest emo"
+        ],
         "is_theater": false
       },
       {
@@ -1245,7 +1263,11 @@
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-03-21",
         "url": "https://www.songkick.com/concerts/42813413-tokyo-tea-room-at-elsewhere?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "dream pop",
+          "psych pop",
+          "dreampop"
+        ],
         "is_theater": false
       },
       {
@@ -1254,7 +1276,10 @@
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-03-21",
         "url": "https://www.elsewherebrooklyn.com/events/",
-        "genres": [],
+        "genres": [
+          "electronic",
+          "italo-disco"
+        ],
         "is_theater": false
       },
       {
@@ -1272,7 +1297,9 @@
         "neighborhood": "Brooklyn/Gowanus",
         "date": "2026-03-22",
         "url": "https://www.thebellhouseny.com/events/",
-        "genres": [],
+        "genres": [
+          "comedian"
+        ],
         "is_theater": false
       },
       {
@@ -1281,7 +1308,10 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-23",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "rap",
+          "dance"
+        ],
         "is_theater": false
       },
       {
@@ -1308,7 +1338,11 @@
         "neighborhood": "Manhattan/Greenwich Village",
         "date": "2026-03-24",
         "url": "https://www.songkick.com/concerts/42839828-cubanismo-at-le-poisson-rouge?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "salsa",
+          "afro-cuban jazz",
+          "latin jazz"
+        ],
         "is_theater": false
       },
       {
@@ -1335,7 +1369,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-25",
         "url": "https://www.brooklynsteel.com/events/",
-        "genres": [],
+        "genres": [
+          "indie rock",
+          "alternative",
+          "lyricist"
+        ],
         "is_theater": false
       },
       {
@@ -1371,7 +1409,11 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-03-26",
         "url": "https://www.songkick.com/concerts/42941298-slomosa-at-bowery-ballroom?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "stoner rock",
+          "heavy rock",
+          "desert rock"
+        ],
         "is_theater": false
       },
       {
@@ -1389,7 +1431,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-26",
         "url": "https://www.brooklynsteel.com/events/",
-        "genres": [],
+        "genres": [
+          "dirty rap",
+          "explicit",
+          "nsfw"
+        ],
         "is_theater": false
       },
       {
@@ -1438,6 +1484,15 @@
         "is_theater": false
       },
       {
+        "name": "DJ K Styles",
+        "venue": "Le Poisson Rouge",
+        "neighborhood": "Manhattan/Greenwich Village",
+        "date": "2026-03-27",
+        "url": "https://www.songkick.com/concerts/43063201-dj-k-styles-at-le-poisson-rouge?utm_medium=organic\\u0026utm_source=microformat",
+        "genres": [],
+        "is_theater": false
+      },
+      {
         "name": "The Hellp",
         "venue": "Brooklyn Steel",
         "neighborhood": "Brooklyn/Williamsburg",
@@ -1452,7 +1507,11 @@
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-03-27",
         "url": "https://www.elsewherebrooklyn.com/events/",
-        "genres": [],
+        "genres": [
+          "garage",
+          "uk",
+          "uk garage"
+        ],
         "is_theater": false
       },
       {
@@ -1483,6 +1542,15 @@
         "is_theater": false
       },
       {
+        "name": "DJ Tokyo Rose",
+        "venue": "Le Poisson Rouge",
+        "neighborhood": "Manhattan/Greenwich Village",
+        "date": "2026-03-28",
+        "url": "https://lpr.com/events/",
+        "genres": [],
+        "is_theater": false
+      },
+      {
         "name": "Ricky Montgomery",
         "venue": "Brooklyn Steel",
         "neighborhood": "Brooklyn/Williamsburg",
@@ -1497,7 +1565,11 @@
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-03-28",
         "url": "https://www.elsewherebrooklyn.com/events/",
-        "genres": [],
+        "genres": [
+          "electronic",
+          "hardcore",
+          "math rock"
+        ],
         "is_theater": false
       },
       {
@@ -1506,7 +1578,10 @@
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-03-28",
         "url": "https://www.elsewherebrooklyn.com/events/",
-        "genres": [],
+        "genres": [
+          "blues",
+          "death by heart disease"
+        ],
         "is_theater": false
       },
       {
@@ -1542,7 +1617,11 @@
         "neighborhood": "Brooklyn/Greenpoint",
         "date": "2026-03-30",
         "url": "https://www.warsawconcerts.com/events/",
-        "genres": [],
+        "genres": [
+          "hardcore punk",
+          "metal",
+          "agro"
+        ],
         "is_theater": false
       },
       {
@@ -1551,7 +1630,9 @@
         "neighborhood": "Manhattan/Greenwich Village",
         "date": "2026-03-31",
         "url": "https://lpr.com/events/",
-        "genres": [],
+        "genres": [
+          "world"
+        ],
         "is_theater": false
       },
       {
@@ -1560,7 +1641,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-03-31",
         "url": "https://www.songkick.com/concerts/42871336-shady-nasty-at-babys-all-right?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "post-punk",
+          "post-hardcore",
+          "rap rock"
+        ],
         "is_theater": false
       },
       {
@@ -1605,7 +1690,11 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-04-02",
         "url": "https://www.songkick.com/concerts/42918572-luna-at-bowery-ballroom?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "rock",
+          "alternative rock",
+          "visual kei"
+        ],
         "is_theater": false
       },
       {
@@ -1641,7 +1730,11 @@
         "neighborhood": "Brooklyn/Greenpoint",
         "date": "2026-04-02",
         "url": "https://www.warsawconcerts.com/events/",
-        "genres": [],
+        "genres": [
+          "indie rock",
+          "chamber pop",
+          "rock"
+        ],
         "is_theater": false
       },
       {
@@ -1659,7 +1752,9 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-03",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "jazz"
+        ],
         "is_theater": false
       },
       {
@@ -1668,7 +1763,11 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-04-03",
         "url": "https://www.songkick.com/concerts/42918569-luna-at-bowery-ballroom?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "rock",
+          "alternative rock",
+          "visual kei"
+        ],
         "is_theater": false
       },
       {
@@ -1695,7 +1794,9 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-03",
         "url": "https://www.brooklynsteel.com/events/",
-        "genres": [],
+        "genres": [
+          "dubstep"
+        ],
         "is_theater": false
       },
       {
@@ -1704,7 +1805,11 @@
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-04-03",
         "url": "https://www.elsewherebrooklyn.com/events/",
-        "genres": [],
+        "genres": [
+          "electronic",
+          "composer",
+          "ambient pop"
+        ],
         "is_theater": false
       },
       {
@@ -1722,7 +1827,10 @@
         "neighborhood": "Brooklyn/Greenpoint",
         "date": "2026-04-03",
         "url": "https://www.warsawconcerts.com/events/",
-        "genres": [],
+        "genres": [
+          "shoegaze",
+          "alternative rock"
+        ],
         "is_theater": false
       },
       {
@@ -1749,7 +1857,11 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-04-04",
         "url": "https://www.songkick.com/concerts/42918570-luna-at-bowery-ballroom?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "rock",
+          "alternative rock",
+          "visual kei"
+        ],
         "is_theater": false
       },
       {
@@ -2626,6 +2738,15 @@
         "is_theater": false
       },
       {
+        "name": "DJ K Styles",
+        "venue": "Le Poisson Rouge",
+        "neighborhood": "Manhattan/Greenwich Village",
+        "date": "2026-05-01",
+        "url": "https://www.songkick.com/concerts/43063193-dj-k-styles-at-le-poisson-rouge?utm_medium=organic\\u0026utm_source=microformat",
+        "genres": [],
+        "is_theater": false
+      },
+      {
         "name": "Bellaire",
         "venue": "Warsaw",
         "neighborhood": "Brooklyn/Greenpoint",
@@ -2950,6 +3071,15 @@
         "is_theater": false
       },
       {
+        "name": "Clara La San",
+        "venue": "Brooklyn Steel",
+        "neighborhood": "Brooklyn/Williamsburg",
+        "date": "2026-05-16",
+        "url": "https://www.songkick.com/concerts/43063020-clara-la-san-at-brooklyn-steel?utm_medium=organic\\u0026utm_source=microformat",
+        "genres": [],
+        "is_theater": false
+      },
+      {
         "name": "Cut Worms",
         "venue": "Warsaw",
         "neighborhood": "Brooklyn/Greenpoint",
@@ -3094,15 +3224,6 @@
         "is_theater": false
       },
       {
-        "name": "Oranssi Pazuzu",
-        "venue": "Le Poisson Rouge",
-        "neighborhood": "Manhattan/Greenwich Village",
-        "date": "2026-05-23",
-        "url": "https://lpr.com/events/",
-        "genres": [],
-        "is_theater": false
-      },
-      {
         "name": "Alex Falcone",
         "venue": "The Bell House",
         "neighborhood": "Brooklyn/Gowanus",
@@ -3211,29 +3332,11 @@
         "is_theater": false
       },
       {
-        "name": "Prince Daddy & The Hyena",
-        "venue": "Le Poisson Rouge",
-        "neighborhood": "Manhattan/Greenwich Village",
-        "date": "2026-06-11",
-        "url": "https://lpr.com/events/",
-        "genres": [],
-        "is_theater": false
-      },
-      {
         "name": "Snor",
         "venue": "Warsaw",
         "neighborhood": "Brooklyn/Greenpoint",
         "date": "2026-06-12",
         "url": "https://www.songkick.com/concerts/43044554-snor-at-warsaw?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
-        "is_theater": false
-      },
-      {
-        "name": "Hrishikesh Hirway",
-        "venue": "Le Poisson Rouge",
-        "neighborhood": "Manhattan/Greenwich Village",
-        "date": "2026-06-13",
-        "url": "https://lpr.com/events/",
         "genres": [],
         "is_theater": false
       },
@@ -3374,15 +3477,6 @@
       }
     ],
     "San Francisco": [
-      {
-        "name": "Stephen Malkmus",
-        "venue": "Great American Music Hall",
-        "neighborhood": "SF/Tenderloin",
-        "date": "2026-02-23",
-        "url": "https://www.gamh.com/events/",
-        "genres": [],
-        "is_theater": false
-      },
       {
         "name": "rum·gold",
         "venue": "Rickshaw Stop",
@@ -4984,7 +5078,11 @@
         "neighborhood": "SF/Hayes Valley",
         "date": "2026-04-03",
         "url": "https://www.rickshawstop.com/events/",
-        "genres": [],
+        "genres": [
+          "dream pop",
+          "psych pop",
+          "dreampop"
+        ],
         "is_theater": false
       },
       {
@@ -5002,7 +5100,11 @@
         "neighborhood": "SF/SoMa",
         "date": "2026-04-03",
         "url": "https://augusthallsf.com/events/",
-        "genres": [],
+        "genres": [
+          "alternative rock",
+          "emo",
+          "midwest emo"
+        ],
         "is_theater": false
       },
       {
@@ -5323,7 +5425,11 @@
         "neighborhood": "SF/Potrero Hill",
         "date": "2026-04-11",
         "url": "https://www.songkick.com/concerts/42943743-slomosa-at-bottom-of-the-hill?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "stoner rock",
+          "heavy rock",
+          "desert rock"
+        ],
         "is_theater": false
       },
       {
@@ -5404,7 +5510,10 @@
         "neighborhood": "SF/Tenderloin",
         "date": "2026-04-15",
         "url": "https://www.gamh.com/events/",
-        "genres": [],
+        "genres": [
+          "electronic",
+          "italo-disco"
+        ],
         "is_theater": false
       },
       {
@@ -5521,6 +5630,15 @@
         "neighborhood": "SF/Lower Pac Heights",
         "date": "2026-04-19",
         "url": "https://www.theindependentsf.com/calendar",
+        "genres": [],
+        "is_theater": false
+      },
+      {
+        "name": "Sgt. Splendor",
+        "venue": "Bottom of the Hill",
+        "neighborhood": "SF/Potrero Hill",
+        "date": "2026-04-19",
+        "url": "https://www.bottomofthehill.com/calendar.html",
         "genres": [],
         "is_theater": false
       },
@@ -5903,6 +6021,15 @@
         "is_theater": false
       },
       {
+        "name": "Claire Rosinkranz",
+        "venue": "The Independent",
+        "neighborhood": "SF/Lower Pac Heights",
+        "date": "2026-05-01",
+        "url": "https://www.theindependentsf.com/calendar",
+        "genres": [],
+        "is_theater": false
+      },
+      {
         "name": "Everyone Asked About You",
         "venue": "Bottom of the Hill",
         "neighborhood": "SF/Potrero Hill",
@@ -6029,6 +6156,15 @@
         "is_theater": false
       },
       {
+        "name": "Pennywise",
+        "venue": "The Fillmore",
+        "neighborhood": "SF/Fillmore",
+        "date": "2026-05-08",
+        "url": "https://www.songkick.com/concerts/43060100-pennywise-at-fillmore?utm_medium=organic\\u0026utm_source=microformat",
+        "genres": [],
+        "is_theater": false
+      },
+      {
         "name": "Trauma Ray",
         "venue": "The Chapel",
         "neighborhood": "SF/Mission",
@@ -6088,7 +6224,9 @@
         "neighborhood": "SF/Hayes Valley",
         "date": "2026-05-13",
         "url": "https://www.rickshawstop.com/events/",
-        "genres": [],
+        "genres": [
+          "folk pop"
+        ],
         "is_theater": false
       },
       {
@@ -6356,6 +6494,15 @@
         "is_theater": false
       },
       {
+        "name": "Clara La San",
+        "venue": "Regency Ballroom",
+        "neighborhood": "SF/Tenderloin",
+        "date": "2026-06-04",
+        "url": "https://theregencyballroom.com/events/",
+        "genres": [],
+        "is_theater": false
+      },
+      {
         "name": "Jerry's Middle Finger",
         "venue": "The Chapel",
         "neighborhood": "SF/Mission",
@@ -6568,6 +6715,24 @@
         "neighborhood": "SF/Mission",
         "date": "2026-08-27",
         "url": "https://www.thechapelsf.com/events/",
+        "genres": [],
+        "is_theater": false
+      },
+      {
+        "name": "Osees",
+        "venue": "The Chapel",
+        "neighborhood": "SF/Mission",
+        "date": "2026-08-28",
+        "url": "https://www.thechapelsf.com/events/",
+        "genres": [],
+        "is_theater": false
+      },
+      {
+        "name": "Screeching Weasel",
+        "venue": "August Hall",
+        "neighborhood": "SF/SoMa",
+        "date": "2026-09-01",
+        "url": "https://augusthallsf.com/events/",
         "genres": [],
         "is_theater": false
       }

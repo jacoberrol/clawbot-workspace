@@ -1,5 +1,5 @@
 # Upcoming Events
-_Last updated: 2026-02-23 02:01 EST_
+_Last updated: 2026-02-24 02:01 EST_
 
 ## New York City
 ### Feb 24, 2026
@@ -176,12 +176,14 @@ _Last updated: 2026-02-23 02:01 EST_
 - **The Technicolors** @ Racket NYC — [Info / Tickets](https://www.racketnyc.com/events)
 ### Mar 27, 2026
 - **K-maro** @ Le Poisson Rouge — [Info / Tickets](https://www.songkick.com/concerts/42864192-kmaro-at-le-poisson-rouge?utm_medium=organic\u0026utm_source=microformat)
+- **DJ K Styles** @ Le Poisson Rouge — [Info / Tickets](https://www.songkick.com/concerts/43063201-dj-k-styles-at-le-poisson-rouge?utm_medium=organic\u0026utm_source=microformat)
 - **The Hellp** @ Brooklyn Steel — [Info / Tickets](https://www.songkick.com/concerts/42999001-hellp-at-brooklyn-steel?utm_medium=organic\u0026utm_source=microformat)
 - **Conducta** @ Elsewhere — [Info / Tickets](https://www.elsewherebrooklyn.com/events/)
 - **Kyle Kinane** @ The Bell House — [Info / Tickets](https://www.songkick.com/concerts/42867557-kyle-kinane-at-bell-house?utm_medium=organic\u0026utm_source=microformat)
 ### Mar 28, 2026
 - **Earlybirds Club** @ Music Hall of Williamsburg — [Info / Tickets](https://www.musichallofwilliamsburg.com/events/)
 - **DJ K Styles** @ Le Poisson Rouge — [Info / Tickets](https://lpr.com/events/)
+- **DJ Tokyo Rose** @ Le Poisson Rouge — [Info / Tickets](https://lpr.com/events/)
 - **Ricky Montgomery** @ Brooklyn Steel — [Info / Tickets](https://www.brooklynsteel.com/events/)
 - **The Locust** @ Elsewhere — [Info / Tickets](https://www.elsewherebrooklyn.com/events/)
 - **Sam Collins** @ Elsewhere — [Info / Tickets](https://www.elsewherebrooklyn.com/events/)
@@ -342,6 +344,7 @@ _Last updated: 2026-02-23 02:01 EST_
 ### May 1, 2026
 - **Drugdealer** @ Music Hall of Williamsburg — [Info / Tickets](https://www.musichallofwilliamsburg.com/events/)
 - **Gelli Haha** @ Bowery Ballroom — [Info / Tickets](https://www.songkick.com/concerts/43002532-gelli-haha-at-bowery-ballroom?utm_medium=organic\u0026utm_source=microformat)
+- **DJ K Styles** @ Le Poisson Rouge — [Info / Tickets](https://www.songkick.com/concerts/43063193-dj-k-styles-at-le-poisson-rouge?utm_medium=organic\u0026utm_source=microformat)
 - **Bellaire** @ Warsaw — [Info / Tickets](https://www.songkick.com/concerts/43036939-bellaire-at-warsaw?utm_medium=organic\u0026utm_source=microformat)
 ### May 2, 2026
 - **Yumi Zouma** @ Warsaw — [Info / Tickets](https://www.warsawconcerts.com/events/)
@@ -391,6 +394,7 @@ _Last updated: 2026-02-23 02:01 EST_
 - **VNV Nation** @ Warsaw — [Info / Tickets](https://www.songkick.com/concerts/42844545-vnv-nation-at-warsaw?utm_medium=organic\u0026utm_source=microformat)
 ### May 16, 2026
 - **MUNA** @ Music Hall of Williamsburg — [Info / Tickets](https://www.songkick.com/concerts/43040887-muna-at-music-hall-of-williamsburg?utm_medium=organic\u0026utm_source=microformat)
+- **Clara La San** @ Brooklyn Steel — [Info / Tickets](https://www.songkick.com/concerts/43063020-clara-la-san-at-brooklyn-steel?utm_medium=organic\u0026utm_source=microformat)
 - **Cut Worms** @ Warsaw — [Info / Tickets](https://www.warsawconcerts.com/events/)
 - **Enno Cheng** @ Racket NYC — [Info / Tickets](https://www.songkick.com/concerts/43010577-enno-cheng-at-racket-nyc?utm_medium=organic\u0026utm_source=microformat)
 ### May 17, 2026
@@ -414,7 +418,6 @@ _Last updated: 2026-02-23 02:01 EST_
 - **Frankie Cosmos** @ Bowery Ballroom — [Info / Tickets](https://www.boweryballroom.com/events/)
 - **The Black Queen** @ Le Poisson Rouge — [Info / Tickets](https://lpr.com/events/)
 ### May 23, 2026
-- **Oranssi Pazuzu** @ Le Poisson Rouge — [Info / Tickets](https://lpr.com/events/)
 - **Alex Falcone** @ The Bell House — [Info / Tickets](https://www.thebellhouseny.com/events/)
 ### May 26, 2026
 - **Just Mustard** @ Bowery Ballroom — [Info / Tickets](https://www.boweryballroom.com/events/)
@@ -435,12 +438,8 @@ _Last updated: 2026-02-23 02:01 EST_
 - **Kanine** @ Elsewhere — [Info / Tickets](https://www.songkick.com/concerts/43026583-kanine-at-elsewhere?utm_medium=organic\u0026utm_source=microformat)
 ### Jun 10, 2026
 - **Kevin Morby** @ Brooklyn Steel — [Info / Tickets](https://www.brooklynsteel.com/events/)
-### Jun 11, 2026
-- **Prince Daddy &amp; The Hyena** @ Le Poisson Rouge — [Info / Tickets](https://lpr.com/events/)
 ### Jun 12, 2026
 - **Snor** @ Warsaw — [Info / Tickets](https://www.songkick.com/concerts/43044554-snor-at-warsaw?utm_medium=organic\u0026utm_source=microformat)
-### Jun 13, 2026
-- **Hrishikesh Hirway** @ Le Poisson Rouge — [Info / Tickets](https://lpr.com/events/)
 ### Jun 19, 2026
 - **Vundabar** @ Warsaw — [Info / Tickets](https://www.warsawconcerts.com/events/)
 ### Jun 20, 2026
@@ -472,8 +471,6 @@ _Last updated: 2026-02-23 02:01 EST_
 - **Duncan Trussell** @ The Bell House — [Info / Tickets](https://www.thebellhouseny.com/events/)
 
 ## San Francisco
-### Feb 23, 2026
-- **Stephen Malkmus** @ Great American Music Hall — [Info / Tickets](https://www.gamh.com/events/)
 ### Feb 24, 2026
 - **rum·gold** @ Rickshaw Stop — [Info / Tickets](https://www.rickshawstop.com/events/)
 - **Miyavi** @ Regency Ballroom — [Info / Tickets](https://www.songkick.com/concerts/42631814-miyavi-at-regency-ballroom?utm_medium=organic\u0026utm_source=microformat)
@@ -763,6 +760,7 @@ _Last updated: 2026-02-23 02:01 EST_
 - **Grateful Shred** @ The Fillmore — [Info / Tickets](https://www.thefillmore.com/events/)
 ### Apr 19, 2026
 - **Jane Handcock** @ The Independent — [Info / Tickets](https://www.theindependentsf.com/calendar)
+- **Sgt. Splendor** @ Bottom of the Hill — [Info / Tickets](https://www.bottomofthehill.com/calendar.html)
 ### Apr 20, 2026
 - **Cattle Decapitation** @ Regency Ballroom — [Info / Tickets](https://theregencyballroom.com/events/)
 - **Bloodywood** @ August Hall — [Info / Tickets](https://augusthallsf.com/events/)
@@ -817,6 +815,7 @@ _Last updated: 2026-02-23 02:01 EST_
 ### May 1, 2026
 - **ford.** @ Rickshaw Stop — [Info / Tickets](https://www.songkick.com/concerts/43012735-ford-at-rickshaw-stop?utm_medium=organic\u0026utm_source=microformat)
 - **Le Youth** @ Regency Ballroom — [Info / Tickets](https://theregencyballroom.com/events/)
+- **Claire Rosinkranz** @ The Independent — [Info / Tickets](https://www.theindependentsf.com/calendar)
 - **Everyone Asked About You** @ Bottom of the Hill — [Info / Tickets](https://www.bottomofthehill.com/calendar.html)
 ### May 2, 2026
 - **Adult.** @ Rickshaw Stop — [Info / Tickets](https://www.songkick.com/concerts/43021216-adult-at-rickshaw-stop?utm_medium=organic\u0026utm_source=microformat)
@@ -838,6 +837,7 @@ _Last updated: 2026-02-23 02:01 EST_
 - **Kettama** @ Regency Ballroom — [Info / Tickets](https://www.songkick.com/concerts/42924410-kettama-at-regency-ballroom?utm_medium=organic\u0026utm_source=microformat)
 ### May 8, 2026
 - **Kettama** @ Regency Ballroom — [Info / Tickets](https://www.songkick.com/concerts/42918201-kettama-at-regency-ballroom?utm_medium=organic\u0026utm_source=microformat)
+- **Pennywise** @ The Fillmore — [Info / Tickets](https://www.songkick.com/concerts/43060100-pennywise-at-fillmore?utm_medium=organic\u0026utm_source=microformat)
 - **Trauma Ray** @ The Chapel — [Info / Tickets](https://www.thechapelsf.com/events/)
 ### May 10, 2026
 - **Ritt Momney** @ The Chapel — [Info / Tickets](https://www.songkick.com/concerts/43026365-ritt-momney-at-chapel?utm_medium=organic\u0026utm_source=microformat)
@@ -892,6 +892,8 @@ _Last updated: 2026-02-23 02:01 EST_
 - **Allah-Las** @ The Chapel — [Info / Tickets](https://www.thechapelsf.com/events/)
 ### Jun 2, 2026
 - **Jady** @ August Hall — [Info / Tickets](https://augusthallsf.com/events/)
+### Jun 4, 2026
+- **Clara La San** @ Regency Ballroom — [Info / Tickets](https://theregencyballroom.com/events/)
 ### Jun 5, 2026
 - **Jerry's Middle Finger** @ The Chapel — [Info / Tickets](https://www.thechapelsf.com/events/)
 ### Jun 6, 2026
@@ -933,3 +935,7 @@ _Last updated: 2026-02-23 02:01 EST_
 ### Aug 27, 2026
 - **Courtney Barnett** @ The Fillmore — [Info / Tickets](https://www.thefillmore.com/events/)
 - **Osees** @ The Chapel — [Info / Tickets](https://www.thechapelsf.com/events/)
+### Aug 28, 2026
+- **Osees** @ The Chapel — [Info / Tickets](https://www.thechapelsf.com/events/)
+### Sep 1, 2026
+- **Screeching Weasel** @ August Hall — [Info / Tickets](https://augusthallsf.com/events/)

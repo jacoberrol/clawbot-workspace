@@ -28,6 +28,11 @@
       "pop"
     ]
   },
+  "alicia creti": {
+    "cached_at": 1771927240.6345787,
+    "expires_at": 1781085640.634597,
+    "genres": []
+  },
   "all your friends": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781385740.214435,
@@ -46,6 +51,11 @@
   "amie blu": {
     "cached_at": 1771840885.5960212,
     "expires_at": 1781431285.596041,
+    "genres": []
+  },
+  "andy hull": {
+    "cached_at": 1771927235.833842,
+    "expires_at": 1780999235.8338606,
     "genres": []
   },
   "ariel elias": {
@@ -79,6 +89,11 @@
       "hip hop"
     ]
   },
+  "bullet tooth": {
+    "cached_at": 1771927207.0738745,
+    "expires_at": 1781776807.0738955,
+    "genres": []
+  },
   "camoufly": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1779744140.2144973,
@@ -106,10 +121,59 @@
       "indie folk"
     ]
   },
+  "chloe qisha": {
+    "cached_at": 1771927226.3213637,
+    "expires_at": 1780826426.3213813,
+    "genres": []
+  },
+  "chyl": {
+    "cached_at": 1771927210.2793877,
+    "expires_at": 1779876010.2794075,
+    "genres": []
+  },
   "clinton kane": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1779830540.214501,
     "genres": []
+  },
+  "clover county": {
+    "cached_at": 1771927223.1198094,
+    "expires_at": 1782122423.1198273,
+    "genres": []
+  },
+  "conducta": {
+    "cached_at": 1771927250.2842462,
+    "expires_at": 1779876050.284265,
+    "genres": [
+      "garage",
+      "uk",
+      "uk garage"
+    ]
+  },
+  "cornelia murr": {
+    "cached_at": 1771927205.4506888,
+    "expires_at": 1780221605.4507082,
+    "genres": [
+      "folk pop"
+    ]
+  },
+  "cubanismo!": {
+    "cached_at": 1771927224.7186224,
+    "expires_at": 1779703224.7186403,
+    "genres": [
+      "salsa",
+      "afro-cuban jazz",
+      "latin jazz"
+    ]
+  },
+  "cupcakke": {
+    "cached_at": 1771927237.4319386,
+    "expires_at": 1779703237.4319582,
+    "genres": [
+      "dirty rap",
+      "explicit",
+      "nsfw"
+    ]
   },
   "cyberia": {
     "cached_at": 1771840895.1995013,
@@ -127,6 +191,11 @@
     "genres": [
       "hip hop"
     ]
+  },
+  "dj k styles": {
+    "cached_at": 1771927247.0407543,
+    "expires_at": 1780740047.0407724,
+    "genres": []
   },
   "dj tokyo rose": {
     "cached_at": 1771795340.2144322,
@@ -147,6 +216,15 @@
     "expires_at": 1780653651.917487,
     "genres": []
   },
+  "drain": {
+    "cached_at": 1771927264.5255926,
+    "expires_at": 1780999264.5256126,
+    "genres": [
+      "hardcore punk",
+      "metal",
+      "agro"
+    ]
+  },
   "dream, ivory": {
     "cached_at": 1771840842.4853082,
     "expires_at": 1780653642.4853284,
@@ -162,9 +240,24 @@
     "expires_at": 1780740079.118476,
     "genres": []
   },
+  "earlybirds club": {
+    "cached_at": 1771927253.488107,
+    "expires_at": 1780048853.4881263,
+    "genres": []
+  },
   "ed gamble": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781731340.2145045,
+    "genres": []
+  },
+  "elk city": {
+    "cached_at": 1771927286.900016,
+    "expires_at": 1780567286.900036,
+    "genres": []
+  },
+  "emily winter": {
+    "cached_at": 1771927270.8486352,
+    "expires_at": 1780394470.8486545,
     "genres": []
   },
   "emmy meli": {
@@ -231,9 +324,28 @@
       "post-punk"
     ]
   },
+  "habib koit\u00e9": {
+    "cached_at": 1771927266.143651,
+    "expires_at": 1780135266.1437125,
+    "genres": [
+      "world"
+    ]
+  },
+  "hari kondabolu": {
+    "cached_at": 1771927218.3081853,
+    "expires_at": 1780653618.308206,
+    "genres": [
+      "comedian"
+    ]
+  },
   "herbert holler": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780521740.2145138,
+    "genres": []
+  },
+  "highschool": {
+    "cached_at": 1771927239.0381687,
+    "expires_at": 1779962439.0381904,
     "genres": []
   },
   "humble the great": {
@@ -268,6 +380,16 @@
     "expires_at": 1779916940.2145193,
     "genres": []
   },
+  "jacqueline novak": {
+    "cached_at": 1771927296.5458498,
+    "expires_at": 1780826496.5458696,
+    "genres": []
+  },
+  "jamie fine": {
+    "cached_at": 1771927280.4905958,
+    "expires_at": 1782208880.4906154,
+    "genres": []
+  },
   "jesse baez": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780953740.214521,
@@ -287,6 +409,11 @@
     "expires_at": 1780912892.00335,
     "genres": []
   },
+  "joel kim booster": {
+    "cached_at": 1771927262.9192264,
+    "expires_at": 1781344862.9192438,
+    "genres": []
+  },
   "joey valence & brae": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780176140.2145226,
@@ -294,6 +421,13 @@
       "hip hop",
       "rap rock",
       "boom bap"
+    ]
+  },
+  "jonathan richman": {
+    "cached_at": 1771927203.8496,
+    "expires_at": 1781949603.849624,
+    "genres": [
+      "classic pop and rock"
     ]
   },
   "jordana": {
@@ -305,6 +439,25 @@
       "bedroom pop"
     ]
   },
+  "joris delacroix": {
+    "cached_at": 1771927242.2371247,
+    "expires_at": 1780653642.2371442,
+    "genres": []
+  },
+  "josh sharp": {
+    "cached_at": 1771927216.7027402,
+    "expires_at": 1780912816.7027628,
+    "genres": []
+  },
+  "josman": {
+    "cached_at": 1771927202.2388873,
+    "expires_at": 1780048802.2389243,
+    "genres": [
+      "rap",
+      "hip hop",
+      "cloud rap"
+    ]
+  },
   "juice": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1779657740.2145247,
@@ -314,14 +467,33 @@
       "girl group"
     ]
   },
+  "k-maro": {
+    "cached_at": 1771927245.438768,
+    "expires_at": 1781776845.438787,
+    "genres": []
+  },
   "kaiju big battel": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780953740.2145264,
     "genres": []
   },
+  "kaitlyn aurelia smith": {
+    "cached_at": 1771927291.6994967,
+    "expires_at": 1780221691.699517,
+    "genres": [
+      "electronic",
+      "composer",
+      "ambient pop"
+    ]
+  },
   "kaivon": {
     "cached_at": 1771840890.4084916,
     "expires_at": 1779962490.4085083,
+    "genres": []
+  },
+  "kyle kinane": {
+    "cached_at": 1771927251.8847308,
+    "expires_at": 1781258451.8847504,
     "genres": []
   },
   "labiahead": {
@@ -329,9 +501,19 @@
     "expires_at": 1780826402.5165792,
     "genres": []
   },
+  "lady shaka": {
+    "cached_at": 1771927293.302287,
+    "expires_at": 1780826493.3023086,
+    "genres": []
+  },
   "landon conrath": {
     "cached_at": 1771840812.139475,
     "expires_at": 1781863212.1394942,
+    "genres": []
+  },
+  "level up": {
+    "cached_at": 1771927288.4968948,
+    "expires_at": 1781604088.4969132,
     "genres": []
   },
   "lindsay ell": {
@@ -345,6 +527,15 @@
     "cached_at": 1771795340.2144322,
     "expires_at": 1779744140.2145462,
     "genres": []
+  },
+  "luna": {
+    "cached_at": 1771927275.6852033,
+    "expires_at": 1781431275.6852243,
+    "genres": [
+      "rock",
+      "alternative rock",
+      "visual kei"
+    ]
   },
   "lykn": {
     "cached_at": 1771840831.379237,
@@ -374,10 +565,32 @@
     "expires_at": 1780999216.9397395,
     "genres": []
   },
+  "matt berninger": {
+    "cached_at": 1771927229.5285733,
+    "expires_at": 1781431229.5285923,
+    "genres": [
+      "indie rock",
+      "alternative",
+      "lyricist"
+    ]
+  },
   "michael shannon": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781299340.21455,
     "genres": []
+  },
+  "midnight til morning": {
+    "cached_at": 1771927232.5634346,
+    "expires_at": 1780048832.5634534,
+    "genres": []
+  },
+  "mind enterprises": {
+    "cached_at": 1771927215.0932872,
+    "expires_at": 1781604015.0933065,
+    "genres": [
+      "electronic",
+      "italo-disco"
+    ]
   },
   "molina": {
     "cached_at": 1771840887.203772,
@@ -411,6 +624,14 @@
       "soul"
     ]
   },
+  "nothing": {
+    "cached_at": 1771927294.9432914,
+    "expires_at": 1781604094.943313,
+    "genres": [
+      "shoegaze",
+      "alternative rock"
+    ]
+  },
   "okayval": {
     "cached_at": 1771840848.7169986,
     "expires_at": 1779962448.7170162,
@@ -429,6 +650,15 @@
     "cached_at": 1771840858.1434083,
     "expires_at": 1781949658.14343,
     "genres": []
+  },
+  "patrick watson": {
+    "cached_at": 1771927282.093009,
+    "expires_at": 1780048882.093038,
+    "genres": [
+      "indie rock",
+      "chamber pop",
+      "rock"
+    ]
   },
   "peter mcpoland": {
     "cached_at": 1771840807.3275478,
@@ -466,6 +696,16 @@
       "trap"
     ]
   },
+  "rich(ard) dawson": {
+    "cached_at": 1771927227.9297369,
+    "expires_at": 1780999227.929756,
+    "genres": []
+  },
+  "ricky montgomery": {
+    "cached_at": 1771927255.0941832,
+    "expires_at": 1780394455.0942016,
+    "genres": []
+  },
   "rory scovel": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781040140.2145627,
@@ -475,6 +715,36 @@
     "cached_at": 1771840844.0804005,
     "expires_at": 1780308044.0804179,
     "genres": []
+  },
+  "rusowsky": {
+    "cached_at": 1771927277.2901227,
+    "expires_at": 1781344877.2901375,
+    "genres": []
+  },
+  "ryan caraveo": {
+    "cached_at": 1771927272.451882,
+    "expires_at": 1780135272.4519053,
+    "genres": []
+  },
+  "ryan davis": {
+    "cached_at": 1771927274.059897,
+    "expires_at": 1780567274.059918,
+    "genres": []
+  },
+  "sam collins": {
+    "cached_at": 1771927258.2977154,
+    "expires_at": 1780999258.2977324,
+    "genres": [
+      "blues",
+      "death by heart disease"
+    ]
+  },
+  "sam wilkes": {
+    "cached_at": 1771927285.2965379,
+    "expires_at": 1782208885.2965574,
+    "genres": [
+      "jazz"
+    ]
   },
   "samm henshaw": {
     "cached_at": 1771840829.7783267,
@@ -502,6 +772,15 @@
     "expires_at": 1780221639.2496026,
     "genres": []
   },
+  "shady nasty": {
+    "cached_at": 1771927267.7410858,
+    "expires_at": 1780826467.7411063,
+    "genres": [
+      "post-punk",
+      "post-hardcore",
+      "rap rock"
+    ]
+  },
   "sienna spiro": {
     "cached_at": 1771840862.9354625,
     "expires_at": 1781776862.9354799,
@@ -509,6 +788,28 @@
       "pop soul",
       "pop",
       "singer-songwriter"
+    ]
+  },
+  "skai water": {
+    "cached_at": 1771927221.5154731,
+    "expires_at": 1781690421.5155284,
+    "genres": []
+  },
+  "skaiwater": {
+    "cached_at": 1771927219.9085972,
+    "expires_at": 1779876019.9086177,
+    "genres": [
+      "rap",
+      "dance"
+    ]
+  },
+  "slomosa": {
+    "cached_at": 1771927234.224868,
+    "expires_at": 1781431234.2248871,
+    "genres": [
+      "stoner rock",
+      "heavy rock",
+      "desert rock"
     ]
   },
   "sofia d'angelo": {
@@ -544,6 +845,11 @@
     "expires_at": 1780394410.5324607,
     "genres": []
   },
+  "strutman lane": {
+    "cached_at": 1771927261.312218,
+    "expires_at": 1780999261.3122368,
+    "genres": []
+  },
   "sumsun": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780608140.21457,
@@ -556,6 +862,15 @@
       "art pop",
       "pop",
       "singer-songwriter"
+    ]
+  },
+  "sweet pill": {
+    "cached_at": 1771927208.6738667,
+    "expires_at": 1781517608.6738865,
+    "genres": [
+      "alternative rock",
+      "emo",
+      "midwest emo"
     ]
   },
   "taiki nulight": {
@@ -579,6 +894,25 @@
       "acid jazz"
     ]
   },
+  "the hellp": {
+    "cached_at": 1771927248.6436179,
+    "expires_at": 1781690448.643641,
+    "genres": []
+  },
+  "the locust": {
+    "cached_at": 1771927256.697563,
+    "expires_at": 1780740056.6975818,
+    "genres": [
+      "electronic",
+      "hardcore",
+      "math rock"
+    ]
+  },
+  "the technicolors": {
+    "cached_at": 1771927243.8385792,
+    "expires_at": 1781172043.8385997,
+    "genres": []
+  },
   "timecop1983": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780089740.2145758,
@@ -586,6 +920,15 @@
       "synthwave",
       "eighties",
       "dreamwave"
+    ]
+  },
+  "tokyo tea room": {
+    "cached_at": 1771927213.4870365,
+    "expires_at": 1780221613.4870553,
+    "genres": [
+      "dream pop",
+      "psych pop",
+      "dreampop"
     ]
   },
   "trixter": {
@@ -615,6 +958,11 @@
     "expires_at": 1780394421.7321265,
     "genres": []
   },
+  "westerman": {
+    "cached_at": 1771927211.8851283,
+    "expires_at": 1779962411.885147,
+    "genres": []
+  },
   "what so not": {
     "cached_at": 1771840823.3303146,
     "expires_at": 1780999223.3303325,
@@ -628,6 +976,16 @@
       "hip hop",
       "indie"
     ]
+  },
+  "why are you single?": {
+    "cached_at": 1771927283.6919775,
+    "expires_at": 1780308083.6919956,
+    "genres": []
+  },
+  "wild party": {
+    "cached_at": 1771927278.8890247,
+    "expires_at": 1780048878.8890429,
+    "genres": []
   },
   "xmal deutschland": {
     "cached_at": 1771840871.133371,
@@ -658,5 +1016,12 @@
     "cached_at": 1771840859.7375708,
     "expires_at": 1780135259.737591,
     "genres": []
+  },
+  "zingara": {
+    "cached_at": 1771927290.0947185,
+    "expires_at": 1781604090.0947373,
+    "genres": [
+      "dubstep"
+    ]
   }
 }

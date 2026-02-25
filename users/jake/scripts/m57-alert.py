@@ -49,7 +49,7 @@ def send_notification(message):
     try:
         result = subprocess.run(
             [
-                "openclaw", "message", "send",
+                "/home/exedev/.npm-global/bin/openclaw", "message", "send",
                 "--channel", "telegram",
                 "--target", os.environ.get("TELEGRAM_TARGET", ""),
                 "--message", message,
