@@ -28,6 +28,11 @@
       "pop"
     ]
   },
+  "alex grubard": {
+    "cached_at": 1772013698.9294827,
+    "expires_at": 1780653698.9295022,
+    "genres": []
+  },
   "alicia creti": {
     "cached_at": 1771927240.6345787,
     "expires_at": 1781085640.634597,
@@ -42,6 +47,15 @@
     "cached_at": 1771795340.2144322,
     "expires_at": 1781558540.2144804,
     "genres": []
+  },
+  "alok": {
+    "cached_at": 1772013671.3862042,
+    "expires_at": 1780135271.386225,
+    "genres": [
+      "dance",
+      "2010s",
+      "2020s"
+    ]
   },
   "amber mark": {
     "cached_at": 1771795340.2144322,
@@ -58,6 +72,15 @@
     "expires_at": 1780999235.8338606,
     "genres": []
   },
+  "anna von hausswolff": {
+    "cached_at": 1772013604.130898,
+    "expires_at": 1780221604.1309164,
+    "genres": [
+      "neoclassical dark wave",
+      "drone",
+      "art rock"
+    ]
+  },
   "ariel elias": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780348940.2144887,
@@ -70,6 +93,11 @@
       "folk"
     ]
   },
+  "ashes to amber": {
+    "cached_at": 1772013658.527405,
+    "expires_at": 1780135258.527424,
+    "genres": []
+  },
   "beauty school dropout": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780867340.214491,
@@ -80,6 +108,25 @@
   "bjrnck": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781990540.2144933,
+    "genres": []
+  },
+  "boy factory": {
+    "cached_at": 1772013602.4390469,
+    "expires_at": 1780221602.4390748,
+    "genres": []
+  },
+  "boys go to jupiter": {
+    "cached_at": 1772013682.1512027,
+    "expires_at": 1782208882.15122,
+    "genres": [
+      "pop",
+      "power pop",
+      "indie pop"
+    ]
+  },
+  "brad stank": {
+    "cached_at": 1772013689.7554884,
+    "expires_at": 1780999289.7555072,
     "genres": []
   },
   "bryce vine": {
@@ -103,6 +150,15 @@
       "dance"
     ]
   },
+  "carly cosgrove": {
+    "cached_at": 1772013695.9301038,
+    "expires_at": 1782208895.9301207,
+    "genres": [
+      "pop punk",
+      "punk",
+      "pop rock"
+    ]
+  },
   "cass mccombs": {
     "cached_at": 1771840882.3527105,
     "expires_at": 1779962482.3527484,
@@ -120,6 +176,20 @@
       "folk",
       "indie folk"
     ]
+  },
+  "chameleons": {
+    "cached_at": 1772013678.9760034,
+    "expires_at": 1779962478.9760225,
+    "genres": [
+      "post-punk",
+      "dream pop",
+      "new wave"
+    ]
+  },
+  "chasewest": {
+    "cached_at": 1772013652.144379,
+    "expires_at": 1780826452.1443973,
+    "genres": []
   },
   "chloe qisha": {
     "cached_at": 1771927226.3213637,
@@ -180,6 +250,11 @@
     "expires_at": 1781863295.199518,
     "genres": []
   },
+  "dan mintz": {
+    "cached_at": 1772013608.7484355,
+    "expires_at": 1781949608.748452,
+    "genres": []
+  },
   "dan reeder": {
     "cached_at": 1771840845.6838713,
     "expires_at": 1780135245.683892,
@@ -191,6 +266,11 @@
     "genres": [
       "hip hop"
     ]
+  },
+  "divorce (uk)": {
+    "cached_at": 1772013614.9873557,
+    "expires_at": 1780308014.9873774,
+    "genres": []
   },
   "dj k styles": {
     "cached_at": 1771927247.0407543,
@@ -250,6 +330,14 @@
     "expires_at": 1781731340.2145045,
     "genres": []
   },
+  "el cuarteto de nos": {
+    "cached_at": 1772013626.4403336,
+    "expires_at": 1782208826.4403505,
+    "genres": [
+      "alternative rock",
+      "latin rock"
+    ]
+  },
   "elk city": {
     "cached_at": 1771927286.900016,
     "expires_at": 1780567286.900036,
@@ -281,6 +369,32 @@
       "power pop"
     ]
   },
+  "femtanyl": {
+    "cached_at": 1772013680.5657382,
+    "expires_at": 1780653680.5657563,
+    "genres": [
+      "breakcore",
+      "digital hardcore",
+      "transgender"
+    ]
+  },
+  "field medic": {
+    "cached_at": 1772013675.9711099,
+    "expires_at": 1781258475.9711275,
+    "genres": [
+      "lo-fi",
+      "freak folk"
+    ]
+  },
+  "frog": {
+    "cached_at": 1772013686.5598643,
+    "expires_at": 1781172086.5598836,
+    "genres": [
+      "eurodance",
+      "schlager",
+      "synth-pop"
+    ]
+  },
   "gabi hartmann": {
     "cached_at": 1771840832.9918642,
     "expires_at": 1779876032.9918833,
@@ -302,9 +416,23 @@
     "expires_at": 1779703220.138071,
     "genres": []
   },
+  "glen hansard": {
+    "cached_at": 1772013632.8323095,
+    "expires_at": 1779876032.8323264,
+    "genres": [
+      "rock",
+      "folk rock",
+      "singer-songwriter"
+    ]
+  },
   "glitterer": {
     "cached_at": 1771840840.8461828,
     "expires_at": 1780740040.846201,
+    "genres": []
+  },
+  "go kurosawa": {
+    "cached_at": 1772013629.6364803,
+    "expires_at": 1781604029.6365001,
     "genres": []
   },
   "guitarricadelafuente": {
@@ -331,11 +459,40 @@
       "world"
     ]
   },
+  "habibi": {
+    "cached_at": 1772013620.0690632,
+    "expires_at": 1781863220.069082,
+    "genres": [
+      "rock"
+    ]
+  },
+  "happy landing": {
+    "cached_at": 1772013647.3696842,
+    "expires_at": 1780048847.3697152,
+    "genres": []
+  },
   "hari kondabolu": {
     "cached_at": 1771927218.3081853,
     "expires_at": 1780653618.308206,
     "genres": [
       "comedian"
+    ]
+  },
+  "heavenly": {
+    "cached_at": 1772013688.1456196,
+    "expires_at": 1780740088.1456394,
+    "genres": [
+      "indie pop",
+      "twee pop",
+      "indie rock"
+    ]
+  },
+  "hepcat": {
+    "cached_at": 1772013653.7599432,
+    "expires_at": 1781776853.759965,
+    "genres": [
+      "ska",
+      "rocksteady"
     ]
   },
   "herbert holler": {
@@ -346,6 +503,11 @@
   "highschool": {
     "cached_at": 1771927239.0381687,
     "expires_at": 1779962439.0381904,
+    "genres": []
+  },
+  "hudson freeman": {
+    "cached_at": 1772013610.4065728,
+    "expires_at": 1781258410.4065912,
     "genres": []
   },
   "humble the great": {
@@ -444,6 +606,15 @@
     "expires_at": 1780653642.2371442,
     "genres": []
   },
+  "joseph": {
+    "cached_at": 1772013611.9914746,
+    "expires_at": 1781172011.9914927,
+    "genres": [
+      "classical",
+      "austrian",
+      "composer"
+    ]
+  },
   "josh sharp": {
     "cached_at": 1771927216.7027402,
     "expires_at": 1780912816.7027628,
@@ -491,6 +662,15 @@
     "expires_at": 1779962490.4085083,
     "genres": []
   },
+  "kepler": {
+    "cached_at": 1772013616.5793974,
+    "expires_at": 1782036016.5794153,
+    "genres": [
+      "audiobook",
+      "has german audiobooks",
+      "collective pseudonym"
+    ]
+  },
   "kyle kinane": {
     "cached_at": 1771927251.8847308,
     "expires_at": 1781258451.8847504,
@@ -528,6 +708,11 @@
     "expires_at": 1779744140.2145462,
     "genres": []
   },
+  "luciano messenjah": {
+    "cached_at": 1772013694.340567,
+    "expires_at": 1782036094.3405833,
+    "genres": []
+  },
   "luna": {
     "cached_at": 1771927275.6852033,
     "expires_at": 1781431275.6852243,
@@ -551,6 +736,11 @@
       "heavy metal"
     ]
   },
+  "magnolia & johnson electric co.": {
+    "cached_at": 1772013661.8657787,
+    "expires_at": 1780135261.865798,
+    "genres": []
+  },
   "mariah the scientist": {
     "cached_at": 1771840808.9303396,
     "expires_at": 1781517608.9303617,
@@ -559,6 +749,11 @@
       "contemporary r&b",
       "r&b/soul"
     ]
+  },
+  "mark robinson": {
+    "cached_at": 1772013624.8449402,
+    "expires_at": 1779962424.8449628,
+    "genres": []
   },
   "mary droppinz": {
     "cached_at": 1771840816.9396524,
@@ -574,6 +769,20 @@
       "lyricist"
     ]
   },
+  "mclusky": {
+    "cached_at": 1772013636.0079842,
+    "expires_at": 1780394436.008015,
+    "genres": [
+      "noise rock",
+      "wales",
+      "indie rock"
+    ]
+  },
+  "melissa villasenor": {
+    "cached_at": 1772013645.7864497,
+    "expires_at": 1781517645.7864695,
+    "genres": []
+  },
   "michael shannon": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781299340.21455,
@@ -583,6 +792,15 @@
     "cached_at": 1771927232.5634346,
     "expires_at": 1780048832.5634534,
     "genres": []
+  },
+  "mike doughty": {
+    "cached_at": 1772013634.414392,
+    "expires_at": 1779876034.4144063,
+    "genres": [
+      "rock",
+      "alternative rock",
+      "indie rock"
+    ]
   },
   "mind enterprises": {
     "cached_at": 1771927215.0932872,
@@ -595,6 +813,16 @@
   "molina": {
     "cached_at": 1771840887.203772,
     "expires_at": 1781949687.2037911,
+    "genres": []
+  },
+  "monkeys on a string": {
+    "cached_at": 1772013650.5548089,
+    "expires_at": 1782208850.5548277,
+    "genres": []
+  },
+  "naika": {
+    "cached_at": 1772013644.1448488,
+    "expires_at": 1781949644.1448681,
     "genres": []
   },
   "natalie jane": {
@@ -631,6 +859,11 @@
       "shoegaze",
       "alternative rock"
     ]
+  },
+  "odumodublvck": {
+    "cached_at": 1772013660.1307867,
+    "expires_at": 1780740060.130806,
+    "genres": []
   },
   "okayval": {
     "cached_at": 1771840848.7169986,
@@ -672,6 +905,14 @@
       "drum and bass"
     ]
   },
+  "poison ru\u00efn": {
+    "cached_at": 1772013648.962354,
+    "expires_at": 1779962448.962382,
+    "genres": [
+      "deathrock",
+      "post-punk"
+    ]
+  },
   "poolside": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1779571340.2145572,
@@ -681,11 +922,25 @@
       "summer"
     ]
   },
+  "raf-saperra": {
+    "cached_at": 1772013639.3370686,
+    "expires_at": 1780480839.3370857,
+    "genres": []
+  },
   "ratboys": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780694540.214559,
     "genres": [
       "indie rock"
+    ]
+  },
+  "reggie watts": {
+    "cached_at": 1772013655.3471932,
+    "expires_at": 1781085655.347212,
+    "genres": [
+      "neo soul",
+      "trip hop",
+      "soul"
     ]
   },
   "rich brian": {
@@ -705,6 +960,15 @@
     "cached_at": 1771927255.0941832,
     "expires_at": 1780394455.0942016,
     "genres": []
+  },
+  "ritt momney": {
+    "cached_at": 1772013692.756554,
+    "expires_at": 1780048892.756572,
+    "genres": [
+      "indie rock",
+      "english",
+      "indie pop"
+    ]
   },
   "rory scovel": {
     "cached_at": 1771795340.2144322,
@@ -729,6 +993,11 @@
   "ryan davis": {
     "cached_at": 1771927274.059897,
     "expires_at": 1780567274.059918,
+    "genres": []
+  },
+  "ryan montblueau band": {
+    "cached_at": 1772013668.2043998,
+    "expires_at": 1781085668.204429,
     "genres": []
   },
   "sam collins": {
@@ -790,6 +1059,14 @@
       "singer-songwriter"
     ]
   },
+  "six sex": {
+    "cached_at": 1772013642.5510027,
+    "expires_at": 1780394442.5510182,
+    "genres": [
+      "latin",
+      "neoperreo"
+    ]
+  },
   "skai water": {
     "cached_at": 1771927221.5154731,
     "expires_at": 1781690421.5155284,
@@ -802,6 +1079,11 @@
       "rap",
       "dance"
     ]
+  },
+  "skullcrusher": {
+    "cached_at": 1772013666.6210675,
+    "expires_at": 1780567266.6210883,
+    "genres": []
   },
   "slomosa": {
     "cached_at": 1771927234.224868,
@@ -850,6 +1132,15 @@
     "expires_at": 1780999261.3122368,
     "genres": []
   },
+  "stuck": {
+    "cached_at": 1772013631.2422175,
+    "expires_at": 1780308031.2422364,
+    "genres": [
+      "jazz",
+      "metal",
+      "alternative metal"
+    ]
+  },
   "sumsun": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780608140.21457,
@@ -878,6 +1169,11 @@
     "expires_at": 1779789654.9442637,
     "genres": []
   },
+  "tanya donnelly": {
+    "cached_at": 1772013663.4493115,
+    "expires_at": 1779789663.449328,
+    "genres": []
+  },
   "telykast": {
     "cached_at": 1771840818.5370684,
     "expires_at": 1780394418.5370889,
@@ -887,11 +1183,29 @@
       "electronic"
     ]
   },
+  "the belair lip bombs": {
+    "cached_at": 1772013640.9672966,
+    "expires_at": 1779962440.9673152,
+    "genres": [
+      "indie rock",
+      "power pop",
+      "garage rock"
+    ]
+  },
   "the greyboy allstars": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1781990540.214574,
     "genres": [
       "acid jazz"
+    ]
+  },
+  "the growlers": {
+    "cached_at": 1772013669.7897449,
+    "expires_at": 1781431269.7897637,
+    "genres": [
+      "garage rock",
+      "psychedelic rock",
+      "surf rock"
     ]
   },
   "the hellp": {
@@ -912,6 +1226,33 @@
     "cached_at": 1771927243.8385792,
     "expires_at": 1781172043.8385997,
     "genres": []
+  },
+  "the wedding present": {
+    "cached_at": 1772013623.2519438,
+    "expires_at": 1780308023.251962,
+    "genres": [
+      "indie rock",
+      "post-punk",
+      "c86"
+    ]
+  },
+  "thomas dolby": {
+    "cached_at": 1772013672.9742665,
+    "expires_at": 1780740072.9742846,
+    "genres": [
+      "new wave",
+      "synth-pop",
+      "rock"
+    ]
+  },
+  "tigers jaw": {
+    "cached_at": 1772013618.1746194,
+    "expires_at": 1780912818.1746368,
+    "genres": [
+      "emo",
+      "indie rock",
+      "indie folk"
+    ]
   },
   "timecop1983": {
     "cached_at": 1771795340.2144322,
@@ -948,6 +1289,15 @@
     "expires_at": 1780694540.214581,
     "genres": []
   },
+  "two feet": {
+    "cached_at": 1772013656.9379885,
+    "expires_at": 1781431256.9380066,
+    "genres": [
+      "electronic",
+      "alternative rock",
+      "singer-songwriter"
+    ]
+  },
   "vendredi sur mer": {
     "cached_at": 1771795340.2144322,
     "expires_at": 1780176140.2145834,
@@ -956,6 +1306,18 @@
   "victoryland": {
     "cached_at": 1771840821.7321086,
     "expires_at": 1780394421.7321265,
+    "genres": []
+  },
+  "voxtrot": {
+    "cached_at": 1772013637.745484,
+    "expires_at": 1780912837.7455003,
+    "genres": [
+      "rock and indie"
+    ]
+  },
+  "wallice": {
+    "cached_at": 1772013665.0353582,
+    "expires_at": 1781863265.0353754,
     "genres": []
   },
   "westerman": {
@@ -975,6 +1337,15 @@
       "rap",
       "hip hop",
       "indie"
+    ]
+  },
+  "whitney": {
+    "cached_at": 1772013628.0372856,
+    "expires_at": 1780308028.0373027,
+    "genres": [
+      "contemporary r&b",
+      "pop",
+      "dance-pop"
     ]
   },
   "why are you single?": {
@@ -1015,6 +1386,11 @@
   "young me and the moons": {
     "cached_at": 1771840859.7375708,
     "expires_at": 1780135259.737591,
+    "genres": []
+  },
+  "yung kai": {
+    "cached_at": 1772013621.6640522,
+    "expires_at": 1781776821.6640701,
     "genres": []
   },
   "zingara": {

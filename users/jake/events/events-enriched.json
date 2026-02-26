@@ -1,20 +1,7 @@
 {
-  "generated_at": "2026-02-24T02:01:01.590226-05:00",
+  "generated_at": "2026-02-25T02:01:03.951876-05:00",
   "cities": {
     "New York City": [
-      {
-        "name": "Joey Valence & Brae",
-        "venue": "Brooklyn Steel",
-        "neighborhood": "Brooklyn/Williamsburg",
-        "date": "2026-02-24",
-        "url": "https://www.brooklynsteel.com/events/",
-        "genres": [
-          "hip hop",
-          "rap rock",
-          "boom bap"
-        ],
-        "is_theater": false
-      },
       {
         "name": "Labiahead",
         "venue": "Le Poisson Rouge",
@@ -291,6 +278,15 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-02-28",
         "url": "https://www.songkick.com/concerts/43020694-sasha-marie-at-babys-all-right?utm_medium=organic\\u0026utm_source=microformat",
+        "genres": [],
+        "is_theater": false
+      },
+      {
+        "name": "Boy Factory",
+        "venue": "Baby's All Right",
+        "neighborhood": "Brooklyn/Williamsburg",
+        "date": "2026-02-28",
+        "url": "https://www.songkick.com/concerts/43064310-boy-factory-at-babys-all-right?utm_medium=organic\\u0026utm_source=microformat",
         "genres": [],
         "is_theater": false
       },
@@ -1391,7 +1387,11 @@
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-03-25",
         "url": "https://www.elsewherebrooklyn.com/events/",
-        "genres": [],
+        "genres": [
+          "neoclassical dark wave",
+          "drone",
+          "art rock"
+        ],
         "is_theater": false
       },
       {
@@ -1848,7 +1848,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-04",
         "url": "https://www.songkick.com/concerts/42874938-joseph-at-music-hall-of-williamsburg?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "classical",
+          "austrian",
+          "composer"
+        ],
         "is_theater": false
       },
       {
@@ -1888,7 +1892,11 @@
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-04-04",
         "url": "https://www.songkick.com/concerts/42944658-kepler-at-elsewhere?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "audiobook",
+          "has german audiobooks",
+          "collective pseudonym"
+        ],
         "is_theater": false
       },
       {
@@ -1906,7 +1914,11 @@
         "neighborhood": "Manhattan/West Village",
         "date": "2026-04-04",
         "url": "https://www.songkick.com/concerts/42974888-tigers-jaw-at-racket-nyc?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "emo",
+          "indie rock",
+          "indie folk"
+        ],
         "is_theater": false
       },
       {
@@ -1915,7 +1927,9 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-05",
         "url": "https://www.songkick.com/concerts/43038659-habibi-at-babys-all-right?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "rock"
+        ],
         "is_theater": false
       },
       {
@@ -1942,7 +1956,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-07",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "indie rock",
+          "post-punk",
+          "c86"
+        ],
         "is_theater": false
       },
       {
@@ -1960,7 +1978,10 @@
         "neighborhood": "Brooklyn/Greenpoint",
         "date": "2026-04-07",
         "url": "https://www.warsawconcerts.com/events/",
-        "genres": [],
+        "genres": [
+          "alternative rock",
+          "latin rock"
+        ],
         "is_theater": false
       },
       {
@@ -1969,7 +1990,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-08",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "contemporary r&b",
+          "pop",
+          "dance-pop"
+        ],
         "is_theater": false
       },
       {
@@ -1987,7 +2012,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-08",
         "url": "https://www.songkick.com/concerts/43007807-stuck-at-babys-all-right?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "jazz",
+          "metal",
+          "alternative metal"
+        ],
         "is_theater": false
       },
       {
@@ -1996,7 +2025,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-09",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "contemporary r&b",
+          "pop",
+          "dance-pop"
+        ],
         "is_theater": false
       },
       {
@@ -2005,7 +2038,11 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-04-09",
         "url": "https://www.boweryballroom.com/events/",
-        "genres": [],
+        "genres": [
+          "rock",
+          "folk rock",
+          "singer-songwriter"
+        ],
         "is_theater": false
       },
       {
@@ -2014,7 +2051,11 @@
         "neighborhood": "Manhattan/Greenwich Village",
         "date": "2026-04-09",
         "url": "https://lpr.com/events/",
-        "genres": [],
+        "genres": [
+          "rock",
+          "alternative rock",
+          "indie rock"
+        ],
         "is_theater": false
       },
       {
@@ -2023,7 +2064,11 @@
         "neighborhood": "Brooklyn/Greenpoint",
         "date": "2026-04-09",
         "url": "https://www.warsawconcerts.com/events/",
-        "genres": [],
+        "genres": [
+          "noise rock",
+          "wales",
+          "indie rock"
+        ],
         "is_theater": false
       },
       {
@@ -2032,7 +2077,9 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-10",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "rock and indie"
+        ],
         "is_theater": false
       },
       {
@@ -2050,7 +2097,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-10",
         "url": "https://www.babysallright.com/",
-        "genres": [],
+        "genres": [
+          "indie rock",
+          "power pop",
+          "garage rock"
+        ],
         "is_theater": false
       },
       {
@@ -2059,7 +2110,10 @@
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-04-10",
         "url": "https://www.songkick.com/concerts/42820516-six-sex-at-elsewhere?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "latin",
+          "neoperreo"
+        ],
         "is_theater": false
       },
       {
@@ -2095,11 +2149,23 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-04-11",
         "url": "https://www.songkick.com/concerts/43036906-poison-ruin-at-bowery-ballroom?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "deathrock",
+          "post-punk"
+        ],
         "is_theater": false
       },
       {
         "name": "Monkeys On A String",
+        "venue": "Le Poisson Rouge",
+        "neighborhood": "Manhattan/Greenwich Village",
+        "date": "2026-04-11",
+        "url": "https://lpr.com/events/",
+        "genres": [],
+        "is_theater": false
+      },
+      {
+        "name": "Gimme Gimme Disco",
         "venue": "Le Poisson Rouge",
         "neighborhood": "Manhattan/Greenwich Village",
         "date": "2026-04-11",
@@ -2122,7 +2188,10 @@
         "neighborhood": "Brooklyn/Greenpoint",
         "date": "2026-04-11",
         "url": "https://www.songkick.com/concerts/42862556-hepcat-at-warsaw?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "ska",
+          "rocksteady"
+        ],
         "is_theater": false
       },
       {
@@ -2131,7 +2200,11 @@
         "neighborhood": "Brooklyn/Gowanus",
         "date": "2026-04-11",
         "url": "https://www.thebellhouseny.com/events/",
-        "genres": [],
+        "genres": [
+          "neo soul",
+          "trip hop",
+          "soul"
+        ],
         "is_theater": false
       },
       {
@@ -2140,7 +2213,11 @@
         "neighborhood": "Manhattan/West Village",
         "date": "2026-04-11",
         "url": "https://www.songkick.com/concerts/42891581-two-feet-at-racket-nyc?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "electronic",
+          "alternative rock",
+          "singer-songwriter"
+        ],
         "is_theater": false
       },
       {
@@ -2176,7 +2253,11 @@
         "neighborhood": "Brooklyn/Gowanus",
         "date": "2026-04-12",
         "url": "https://www.thebellhouseny.com/events/",
-        "genres": [],
+        "genres": [
+          "neo soul",
+          "trip hop",
+          "soul"
+        ],
         "is_theater": false
       },
       {
@@ -2221,7 +2302,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-15",
         "url": "https://www.songkick.com/concerts/42894326-growlers-at-brooklyn-steel?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "garage rock",
+          "psychedelic rock",
+          "surf rock"
+        ],
         "is_theater": false
       },
       {
@@ -2230,7 +2315,11 @@
         "neighborhood": "Brooklyn/Gowanus",
         "date": "2026-04-15",
         "url": "https://www.songkick.com/concerts/43058131-alok-at-bell-house?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "dance",
+          "2010s",
+          "2020s"
+        ],
         "is_theater": false
       },
       {
@@ -2239,7 +2328,11 @@
         "neighborhood": "Manhattan/West Village",
         "date": "2026-04-15",
         "url": "https://www.racketnyc.com/events",
-        "genres": [],
+        "genres": [
+          "new wave",
+          "synth-pop",
+          "rock"
+        ],
         "is_theater": false
       },
       {
@@ -2257,7 +2350,10 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-16",
         "url": "https://www.babysallright.com/",
-        "genres": [],
+        "genres": [
+          "lo-fi",
+          "freak folk"
+        ],
         "is_theater": false
       },
       {
@@ -2275,7 +2371,11 @@
         "neighborhood": "Brooklyn/Greenpoint",
         "date": "2026-04-16",
         "url": "https://www.warsawconcerts.com/events/",
-        "genres": [],
+        "genres": [
+          "post-punk",
+          "dream pop",
+          "new wave"
+        ],
         "is_theater": false
       },
       {
@@ -2284,7 +2384,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-17",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "breakcore",
+          "digital hardcore",
+          "transgender"
+        ],
         "is_theater": false
       },
       {
@@ -2293,7 +2397,11 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-04-17",
         "url": "https://www.boweryballroom.com/events/",
-        "genres": [],
+        "genres": [
+          "pop",
+          "power pop",
+          "indie pop"
+        ],
         "is_theater": false
       },
       {
@@ -2315,21 +2423,16 @@
         "is_theater": false
       },
       {
-        "name": "Lala Lala",
-        "venue": "Baby's All Right",
-        "neighborhood": "Brooklyn/Williamsburg",
-        "date": "2026-04-17",
-        "url": "https://www.songkick.com/concerts/42978241-lala-lala-at-babys-all-right?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
-        "is_theater": false
-      },
-      {
         "name": "Frog",
         "venue": "Elsewhere",
         "neighborhood": "Brooklyn/Bushwick",
         "date": "2026-04-17",
         "url": "https://www.songkick.com/concerts/43057342-frog-at-elsewhere?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "eurodance",
+          "schlager",
+          "synth-pop"
+        ],
         "is_theater": false
       },
       {
@@ -2338,7 +2441,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-18",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "breakcore",
+          "digital hardcore",
+          "transgender"
+        ],
         "is_theater": false
       },
       {
@@ -2347,7 +2454,11 @@
         "neighborhood": "Manhattan/Lower East Side",
         "date": "2026-04-18",
         "url": "https://www.songkick.com/concerts/42840283-heavenly-at-bowery-ballroom?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "indie pop",
+          "twee pop",
+          "indie rock"
+        ],
         "is_theater": false
       },
       {
@@ -2383,7 +2494,11 @@
         "neighborhood": "Brooklyn/Williamsburg",
         "date": "2026-04-19",
         "url": "https://www.musichallofwilliamsburg.com/events/",
-        "genres": [],
+        "genres": [
+          "indie rock",
+          "english",
+          "indie pop"
+        ],
         "is_theater": false
       },
       {
@@ -2410,7 +2525,11 @@
         "neighborhood": "Manhattan/West Village",
         "date": "2026-04-19",
         "url": "https://www.racketnyc.com/events",
-        "genres": [],
+        "genres": [
+          "pop punk",
+          "punk",
+          "pop rock"
+        ],
         "is_theater": false
       },
       {
@@ -3215,15 +3334,6 @@
         "is_theater": false
       },
       {
-        "name": "The Black Queen",
-        "venue": "Le Poisson Rouge",
-        "neighborhood": "Manhattan/Greenwich Village",
-        "date": "2026-05-22",
-        "url": "https://lpr.com/events/",
-        "genres": [],
-        "is_theater": false
-      },
-      {
         "name": "Alex Falcone",
         "venue": "The Bell House",
         "neighborhood": "Brooklyn/Gowanus",
@@ -3386,6 +3496,15 @@
         "is_theater": false
       },
       {
+        "name": "Tomahawk",
+        "venue": "Brooklyn Steel",
+        "neighborhood": "Brooklyn/Williamsburg",
+        "date": "2026-07-28",
+        "url": "https://www.brooklynsteel.com/events/",
+        "genres": [],
+        "is_theater": false
+      },
+      {
         "name": "Aldous Harding",
         "venue": "Brooklyn Steel",
         "neighborhood": "Brooklyn/Williamsburg",
@@ -3467,6 +3586,15 @@
         "is_theater": false
       },
       {
+        "name": "Die Spitz",
+        "venue": "Warsaw",
+        "neighborhood": "Brooklyn/Greenpoint",
+        "date": "2026-11-13",
+        "url": "https://www.songkick.com/concerts/43065899-die-spitz-at-warsaw?utm_medium=organic\\u0026utm_source=microformat",
+        "genres": [],
+        "is_theater": false
+      },
+      {
         "name": "Duncan Trussell",
         "venue": "The Bell House",
         "neighborhood": "Brooklyn/Gowanus",
@@ -3477,33 +3605,6 @@
       }
     ],
     "San Francisco": [
-      {
-        "name": "rum·gold",
-        "venue": "Rickshaw Stop",
-        "neighborhood": "SF/Hayes Valley",
-        "date": "2026-02-24",
-        "url": "https://www.rickshawstop.com/events/",
-        "genres": [],
-        "is_theater": false
-      },
-      {
-        "name": "Miyavi",
-        "venue": "Regency Ballroom",
-        "neighborhood": "SF/Tenderloin",
-        "date": "2026-02-24",
-        "url": "https://www.songkick.com/concerts/42631814-miyavi-at-regency-ballroom?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
-        "is_theater": false
-      },
-      {
-        "name": "Porches",
-        "venue": "Great American Music Hall",
-        "neighborhood": "SF/Tenderloin",
-        "date": "2026-02-24",
-        "url": "https://www.gamh.com/events/",
-        "genres": [],
-        "is_theater": false
-      },
       {
         "name": "Sugar Candy Mountain",
         "venue": "Rickshaw Stop",
@@ -3665,7 +3766,11 @@
         "neighborhood": "SF/SoMa",
         "date": "2026-02-28",
         "url": "https://www.songkick.com/concerts/42874902-joseph-at-august-hall?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "classical",
+          "austrian",
+          "composer"
+        ],
         "is_theater": false
       },
       {
@@ -4100,7 +4205,11 @@
         "neighborhood": "SF/Fillmore",
         "date": "2026-03-12",
         "url": "https://www.thefillmore.com/events/",
-        "genres": [],
+        "genres": [
+          "contemporary r&b",
+          "pop",
+          "dance-pop"
+        ],
         "is_theater": false
       },
       {
@@ -4317,7 +4426,7 @@
         "venue": "The Independent",
         "neighborhood": "SF/Lower Pac Heights",
         "date": "2026-03-18",
-        "url": "https://www.songkick.com/concerts/42883730-son-little-at-independent?utm_medium=organic\\u0026utm_source=microformat",
+        "url": "https://www.theindependentsf.com/calendar",
         "genres": [],
         "is_theater": false
       },
@@ -4817,7 +4926,9 @@
         "neighborhood": "SF/Lower Pac Heights",
         "date": "2026-03-28",
         "url": "https://www.songkick.com/concerts/42918443-voxtrot-at-independent?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "rock and indie"
+        ],
         "is_theater": false
       },
       {
@@ -4925,7 +5036,11 @@
         "neighborhood": "SF/Mission",
         "date": "2026-03-30",
         "url": "https://www.thechapelsf.com/events/",
-        "genres": [],
+        "genres": [
+          "noise rock",
+          "wales",
+          "indie rock"
+        ],
         "is_theater": false
       },
       {
@@ -5006,7 +5121,11 @@
         "neighborhood": "SF/Tenderloin",
         "date": "2026-04-01",
         "url": "https://www.gamh.com/events/",
-        "genres": [],
+        "genres": [
+          "breakcore",
+          "digital hardcore",
+          "transgender"
+        ],
         "is_theater": false
       },
       {
@@ -5042,7 +5161,11 @@
         "neighborhood": "SF/Tenderloin",
         "date": "2026-04-02",
         "url": "https://www.gamh.com/events/",
-        "genres": [],
+        "genres": [
+          "breakcore",
+          "digital hardcore",
+          "transgender"
+        ],
         "is_theater": false
       },
       {
@@ -5335,7 +5458,9 @@
         "neighborhood": "SF/Potrero Hill",
         "date": "2026-04-09",
         "url": "https://www.songkick.com/concerts/43038671-habibi-at-bottom-of-the-hill?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "rock"
+        ],
         "is_theater": false
       },
       {
@@ -5981,7 +6106,11 @@
         "neighborhood": "SF/Mission",
         "date": "2026-04-30",
         "url": "https://www.thechapelsf.com/events/",
-        "genres": [],
+        "genres": [
+          "indie rock",
+          "post-punk",
+          "c86"
+        ],
         "is_theater": false
       },
       {
@@ -6061,7 +6190,7 @@
         "venue": "August Hall",
         "neighborhood": "SF/SoMa",
         "date": "2026-05-02",
-        "url": "https://www.songkick.com/concerts/43043598-forester-at-august-hall?utm_medium=organic\\u0026utm_source=microformat",
+        "url": "https://augusthallsf.com/events/",
         "genres": [],
         "is_theater": false
       },
@@ -6179,7 +6308,11 @@
         "neighborhood": "SF/Mission",
         "date": "2026-05-10",
         "url": "https://www.songkick.com/concerts/43026365-ritt-momney-at-chapel?utm_medium=organic\\u0026utm_source=microformat",
-        "genres": [],
+        "genres": [
+          "indie rock",
+          "english",
+          "indie pop"
+        ],
         "is_theater": false
       },
       {
@@ -6395,11 +6528,29 @@
         "is_theater": false
       },
       {
+        "name": "DJ Pauly D",
+        "venue": "August Hall",
+        "neighborhood": "SF/SoMa",
+        "date": "2026-05-22",
+        "url": "https://www.songkick.com/concerts/43066257-dj-pauly-d-at-august-hall?utm_medium=organic\\u0026utm_source=microformat",
+        "genres": [],
+        "is_theater": false
+      },
+      {
         "name": "Wild Nothing",
         "venue": "Great American Music Hall",
         "neighborhood": "SF/Tenderloin",
         "date": "2026-05-22",
         "url": "https://www.gamh.com/events/",
+        "genres": [],
+        "is_theater": false
+      },
+      {
+        "name": "Midnight Generation",
+        "venue": "August Hall",
+        "neighborhood": "SF/SoMa",
+        "date": "2026-05-23",
+        "url": "https://augusthallsf.com/events/",
         "genres": [],
         "is_theater": false
       },
@@ -6539,6 +6690,19 @@
         "is_theater": false
       },
       {
+        "name": "Tigers Jaw",
+        "venue": "Great American Music Hall",
+        "neighborhood": "SF/Tenderloin",
+        "date": "2026-06-09",
+        "url": "https://www.gamh.com/events/",
+        "genres": [
+          "emo",
+          "indie rock",
+          "indie folk"
+        ],
+        "is_theater": false
+      },
+      {
         "name": "Toadies",
         "venue": "The Fillmore",
         "neighborhood": "SF/Fillmore",
@@ -6553,6 +6717,15 @@
         "neighborhood": "SF/Mission",
         "date": "2026-06-12",
         "url": "https://www.songkick.com/concerts/42991294-don-carlos-at-chapel?utm_medium=organic\\u0026utm_source=microformat",
+        "genres": [],
+        "is_theater": false
+      },
+      {
+        "name": "Monolord",
+        "venue": "Great American Music Hall",
+        "neighborhood": "SF/Tenderloin",
+        "date": "2026-06-13",
+        "url": "https://www.gamh.com/events/",
         "genres": [],
         "is_theater": false
       },
@@ -6674,11 +6847,11 @@
         "is_theater": false
       },
       {
-        "name": "Saliva",
-        "venue": "August Hall",
-        "neighborhood": "SF/SoMa",
-        "date": "2026-08-13",
-        "url": "https://augusthallsf.com/events/",
+        "name": "Corinne Bailey Rae",
+        "venue": "The Fillmore",
+        "neighborhood": "SF/Fillmore",
+        "date": "2026-08-08",
+        "url": "https://www.thefillmore.com/events/",
         "genres": [],
         "is_theater": false
       },
@@ -6728,11 +6901,11 @@
         "is_theater": false
       },
       {
-        "name": "Screeching Weasel",
-        "venue": "August Hall",
-        "neighborhood": "SF/SoMa",
-        "date": "2026-09-01",
-        "url": "https://augusthallsf.com/events/",
+        "name": "Kamelot",
+        "venue": "The Fillmore",
+        "neighborhood": "SF/Fillmore",
+        "date": "2026-09-05",
+        "url": "https://www.thefillmore.com/events/",
         "genres": [],
         "is_theater": false
       }
