@@ -9,7 +9,7 @@ import json
 import os
 import subprocess
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -18,6 +18,7 @@ load_dotenv()
 
 STATUS_FILE = Path(__file__).parent / "m57-status.json"
 ALERT_STATE_FILE = Path(__file__).parent / "m57-alert-state.json"
+MUTE_FILE = Path(__file__).parent / "m57-mute.json"
 
 ET = ZoneInfo("America/New_York")
 ALERT_MIN = 8    # lower bound: alert if bus is >= this many minutes away
@@ -45,6 +46,20 @@ def save_alert_state(state):
     ALERT_STATE_FILE.write_text(json.dumps(state, indent=2))
 
 
+def is_muted():
+    """Check if alerts are muted until a specific time."""
+    try:
+        mute_data = json.loads(MUTE_FILE.read_text())
+        mute_until_str = mute_data.get("muted_until")
+        if mute_until_str:
+            mute_until = datetime.fromisoformat(mute_until_str)
+            now = datetime.now(timezone.utc)
+            return now < mute_until
+    except Exception:
+        pass
+    return False
+
+
 def send_notification(message):
     try:
         result = subprocess.run(
@@ -66,6 +81,10 @@ def send_notification(message):
 
 def main():
     now_et = datetime.now(ET)
+
+    if is_muted():
+        print(f"[{now_et.strftime('%H:%M %Z')}] Alerts muted, skipping.")
+        return
 
     if not in_window(now_et):
         print(f"[{now_et.strftime('%H:%M %Z')}] Outside alert window, skipping.")
@@ -119,8 +138,8 @@ def main():
 
             msg = (
                 f"🚌 M57 alert! Bus is {bus['stops_away']} stops away "
-                f"(~{mins:.0f} min) — arriving West End & 61st around {arr_str}. "
-                f"Time to head out!"
+                f"(~{mins:.0f} min) — arriving around {arr_str}. "
+                f"Time to head out!\n\n👍 React with thumbs up to mute for the day."
             )
             send_notification(msg)
             alerted[alert_key] = now_ts
