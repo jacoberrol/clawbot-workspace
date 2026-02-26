@@ -7,6 +7,7 @@ when a bus is ~10 minutes from his stop.
 
 import json
 import os
+import re
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
@@ -19,6 +20,7 @@ load_dotenv()
 STATUS_FILE = Path(__file__).parent / "m57-status.json"
 ALERT_STATE_FILE = Path(__file__).parent / "m57-alert-state.json"
 MUTE_FILE = Path(__file__).parent / "m57-mute.json"
+LAST_MESSAGE_FILE = Path(__file__).parent / "m57-last-alert.json"
 
 ET = ZoneInfo("America/New_York")
 ALERT_MIN = 8    # lower bound: alert if bus is >= this many minutes away
@@ -75,6 +77,17 @@ def send_notification(message):
             print(f"Notify failed: {result.stderr}", file=sys.stderr)
         else:
             print(f"Notified: {message[:100]}")
+            # Parse message ID from response and store it for reaction checking
+            try:
+                match = re.search(r"Message ID: (\d+)", result.stdout)
+                if match:
+                    msg_id = match.group(1)
+                    LAST_MESSAGE_FILE.write_text(json.dumps({
+                        "message_id": msg_id,
+                        "sent_at": datetime.now(timezone.utc).isoformat()
+                    }))
+            except Exception:
+                pass
     except Exception as e:
         print(f"Notify error: {e}", file=sys.stderr)
 
