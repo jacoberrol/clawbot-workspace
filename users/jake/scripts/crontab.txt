@@ -12,3 +12,4 @@
 0 9 * * * /usr/bin/python3 /home/exedev/clawbot/workspace/users/jake/scripts/events-html-gen.py >> /home/exedev/clawbot/workspace/users/jake/scripts/events-html-gen.log 2>&1
 # Genre enricher — nightly 5am ET (10am UTC)
 0 10 * * * /usr/bin/python3 /home/exedev/clawbot/workspace/users/jake/scripts/events-genres.py >> /home/exedev/clawbot/workspace/users/jake/scripts/events-genres.log 2>&1
+* * * * * /usr/bin/python3 /home/exedev/clawbot/workspace/users/jake/scripts/m57-reaction-monitor.py --check >> /home/exedev/clawbot/workspace/users/jake/scripts/m57-reaction-monitor.log 2>&1
